@@ -1,0 +1,147 @@
+{
+    "smarkets": {
+        "url": "https://smarkets.com/event/952418/sport/horse-racing/musselburgh/2018/08/29/15:10",
+        "horses": {
+            "alsvinder": [
+                "13.5",
+                "22.48"
+            ],
+            "computable": [
+                "48",
+                "22.27"
+            ],
+            "economic crisis": [
+                "80",
+                "22.33"
+            ],
+            "kinloch pride": [
+                "10.5",
+                "22.36"
+            ],
+            "longroom": [
+                "10.5",
+                "21.56"
+            ],
+            "machree": [
+                "18.5",
+                "22.15"
+            ],
+            "primo's comet": [
+                "80",
+                "21.39"
+            ],
+            "royal brave": [
+                "6.8",
+                "21.88"
+            ],
+            "war whisper": [
+                "10.5",
+                "22.31"
+            ]
+        }
+    },
+    "oddschecker": {
+        "horses": {
+            "royal brave": {
+                "Bet 365": "4.5",
+                "Sky Bet": "4",
+                "Ladbrokes": "5",
+                "William Hill": "4.33",
+                "Marathon Bet": "4.33",
+                "Betfair": "4.33",
+                "Paddy Power": "4",
+                "Coral": "4.5",
+                "BetFred": "4.33"
+            },
+            "longroom": {
+                "Bet 365": "5.5",
+                "Sky Bet": "6",
+                "Ladbrokes": "5",
+                "William Hill": "6",
+                "Marathon Bet": "6",
+                "Betfair": "6",
+                "Paddy Power": "6",
+                "Coral": "5.5",
+                "BetFred": "5.5"
+            },
+            "war whisper": {
+                "Bet 365": "6",
+                "Sky Bet": "6",
+                "Ladbrokes": "5.5",
+                "William Hill": "6",
+                "Marathon Bet": "6",
+                "Betfair": "6",
+                "Paddy Power": "6",
+                "Coral": "6",
+                "BetFred": "6"
+            },
+            "kinloch pride": {
+                "Bet 365": "5.5",
+                "Sky Bet": "6.5",
+                "Ladbrokes": "5.5",
+                "William Hill": "6.5",
+                "Marathon Bet": "6",
+                "Betfair": "7",
+                "Paddy Power": "7",
+                "Coral": "6",
+                "BetFred": "6"
+            },
+            "alsvinder": {
+                "Bet 365": "7",
+                "Sky Bet": "5.5",
+                "Ladbrokes": "7.5",
+                "William Hill": "6",
+                "Marathon Bet": "7",
+                "Betfair": "5",
+                "Paddy Power": "5",
+                "Coral": "7",
+                "BetFred": "6.5"
+            },
+            "machree": {
+                "Bet 365": "8.5",
+                "Sky Bet": "8.5",
+                "Ladbrokes": "7",
+                "William Hill": "8",
+                "Marathon Bet": "8.5",
+                "Betfair": "9",
+                "Paddy Power": "9",
+                "Coral": "8",
+                "BetFred": "8.5"
+            },
+            "computable": {
+                "Bet 365": "13",
+                "Sky Bet": "13",
+                "Ladbrokes": "15",
+                "William Hill": "13",
+                "Marathon Bet": "13",
+                "Betfair": "13",
+                "Paddy Power": "13",
+                "Coral": "13",
+                "BetFred": "13"
+            },
+            "economic crisis": {
+                "Bet 365": "13",
+                "Sky Bet": "15",
+                "Ladbrokes": "13",
+                "William Hill": "15",
+                "Marathon Bet": "15",
+                "Betfair": "17",
+                "Paddy Power": "17",
+                "Coral": "13",
+                "BetFred": "13"
+            },
+            "primos comet": {
+                "Bet 365": "15",
+                "Sky Bet": "17",
+                "Ladbrokes": "17",
+                "William Hill": "13",
+                "Marathon Bet": "15",
+                "Betfair": "15",
+                "Paddy Power": "15",
+                "Coral": "17",
+                "BetFred": "15"
+            }
+        },
+        "url": "https://www.oddschecker.com/horse-racing/2018-08-29-musselburgh/15:10/winner"
+    }
+}

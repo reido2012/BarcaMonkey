@@ -1,0 +1,102 @@
+{
+    "smarkets": {
+        "url": "https://smarkets.com/event/952427/sport/horse-racing/catterick/2018/08/29/16:30",
+        "horses": {
+            "ad libitum": [
+                "8.2",
+                "21.70"
+            ],
+            "breathable": [
+                "15.5",
+                "21.77"
+            ],
+            "dubai empire": [
+                "17.5",
+                "21.42"
+            ],
+            "india": [
+                "3.75",
+                "1.70"
+            ],
+            "reveleon": [
+                "4.1",
+                "21.46"
+            ],
+            "unwritten": [
+                "180",
+                "21.45"
+            ]
+        }
+    },
+    "oddschecker": {
+        "horses": {
+            "reveleon": {
+                "Bet 365": "3",
+                "Sky Bet": "2.88",
+                "Ladbrokes": "3",
+                "William Hill": "2.75",
+                "Marathon Bet": "2.88",
+                "Betfair": "3",
+                "Paddy Power": "3",
+                "Coral": "3",
+                "BetFred": "3"
+            },
+            "india": {
+                "Bet 365": "3",
+                "Sky Bet": "2.88",
+                "Ladbrokes": "3",
+                "William Hill": "3.25",
+                "Marathon Bet": "3.25",
+                "Betfair": "3.5",
+                "Paddy Power": "3.5",
+                "Coral": "2.88",
+                "BetFred": "3"
+            },
+            "ad libitum": {
+                "Bet 365": "6",
+                "Sky Bet": "6",
+                "Ladbrokes": "6",
+                "William Hill": "6",
+                "Marathon Bet": "6",
+                "Betfair": "5.5",
+                "Paddy Power": "5",
+                "Coral": "5.5",
+                "BetFred": "6"
+            },
+            "breathable": {
+                "Bet 365": "7.5",
+                "Sky Bet": "7",
+                "Ladbrokes": "6.5",
+                "William Hill": "7",
+                "Marathon Bet": "7",
+                "Betfair": "7.5",
+                "Paddy Power": "7.5",
+                "Coral": "7",
+                "BetFred": "7"
+            },
+            "dubai empire": {
+                "Bet 365": "10",
+                "Sky Bet": "10",
+                "Ladbrokes": "11",
+                "William Hill": "12",
+                "Marathon Bet": "10",
+                "Betfair": "8",
+                "Paddy Power": "8",
+                "Coral": "12",
+                "BetFred": "10"
+            },
+            "unwritten": {
+                "Bet 365": "11",
+                "Sky Bet": "10",
+                "Ladbrokes": "11",
+                "William Hill": "13",
+                "Marathon Bet": "11",
+                "Betfair": "15",
+                "Paddy Power": "15",
+                "Coral": "10",
+                "BetFred": "11"
+            }
+        },
+        "url": "https://www.oddschecker.com/horse-racing/2018-08-29-catterick/16:30/winner"
+    }
+}

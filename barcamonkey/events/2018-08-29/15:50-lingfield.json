@@ -1,0 +1,117 @@
+{
+    "smarkets": {
+        "url": "https://smarkets.com/event/952439/sport/horse-racing/lingfield/2018/08/29/15:50",
+        "horses": {
+            "big time maybe": [
+                null,
+                null
+            ],
+            "exchequer": [
+                "2.42",
+                "3.27"
+            ],
+            "secret agent": [
+                "24",
+                "13.33"
+            ],
+            "seprani": [
+                "6.2",
+                "1.75"
+            ],
+            "showmethewayavrilo": [
+                "13.5",
+                "12.01"
+            ],
+            "sir billy wright": [
+                null,
+                null
+            ],
+            "temeraire": [
+                "9.4",
+                "14.83"
+            ]
+        }
+    },
+    "oddschecker": {
+        "horses": {
+            "exchequer": {
+                "Bet 365": "2.37",
+                "Sky Bet": "2.1",
+                "Ladbrokes": "2.25",
+                "William Hill": "2.38",
+                "Marathon Bet": "2.25",
+                "Betfair": "2.1",
+                "Paddy Power": "2.1",
+                "Coral": "2.38",
+                "BetFred": "2.2"
+            },
+            "seprani": {
+                "Bet 365": "5",
+                "Sky Bet": "5.5",
+                "Ladbrokes": "5",
+                "William Hill": "6",
+                "Marathon Bet": "6",
+                "Betfair": "5.5",
+                "Paddy Power": "5.5",
+                "Coral": "5",
+                "BetFred": "5.5"
+            },
+            "temeraire": {
+                "Bet 365": "6.5",
+                "Sky Bet": "5.5",
+                "Ladbrokes": "6",
+                "William Hill": "6.5",
+                "Marathon Bet": "6.5",
+                "Betfair": "6",
+                "Paddy Power": "6",
+                "Coral": "6",
+                "BetFred": "6"
+            },
+            "sir billy wright": {
+                "Bet 365": "7.5",
+                "Sky Bet": "7",
+                "Ladbrokes": "6.5",
+                "William Hill": "6.5",
+                "Marathon Bet": "7",
+                "Betfair": "7",
+                "Paddy Power": "6.5",
+                "Coral": "7",
+                "BetFred": "6.5"
+            },
+            "secret agent": {
+                "Bet 365": "7.5",
+                "Sky Bet": "7",
+                "Ladbrokes": "7",
+                "William Hill": "6.5",
+                "Marathon Bet": "7",
+                "Betfair": "6",
+                "Paddy Power": "6",
+                "Coral": "6.5",
+                "BetFred": "6.5"
+            },
+            "showmethewayavrilo": {
+                "Bet 365": "11",
+                "Sky Bet": "9",
+                "Ladbrokes": "10",
+                "William Hill": "9",
+                "Marathon Bet": "8.5",
+                "Betfair": "7",
+                "Paddy Power": "7",
+                "Coral": "9",
+                "BetFred": "9"
+            },
+            "big time maybe": {
+                "Bet 365": "21",
+                "Sky Bet": "19",
+                "Ladbrokes": "21",
+                "William Hill": "21",
+                "Marathon Bet": "19",
+                "Betfair": "19",
+                "Paddy Power": "19",
+                "Coral": "17",
+                "BetFred": "19"
+            }
+        },
+        "url": "https://www.oddschecker.com/horse-racing/2018-08-29-lingfield/15:50/winner"
+    }
+}

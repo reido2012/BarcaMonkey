@@ -1,0 +1,132 @@
+{
+    "smarkets": {
+        "url": "https://smarkets.com/event/952437/sport/horse-racing/kempton/2018/08/29/19:55",
+        "horses": {
+            "atticus boy": [
+                "3.20",
+                "41.31"
+            ],
+            "come on come on": [
+                "5.7",
+                "17.77"
+            ],
+            "dragon mountain": [
+                "14.5",
+                "22.61"
+            ],
+            "grapevine": [
+                "25",
+                "21.83"
+            ],
+            "know your limit": [
+                null,
+                null
+            ],
+            "paddy the chef": [
+                null,
+                null
+            ],
+            "red orator": [
+                null,
+                null
+            ],
+            "thunder speed": [
+                "110",
+                "12.73"
+            ]
+        }
+    },
+    "oddschecker": {
+        "horses": {
+            "atticus boy": {
+                "Bet 365": "2.62",
+                "Sky Bet": "2.75",
+                "Ladbrokes": "2.75",
+                "William Hill": "2.75",
+                "Marathon Bet": "2.75",
+                "Betfair": "2.62",
+                "Paddy Power": "2.62",
+                "Coral": "2.75",
+                "BetFred": "2.75"
+            },
+            "come on come on": {
+                "Bet 365": "5",
+                "Sky Bet": "5",
+                "Ladbrokes": "5",
+                "William Hill": "5",
+                "Marathon Bet": "5",
+                "Betfair": "4.5",
+                "Paddy Power": "4.5",
+                "Coral": "5",
+                "BetFred": "5"
+            },
+            "dragon mountain": {
+                "Bet 365": "7.5",
+                "Sky Bet": "6.5",
+                "Ladbrokes": "5.5",
+                "William Hill": "5.5",
+                "Marathon Bet": "6",
+                "Betfair": "5.5",
+                "Paddy Power": "5",
+                "Coral": "5",
+                "BetFred": "5.5"
+            },
+            "thunder speed": {
+                "Bet 365": "7.5",
+                "Sky Bet": "5",
+                "Ladbrokes": "6",
+                "William Hill": "6",
+                "Marathon Bet": "5.5",
+                "Betfair": "6",
+                "Paddy Power": "6",
+                "Coral": "6.5",
+                "BetFred": "6"
+            },
+            "paddy the chef": {
+                "Bet 365": "9",
+                "Sky Bet": "8",
+                "Ladbrokes": "7.5",
+                "William Hill": "9",
+                "Marathon Bet": "9",
+                "Betfair": "9",
+                "Paddy Power": "9",
+                "Coral": "8.5",
+                "BetFred": "8.5"
+            },
+            "grapevine": {
+                "Bet 365": "11",
+                "Sky Bet": "9",
+                "Ladbrokes": "11",
+                "William Hill": "11",
+                "Marathon Bet": "11",
+                "Betfair": "10",
+                "Paddy Power": "13",
+                "Coral": "11",
+                "BetFred": "11"
+            },
+            "know your limit": {
+                "Bet 365": "13",
+                "Sky Bet": "13",
+                "Ladbrokes": "11",
+                "William Hill": "13",
+                "Marathon Bet": "13",
+                "Betfair": "13",
+                "Paddy Power": "13",
+                "Coral": "13",
+                "BetFred": "13"
+            },
+            "red orator": {
+                "Bet 365": "51",
+                "Sky Bet": "51",
+                "Ladbrokes": "41",
+                "William Hill": "51",
+                "Marathon Bet": "51",
+                "Betfair": "51",
+                "Paddy Power": "51",
+                "Coral": "41",
+                "BetFred": "51"
+            }
+        },
+        "url": "https://www.oddschecker.com/horse-racing/2018-08-29-kempton/19:55/winner"
+    }
+}

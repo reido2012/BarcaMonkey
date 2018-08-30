@@ -1,0 +1,162 @@
+{
+    "smarkets": {
+        "url": "https://smarkets.com/event/952420/sport/horse-racing/musselburgh/2018/08/29/17:10",
+        "horses": {
+            "burmese blazer": [
+                "14.5",
+                "21.81"
+            ],
+            "honey gg": [
+                "13.0",
+                "22.01"
+            ],
+            "jeffrey harris": [
+                "75",
+                "21.75"
+            ],
+            "life for rent": [
+                "8.0",
+                "21.43"
+            ],
+            "miss dd": [
+                "5.5",
+                "22.29"
+            ],
+            "mosseyb": [
+                "46",
+                "21.95"
+            ],
+            "pavarella shoes": [
+                null,
+                null
+            ],
+            "rock in society": [
+                "18.0",
+                "22.47"
+            ],
+            "your just desserts": [
+                "10.5",
+                "21.65"
+            ],
+            "zizum": [
+                null,
+                null
+            ]
+        }
+    },
+    "oddschecker": {
+        "horses": {
+            "miss dd": {
+                "Bet 365": "3.75",
+                "Sky Bet": "3.75",
+                "Ladbrokes": "3.5",
+                "William Hill": "3.75",
+                "Marathon Bet": "3.75",
+                "Betfair": "3.5",
+                "Paddy Power": "3.5",
+                "Coral": "3.75",
+                "BetFred": null
+            },
+            "life for rent": {
+                "Bet 365": "5.5",
+                "Sky Bet": "4.5",
+                "Ladbrokes": "4.5",
+                "William Hill": "5",
+                "Marathon Bet": "5",
+                "Betfair": "5",
+                "Paddy Power": "5",
+                "Coral": "5",
+                "BetFred": null
+            },
+            "your just desserts": {
+                "Bet 365": "5",
+                "Sky Bet": "4.5",
+                "Ladbrokes": "6",
+                "William Hill": "6",
+                "Marathon Bet": "6",
+                "Betfair": "6",
+                "Paddy Power": "6",
+                "Coral": "6",
+                "BetFred": null
+            },
+            "honey gg": {
+                "Bet 365": "8",
+                "Sky Bet": "7",
+                "Ladbrokes": "7",
+                "William Hill": "6.5",
+                "Marathon Bet": "7",
+                "Betfair": "6",
+                "Paddy Power": "6",
+                "Coral": "7",
+                "BetFred": null
+            },
+            "burmese blazer": {
+                "Bet 365": "8",
+                "Sky Bet": "8",
+                "Ladbrokes": "7.5",
+                "William Hill": "7.5",
+                "Marathon Bet": "7.5",
+                "Betfair": "7.5",
+                "Paddy Power": "7.5",
+                "Coral": "7.5",
+                "BetFred": null
+            },
+            "rock in society": {
+                "Bet 365": "9",
+                "Sky Bet": "8.5",
+                "Ladbrokes": "9",
+                "William Hill": "8.5",
+                "Marathon Bet": "9",
+                "Betfair": "8.5",
+                "Paddy Power": "8.5",
+                "Coral": "8.5",
+                "BetFred": null
+            },
+            "mosseyb": {
+                "Bet 365": "9",
+                "Sky Bet": "11",
+                "Ladbrokes": "13",
+                "William Hill": "13",
+                "Marathon Bet": "13",
+                "Betfair": "13",
+                "Paddy Power": "13",
+                "Coral": "13",
+                "BetFred": null
+            },
+            "jeffrey harris": {
+                "Bet 365": "15",
+                "Sky Bet": "15",
+                "Ladbrokes": "15",
+                "William Hill": "15",
+                "Marathon Bet": "15",
+                "Betfair": "15",
+                "Paddy Power": "15",
+                "Coral": "15",
+                "BetFred": null
+            },
+            "pavarella shoes": {
+                "Bet 365": "34",
+                "Sky Bet": "41",
+                "Ladbrokes": "51",
+                "William Hill": "51",
+                "Marathon Bet": "51",
+                "Betfair": "51",
+                "Paddy Power": "51",
+                "Coral": "51",
+                "BetFred": null
+            },
+            "zizum": {
+                "Bet 365": "51",
+                "Sky Bet": "51",
+                "Ladbrokes": "51",
+                "William Hill": "51",
+                "Marathon Bet": "51",
+                "Betfair": "51",
+                "Paddy Power": "51",
+                "Coral": "51",
+                "BetFred": null
+            }
+        },
+        "url": "https://www.oddschecker.com/horse-racing/2018-08-29-musselburgh/17:10/winner"
+    }
+}

@@ -1,0 +1,132 @@
+{
+    "smarkets": {
+        "url": "https://smarkets.com/event/952423/sport/horse-racing/musselburgh/2018/08/29/14:40",
+        "horses": {
+            "ali the hunter": [
+                null,
+                null
+            ],
+            "archipeligo": [
+                "32",
+                "21.60"
+            ],
+            "falcon's fire": [
+                "10.0",
+                "22.16"
+            ],
+            "flower power": [
+                "8.8",
+                "22.40"
+            ],
+            "hayward field": [
+                null,
+                null
+            ],
+            "mac o'polo": [
+                "8.8",
+                "21.65"
+            ],
+            "new abbey angel": [
+                "22",
+                "21.74"
+            ],
+            "trautmann": [
+                "4.2",
+                "22.33"
+            ]
+        }
+    },
+    "oddschecker": {
+        "horses": {
+            "trautmann": {
+                "Bet 365": "3",
+                "Sky Bet": "2.88",
+                "Ladbrokes": "2.75",
+                "William Hill": "2.88",
+                "Marathon Bet": "2.88",
+                "Betfair": "2.75",
+                "Paddy Power": "2.75",
+                "Coral": "2.88",
+                "BetFred": null
+            },
+            "mac opolo": {
+                "Bet 365": "4",
+                "Sky Bet": "4.5",
+                "Ladbrokes": "5",
+                "William Hill": "5",
+                "Marathon Bet": "4.5",
+                "Betfair": "4.5",
+                "Paddy Power": "5",
+                "Coral": "5",
+                "BetFred": null
+            },
+            "flower power": {
+                "Bet 365": "5",
+                "Sky Bet": "5",
+                "Ladbrokes": "5.5",
+                "William Hill": "5.5",
+                "Marathon Bet": "5.5",
+                "Betfair": "4.5",
+                "Paddy Power": "4.33",
+                "Coral": "5",
+                "BetFred": null
+            },
+            "falcons fire": {
+                "Bet 365": "7",
+                "Sky Bet": "5.5",
+                "Ladbrokes": "5.5",
+                "William Hill": "5.5",
+                "Marathon Bet": "5.5",
+                "Betfair": "5.5",
+                "Paddy Power": "5.5",
+                "Coral": "5.5",
+                "BetFred": null
+            },
+            "new abbey angel": {
+                "Bet 365": "9",
+                "Sky Bet": "8.5",
+                "Ladbrokes": "8.5",
+                "William Hill": "8.5",
+                "Marathon Bet": "8.5",
+                "Betfair": "8.5",
+                "Paddy Power": "8.5",
+                "Coral": "8.5",
+                "BetFred": null
+            },
+            "archipeligo": {
+                "Bet 365": "17",
+                "Sky Bet": "10",
+                "Ladbrokes": "10",
+                "William Hill": "9",
+                "Marathon Bet": "10",
+                "Betfair": "10",
+                "Paddy Power": "10",
+                "Coral": "10",
+                "BetFred": null
+            },
+            "hayward field": {
+                "Bet 365": "26",
+                "Sky Bet": "34",
+                "Ladbrokes": "34",
+                "William Hill": "34",
+                "Marathon Bet": "26",
+                "Betfair": "26",
+                "Paddy Power": "26",
+                "Coral": "29",
+                "BetFred": null
+            },
+            "ali the hunter": {
+                "Bet 365": "19",
+                "Sky Bet": "19",
+                "Ladbrokes": "23",
+                "William Hill": "21",
+                "Marathon Bet": "21",
+                "Betfair": "34",
+                "Paddy Power": "34",
+                "Coral": "21",
+                "BetFred": null
+            }
+        },
+        "url": "https://www.oddschecker.com/horse-racing/2018-08-29-musselburgh/14:40/winner"
+    }
+}

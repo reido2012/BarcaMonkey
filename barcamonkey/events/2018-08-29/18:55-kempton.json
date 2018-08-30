@@ -1,0 +1,162 @@
+{
+    "smarkets": {
+        "url": "https://smarkets.com/event/952434/sport/horse-racing/kempton/2018/08/29/18:55",
+        "horses": {
+            "awalii": [
+                null,
+                null
+            ],
+            "dayking": [
+                null,
+                null
+            ],
+            "deliverance": [
+                null,
+                null
+            ],
+            "duke of alba": [
+                null,
+                null
+            ],
+            "ensign ewart": [
+                null,
+                null
+            ],
+            "jabarout": [
+                null,
+                null
+            ],
+            "maaward": [
+                null,
+                null
+            ],
+            "qallaab": [
+                null,
+                null
+            ],
+            "roodeparis": [
+                null,
+                null
+            ],
+            "sir magnum": [
+                null,
+                null
+            ]
+        }
+    },
+    "oddschecker": {
+        "horses": {
+            "maaward": {
+                "Bet 365": "2.2",
+                "Sky Bet": "2.25",
+                "Ladbrokes": "2.5",
+                "William Hill": "2.5",
+                "Marathon Bet": null,
+                "Betfair": "2.5",
+                "Paddy Power": "2.5",
+                "Coral": "2.5",
+                "BetFred": "2.5"
+            },
+            "dayking": {
+                "Bet 365": "2.62",
+                "Sky Bet": "2.38",
+                "Ladbrokes": "2.37",
+                "William Hill": "2.2",
+                "Marathon Bet": null,
+                "Betfair": "2.1",
+                "Paddy Power": "2.1",
+                "Coral": "2.38",
+                "BetFred": "2.38"
+            },
+            "qallaab": {
+                "Bet 365": "7",
+                "Sky Bet": "7",
+                "Ladbrokes": "6.5",
+                "William Hill": "6.5",
+                "Marathon Bet": null,
+                "Betfair": "6.5",
+                "Paddy Power": "6.5",
+                "Coral": "6.5",
+                "BetFred": "6.5"
+            },
+            "awalii": {
+                "Bet 365": "8.5",
+                "Sky Bet": "8.5",
+                "Ladbrokes": "8",
+                "William Hill": "8",
+                "Marathon Bet": null,
+                "Betfair": "8.5",
+                "Paddy Power": "8",
+                "Coral": "8.5",
+                "BetFred": "8.5"
+            },
+            "duke of alba": {
+                "Bet 365": "41",
+                "Sky Bet": "34",
+                "Ladbrokes": "34",
+                "William Hill": "51",
+                "Marathon Bet": null,
+                "Betfair": "51",
+                "Paddy Power": "51",
+                "Coral": "41",
+                "BetFred": "41"
+            },
+            "jabarout": {
+                "Bet 365": "67",
+                "Sky Bet": "67",
+                "Ladbrokes": "67",
+                "William Hill": "51",
+                "Marathon Bet": null,
+                "Betfair": "51",
+                "Paddy Power": "51",
+                "Coral": "67",
+                "BetFred": "67"
+            },
+            "deliverance": {
+                "Bet 365": "67",
+                "Sky Bet": "51",
+                "Ladbrokes": "51",
+                "William Hill": "34",
+                "Marathon Bet": null,
+                "Betfair": "34",
+                "Paddy Power": "34",
+                "Coral": "51",
+                "BetFred": "51"
+            },
+            "roodeparis": {
+                "Bet 365": "81",
+                "Sky Bet": "67",
+                "Ladbrokes": "51",
+                "William Hill": "51",
+                "Marathon Bet": null,
+                "Betfair": "51",
+                "Paddy Power": "51",
+                "Coral": "51",
+                "BetFred": "51"
+            },
+            "ensign ewart": {
+                "Bet 365": "51",
+                "Sky Bet": "67",
+                "Ladbrokes": "67",
+                "William Hill": "67",
+                "Marathon Bet": null,
+                "Betfair": "101",
+                "Paddy Power": "101",
+                "Coral": "67",
+                "BetFred": "67"
+            },
+            "sir magnum": {
+                "Bet 365": "51",
+                "Sky Bet": "67",
+                "Ladbrokes": "67",
+                "William Hill": "67",
+                "Marathon Bet": null,
+                "Betfair": "101",
+                "Paddy Power": "101",
+                "Coral": "67",
+                "BetFred": "67"
+            }
+        },
+        "url": "https://www.oddschecker.com/horse-racing/2018-08-29-kempton/18:55/winner"
+    }
+}

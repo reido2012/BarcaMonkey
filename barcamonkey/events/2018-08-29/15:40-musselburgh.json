@@ -1,0 +1,102 @@
+{
+    "smarkets": {
+        "url": "https://smarkets.com/event/952422/sport/horse-racing/musselburgh/2018/08/29/15:40",
+        "horses": {
+            "angels": [
+                null,
+                null
+            ],
+            "crotchet": [
+                "1000",
+                "7.20"
+            ],
+            "oriental lilly": [
+                "46",
+                "10.19"
+            ],
+            "rebel assault": [
+                "10.5",
+                "14.82"
+            ],
+            "richenza": [
+                "4.4",
+                "9.87"
+            ],
+            "whatsthemessage": [
+                "13.5",
+                "12.33"
+            ]
+        }
+    },
+    "oddschecker": {
+        "horses": {
+            "richenza": {
+                "Bet 365": "3.25",
+                "Sky Bet": "3.25",
+                "Ladbrokes": "3",
+                "William Hill": "3.25",
+                "Marathon Bet": "3.25",
+                "Betfair": "3.25",
+                "Paddy Power": "3.25",
+                "Coral": "3",
+                "BetFred": "3.25"
+            },
+            "crotchet": {
+                "Bet 365": "3.25",
+                "Sky Bet": "3",
+                "Ladbrokes": "3.25",
+                "William Hill": "3",
+                "Marathon Bet": "3",
+                "Betfair": "2.88",
+                "Paddy Power": "2.88",
+                "Coral": "3.5",
+                "BetFred": "3.25"
+            },
+            "rebel assault": {
+                "Bet 365": "5",
+                "Sky Bet": "6",
+                "Ladbrokes": "7.5",
+                "William Hill": "6.5",
+                "Marathon Bet": "6.5",
+                "Betfair": "6.5",
+                "Paddy Power": "6.5",
+                "Coral": "7",
+                "BetFred": "6.5"
+            },
+            "angels": {
+                "Bet 365": "9",
+                "Sky Bet": "7.5",
+                "Ladbrokes": "6.5",
+                "William Hill": "8",
+                "Marathon Bet": "8",
+                "Betfair": "7.5",
+                "Paddy Power": "8",
+                "Coral": "7.5",
+                "BetFred": "7.5"
+            },
+            "whatsthemessage": {
+                "Bet 365": "8.5",
+                "Sky Bet": "7.5",
+                "Ladbrokes": "9",
+                "William Hill": "8.5",
+                "Marathon Bet": "8.5",
+                "Betfair": "8",
+                "Paddy Power": "8",
+                "Coral": "8.5",
+                "BetFred": "8.5"
+            },
+            "oriental lilly": {
+                "Bet 365": "12",
+                "Sky Bet": "10",
+                "Ladbrokes": "8.5",
+                "William Hill": "9",
+                "Marathon Bet": "9",
+                "Betfair": "8.5",
+                "Paddy Power": "8.5",
+                "Coral": "9",
+                "BetFred": "9"
+            }
+        },
+        "url": "https://www.oddschecker.com/horse-racing/2018-08-29-musselburgh/15:40/winner"
+    }
+}

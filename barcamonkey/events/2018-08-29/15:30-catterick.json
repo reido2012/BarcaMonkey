@@ -1,0 +1,177 @@
+{
+    "smarkets": {
+        "url": "https://smarkets.com/event/952425/sport/horse-racing/catterick/2018/08/29/15:30",
+        "horses": {
+            "inner circle": [
+                "260",
+                "9.17"
+            ],
+            "iron sky": [
+                "90",
+                "12.90"
+            ],
+            "katheefa": [
+                null,
+                null
+            ],
+            "magical effect": [
+                "11.0",
+                "14.66"
+            ],
+            "our charlie brown": [
+                "10.5",
+                "14.08"
+            ],
+            "perisher": [
+                "8.0",
+                "14.64"
+            ],
+            "portledge": [
+                "22",
+                "10.65"
+            ],
+            "raselasad": [
+                "8.0",
+                "47.84"
+            ],
+            "regulator": [
+                "110",
+                "10.01"
+            ],
+            "side effect": [
+                "18.5",
+                "8.96"
+            ],
+            "tavener": [
+                null,
+                null
+            ]
+        }
+    },
+    "oddschecker": {
+        "horses": {
+            "perisher": {
+                "Bet 365": "5",
+                "Sky Bet": "5.5",
+                "Ladbrokes": "5.5",
+                "William Hill": "6",
+                "Marathon Bet": "6",
+                "Betfair": "6",
+                "Paddy Power": "6",
+                "Coral": "5.5",
+                "BetFred": "5"
+            },
+            "raselasad": {
+                "Bet 365": "6",
+                "Sky Bet": "6",
+                "Ladbrokes": "6",
+                "William Hill": "5",
+                "Marathon Bet": "5.5",
+                "Betfair": "5",
+                "Paddy Power": "5",
+                "Coral": "6",
+                "BetFred": "5.5"
+            },
+            "magical effect": {
+                "Bet 365": "6",
+                "Sky Bet": "6.5",
+                "Ladbrokes": "6",
+                "William Hill": "7",
+                "Marathon Bet": "6.5",
+                "Betfair": "7.5",
+                "Paddy Power": "7.5",
+                "Coral": "6",
+                "BetFred": "6.5"
+            },
+            "our charlie brown": {
+                "Bet 365": "9",
+                "Sky Bet": "7.5",
+                "Ladbrokes": "8",
+                "William Hill": "7.5",
+                "Marathon Bet": "8",
+                "Betfair": "7",
+                "Paddy Power": "8.5",
+                "Coral": "8.5",
+                "BetFred": "8"
+            },
+            "side effect": {
+                "Bet 365": "8",
+                "Sky Bet": "7",
+                "Ladbrokes": "9",
+                "William Hill": "9",
+                "Marathon Bet": "8",
+                "Betfair": "6.5",
+                "Paddy Power": "6.5",
+                "Coral": "9",
+                "BetFred": "8"
+            },
+            "iron sky": {
+                "Bet 365": "9",
+                "Sky Bet": "8",
+                "Ladbrokes": "8",
+                "William Hill": "8.5",
+                "Marathon Bet": "8",
+                "Betfair": "9",
+                "Paddy Power": "9",
+                "Coral": "8",
+                "BetFred": "8"
+            },
+            "regulator": {
+                "Bet 365": "10",
+                "Sky Bet": "11",
+                "Ladbrokes": "10",
+                "William Hill": "11",
+                "Marathon Bet": "11",
+                "Betfair": "11",
+                "Paddy Power": "11",
+                "Coral": "11",
+                "BetFred": "11"
+            },
+            "inner circle": {
+                "Bet 365": "11",
+                "Sky Bet": "12",
+                "Ladbrokes": "10",
+                "William Hill": "13",
+                "Marathon Bet": "11",
+                "Betfair": "13",
+                "Paddy Power": "13",
+                "Coral": "11",
+                "BetFred": "11"
+            },
+            "portledge": {
+                "Bet 365": "11",
+                "Sky Bet": "10",
+                "Ladbrokes": "10",
+                "William Hill": "13",
+                "Marathon Bet": "10",
+                "Betfair": "13",
+                "Paddy Power": "13",
+                "Coral": "10",
+                "BetFred": "10"
+            },
+            "katheefa": {
+                "Bet 365": "15",
+                "Sky Bet": "13",
+                "Ladbrokes": "10",
+                "William Hill": "12",
+                "Marathon Bet": "13",
+                "Betfair": "15",
+                "Paddy Power": "15",
+                "Coral": "12",
+                "BetFred": "13"
+            },
+            "tavener": {
+                "Bet 365": "34",
+                "Sky Bet": "26",
+                "Ladbrokes": "34",
+                "William Hill": "29",
+                "Marathon Bet": "26",
+                "Betfair": "21",
+                "Paddy Power": "21",
+                "Coral": "29",
+                "BetFred": "26"
+            }
+        },
+        "url": "https://www.oddschecker.com/horse-racing/2018-08-29-catterick/15:30/winner"
+    }
+}

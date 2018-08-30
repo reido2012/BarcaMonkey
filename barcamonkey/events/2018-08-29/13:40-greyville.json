@@ -1,0 +1,40 @@
+{
+    "smarkets": {
+        "url": "https://smarkets.com/event/952577/sport/horse-racing/greyville/2018/08/29/13:40",
+        "horses": {
+            "francesco": [
+                null,
+                null
+            ],
+            "gat henshaw": [
+                null,
+                null
+            ],
+            "gone baby gone": [
+                null,
+                null
+            ],
+            "gunner": [
+                null,
+                null
+            ],
+            "legend": [
+                null,
+                null
+            ],
+            "reactive": [
+                null,
+                null
+            ],
+            "royal armour": [
+                null,
+                null
+            ],
+            "seattle skyline": [
+                null,
+                null
+            ]
+        }
+    },
+    "oddschecker": {}
+}
