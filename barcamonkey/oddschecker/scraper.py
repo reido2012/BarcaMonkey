@@ -9,15 +9,6 @@ from .core_utils import get_soup
 from .bookie_codes import BOOKIE_CODES_AND_INDICES
 
 MAX_WORKERS = 5
-#Overall - want a thread for each race
-#In each race check row in table to see if there are mis matched odds for smarkets odds and our preferred book makers
-#If there are mismatched odds notify
-
-#Can notify bettor of the lay bet for a stake of 10
-
-#Get the page for the day
-# https://www.oddschecker.com/horse-racing#today
-# e.g. https://www.oddschecker.com/horse-racing#Monday
 ODS_CHECKER_NEXT_DAY = 'https://www.oddschecker.com/horse-racing'
 DIRNAME = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -137,8 +128,8 @@ def get_odds_from_event_table(event):
         event.horse_odds[horse_name] = our_odds
 
     return event
+    # Could avoid double checking by saving the last data-bid value of tr
 
-    #Could avoid double checking by saving the last data-bid value of tr
 
 def create_events(race_detail):
     location = get_tag_by_attr(race_detail, 'a', 'class', 'venue beta-caption1').contents[0]
@@ -146,9 +137,13 @@ def create_events(race_detail):
     race_times = get_tags_by_attr(race_detail, 'div', 'class', 'racing-time')
     events = []
     for race_time in race_times:
-        event = parse_event(race_time)
-        event.set_location(location)
-        events.append(event)
+        if race_time:
+            event = parse_event(race_time)
+            if not event:
+                continue
+
+            event.set_location(location)
+            events.append(event)
 
     return events
 
