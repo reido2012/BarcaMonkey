@@ -1,13 +1,14 @@
 import dateparser
 import json
 import os
-
+import string
+import datetime
 
 from concurrent import futures
-from core_utils import get_soup
-from bookie_codes import BOOKIE_CODES_AND_INDICES
+from .core_utils import get_soup
+from .bookie_codes import BOOKIE_CODES_AND_INDICES
 
-MAX_WORKERS = 20
+MAX_WORKERS = 5
 #Overall - want a thread for each race
 #In each race check row in table to see if there are mis matched odds for smarkets odds and our preferred book makers
 #If there are mismatched odds notify
@@ -90,12 +91,14 @@ class Event:
                f"URL: {self.url} "
 
 
-
-def main():
+def run_scraper():
     #Every morning
     #Get links for the events of the day
     soup = get_soup(ODS_CHECKER_NEXT_DAY)
-    race_meets_table = get_tags_by_attr(soup, 'div', 'class', 'race-meets')[1]
+    if datetime.datetime.now().hour < 21:
+        race_meets_table = get_tag_by_attr(soup, 'div', 'class', 'race-meets')
+    else:
+        race_meets_table = get_tags_by_attr(soup, 'div', 'class', 'race-meets')[1]
 
     #Location - Times
     race_details = get_tags_by_attr(race_meets_table, 'div', 'class', 'race-details')
@@ -111,20 +114,25 @@ def get_odds_from_event_table(event):
     #for event in events:
         #Every 30 seconds do this
     soup = get_soup(event.url)
-
     odds_table = get_tag_by_attr(soup, 'tbody', 'id', 't1')
     horse_rows = odds_table.find_all('tr')
 
     for horse_row in horse_rows:
-        horse_name = str(horse_row['data-bname']).lower()
+        horse_name = horse_row['data-bname']
+        horse_name = format_horse_name(horse_name)
 
         our_odds = {}
         all_odds = get_tags_by_attr(horse_row, 'td', 'class', 'bc bs')
+        all_odds_len = len(all_odds)
         for index, name in list(BOOKIE_CODES_AND_INDICES.values()):
-            if all_odds[index]['data-o'] == "SP":
+            if index >= all_odds_len:
+                continue
+
+            horse_odd = all_odds[index]['data-odig']
+            if horse_odd == "0":
                 our_odds[name] = None
             else:
-                our_odds[name] = all_odds[index]['data-odig']
+                our_odds[name] = horse_odd
 
         event.horse_odds[horse_name] = our_odds
 
@@ -172,6 +180,12 @@ def get_tag_by_attr(soup, tag, attr, value):
     return soup.find(tag, {attr: value.split(" ")})
 
 
-if __name__ == '__main__':
-    main()
+def format_horse_name(horse_name):
+    translator = str.maketrans('', '', string.punctuation)
+    horse_name = horse_name.lower()
+    horse_name.translate(translator)
+    return horse_name
+
+# if __name__ == '__main__':
+#     main()
 

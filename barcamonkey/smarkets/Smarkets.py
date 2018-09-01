@@ -4,9 +4,9 @@ import xmltodict
 import datetime
 import os
 import json
+import string
 
 from collections import OrderedDict
-
 DIRNAME = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 class Event:
@@ -26,7 +26,9 @@ class Event:
 
     def set_horses(self, horses):
         for horse in horses:
-            name = horse['@name'].lower()
+            name = horse['@name']
+            name = format_horse_name(name)
+
             bids = horse['bids']
             self.horse_odds[name] = (None, None)
 
@@ -60,6 +62,7 @@ class Event:
             data = json.load(f)
 
         data['smarkets']['horses'] = self.horse_odds
+        data['smarkets']['url'] = self.url
 
         self._write_to_json(filepath, data)
 
@@ -91,13 +94,11 @@ class SmarketsParser:
         s2 = time.time()
         print(f"Time Taken: {s2 -s1}")
         self.date_time = datetime.datetime.now()
-
         if self.date_time.hour < 21:
             self.current_date = str(self.date_time.year) + "-" + '{:02d}'.format(self.date_time.month) + "-" + '{:02d}'.format(self.date_time.day)
         else:
             self.current_date = str(self.date_time.year) + "-" + '{:02d}'.format(
                 self.date_time.month) + "-" + '{:02d}'.format(self.date_time.day + 1)
-
 
     def write_or_update_events(self):
         for event_obj in self.xml_dict['event']:
@@ -114,55 +115,55 @@ class SmarketsParser:
 
                 print(new_event)
 
-    def print_horse_racing_tree(self):
-        print(self.date_time)
-
-        for event_obj in self.xml_dict['event']:
-            if event_obj['@type'] == 'Horse racing race' and event_obj['@date'] == self.current_date and event_obj['@state'] == 'upcoming':
-                print("*" * 80)
-                print(event_obj['@parent_name'])
-                print(event_obj['@name'])
-                print(event_obj['@date'])
-                print(event_obj['@state'])
-                print(event_obj['@url'])
-                print("https://smarkets.com/event/" + event_obj['@id'] + event_obj['@url'])
-                if not event_obj['market']:
-                    continue
-
-                print(event_obj['market'][0]['@slug'])
-                print("Name ----------------- Offers ------------------ Bids")
-                horses = event_obj['market'][0]['contract']
-                sorted_horses = sorted(horses, key=lambda x: x['@slug'])
-
-                for horse in sorted_horses:
-                    name = horse['@name']
-                    bids = horse['bids']
-                    offers = horse['offers']
-
-                    if not bids and not offers:
-                        print(f"{name} --- None  --- None")
-
-                    if bids:
-                        if offers:
-                            if bids['price'] and offers['price']:
-                                self._print_horse_odds(name, bids['price'], offers['price'])
-                        else:
-                            if bids['price']:
-                                self._print_horse_odds(name, bids, [])
-
-                    else:
-                        if offers:
-                            if offers['price']:
-                                self._print_horse_odds(name, [], offers)
-
-    def _print_horse_odds(self, name, bids, offers):
-        offers = self._get_odds(offers)[::-1]
-        bids = self._get_odds(bids)
-        print(name)
-        print(f"|{offers[0][0]}| |{offers[1][0]}| |{offers[2][0]}| -- |{bids[0][0]}| |{bids[1][0]}| |{bids[2][0]}|")
-
-        print(f"|£{offers[0][1]}| |£{offers[1][1]}| |£{offers[2][1]}| --- "
-              f"|£{bids[0][1]}| |£{bids[1][1]}| |£{bids[2][1]})")
+    # def print_horse_racing_tree(self):
+    #     print(self.date_time)
+    #
+    #     for event_obj in self.xml_dict['event']:
+    #         if event_obj['@type'] == 'Horse racing race' and event_obj['@date'] == self.current_date and event_obj['@state'] == 'upcoming':
+    #             print("*" * 80)
+    #             print(event_obj['@parent_name'])
+    #             print(event_obj['@name'])
+    #             print(event_obj['@date'])
+    #             print(event_obj['@state'])
+    #             print(event_obj['@url'])
+    #             print("https://smarkets.com/event/" + event_obj['@id'] + event_obj['@url'])
+    #             if not event_obj['market']:
+    #                 continue
+    #
+    #             print(event_obj['market'][0]['@slug'])
+    #             print("Name ----------------- Offers ------------------ Bids")
+    #             horses = event_obj['market'][0]['contract']
+    #             sorted_horses = sorted(horses, key=lambda x: x['@slug'])
+    #
+    #             for horse in sorted_horses:
+    #                 name = horse['@name']
+    #                 bids = horse['bids']
+    #                 offers = horse['offers']
+    #
+    #                 if not bids and not offers:
+    #                     print(f"{name} --- None  --- None")
+    #
+    #                 if bids:
+    #                     if offers:
+    #                         if bids['price'] and offers['price']:
+    #                             self._print_horse_odds(name, bids['price'], offers['price'])
+    #                     else:
+    #                         if bids['price']:
+    #                             self._print_horse_odds(name, bids, [])
+    #
+    #                 else:
+    #                     if offers:
+    #                         if offers['price']:
+    #                             self._print_horse_odds(name, [], offers)
+    #
+    # def _print_horse_odds(self, name, bids, offers):
+    #     offers = self._get_odds(offers)[::-1]
+    #     bids = self._get_odds(bids)
+    #     print(name)
+    #     print(f"|{offers[0][0]}| |{offers[1][0]}| |{offers[2][0]}| -- |{bids[0][0]}| |{bids[1][0]}| |{bids[2][0]}|")
+    #
+    #     print(f"|£{offers[0][1]}| |£{offers[1][1]}| |£{offers[2][1]}| --- "
+    #           f"|£{bids[0][1]}| |£{bids[1][1]}| |£{bids[2][1]})")
 
     def _get_odds(self, odds_list):
         results_list = []
@@ -208,5 +209,9 @@ def get_odds(odds_list):
     return results_list
 
 
-
+def format_horse_name(horse_name):
+    translator = str.maketrans('', '', string.punctuation)
+    horse_name = horse_name.lower()
+    horse_name.translate(translator)
+    return horse_name
 

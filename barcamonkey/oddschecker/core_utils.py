@@ -7,7 +7,7 @@ import time
 
 
 from bs4 import BeautifulSoup
-from scraper_exceptions import Exception404
+from .scraper_exceptions import Exception404
 from time import sleep
 
 
@@ -38,6 +38,7 @@ def handle_url_request(url, header):
 
         soup = run_bs4(out)
     else:
+
         raise Exception
 
     return soup
