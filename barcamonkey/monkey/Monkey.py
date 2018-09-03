@@ -62,6 +62,7 @@ class Monkey:
                         event_results[smarkets_horse][oddschecker_bookie] = {
                             'diff': difference,
                             'smarkets': smarkets_horse_odds,
+                            'lay': "£" + smarket_horse_lay,
                             'odds_checker': bookie_odds
                         }
             if event_results:
