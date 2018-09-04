@@ -99,9 +99,8 @@ def run_scraper():
         updated_events = do_concurrently(get_odds_from_event_table, days_events)
 
         for event in list(updated_events):
-            # print("*"*40)
-            # print(event)
             event.send_to_json()
+    print("Finished Running Scraper")
 
 def get_odds_from_event_table(event):
     #for event in events:

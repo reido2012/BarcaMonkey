@@ -87,6 +87,8 @@ def create_messages_from_results(results):
 
 def get_odds():
     all_results = get_results()
+    if all_results == 0:
+        slack_client.rtm_send_message("general", "An Error Has Ocurred")
 
     if all_results:
         messages = create_messages_from_results(all_results)

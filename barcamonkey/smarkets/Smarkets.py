@@ -5,6 +5,7 @@ import datetime
 import os
 import json
 import string
+import sys
 
 from collections import OrderedDict
 DIRNAME = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -89,16 +90,14 @@ class SmarketsParser:
 
     def __init__(self):
         self._XML_URL = "http://odds.smarkets.com/oddsfeed.xml"
-        s1 = time.time()
-        self.xml_dict = xmltodict.parse(requests.get(self._XML_URL).text)['odds']
-        s2 = time.time()
-        print(f"Time Taken: {s2 -s1}")
-        self.date_time = datetime.datetime.now()
-        if self.date_time.hour < 21:
-            self.current_date = str(self.date_time.year) + "-" + '{:02d}'.format(self.date_time.month) + "-" + '{:02d}'.format(self.date_time.day)
-        else:
-            self.current_date = str(self.date_time.year) + "-" + '{:02d}'.format(
-                self.date_time.month) + "-" + '{:02d}'.format(self.date_time.day + 1)
+        with requests.get(self._XML_URL, stream=True) as r:
+            self.xml_dict = xmltodict.parse(r.text)['odds']
+            self.date_time = datetime.datetime.now()
+            if self.date_time.hour < 21:
+                self.current_date = str(self.date_time.year) + "-" + '{:02d}'.format(self.date_time.month) + "-" + '{:02d}'.format(self.date_time.day)
+            else:
+                self.current_date = str(self.date_time.year) + "-" + '{:02d}'.format(
+                    self.date_time.month) + "-" + '{:02d}'.format(self.date_time.day + 1)
 
     def write_or_update_events(self):
         for event_obj in self.xml_dict['event']:
@@ -108,12 +107,16 @@ class SmarketsParser:
                     continue
 
                 new_event = Event(event_obj, self.current_date)
-                horses = event_obj['market'][0]['contract']
+
+                if type(event_obj['market']) == OrderedDict:
+                    horses = event_obj['market']['contract']
+                else:
+                    horses = event_obj['market'][0]['contract']
+
                 sorted_horses = sorted(horses, key=lambda x: x['@slug'])
                 new_event.set_horses(sorted_horses)
                 new_event.send_to_json()
-
-                # print(new_event)
+        print("Finished Handling Smarkets")
 
     def _get_odds(self, odds_list):
         results_list = []
