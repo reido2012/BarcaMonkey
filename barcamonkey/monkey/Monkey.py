@@ -37,6 +37,13 @@ class Monkey:
             if 'horses' not in smarkets_event_json.keys():
                 continue
 
+            if not oddschecker_event_json['horses']:
+                continue
+
+            if not smarkets_event_json['horses']:
+                continue
+
+
             oddschecker_horses = oddschecker_event_json['horses']
             oddschecker_url = oddschecker_event_json['url']
 

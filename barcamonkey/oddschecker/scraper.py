@@ -94,12 +94,14 @@ def run_scraper():
     #Location - Times
     race_details = get_tags_by_attr(race_meets_table, 'div', 'class', 'race-details')
     days_events = [item for sublist in list(map(create_events, race_details)) for item in sublist]
-    updated_events = do_concurrently(get_odds_from_event_table, days_events)
 
-    for event in list(updated_events):
-        # print("*"*40)
-        # print(event)
-        event.send_to_json()
+    if days_events:
+        updated_events = do_concurrently(get_odds_from_event_table, days_events)
+
+        for event in list(updated_events):
+            # print("*"*40)
+            # print(event)
+            event.send_to_json()
 
 def get_odds_from_event_table(event):
     #for event in events:
