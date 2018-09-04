@@ -91,7 +91,7 @@ class SmarketsParser:
     def __init__(self):
         self._XML_URL = "http://odds.smarkets.com/oddsfeed.xml"
         with requests.get(self._XML_URL, stream=True) as r:
-            self.xml_dict = xmltodict.parse(r.text)['odds']
+            self.xml_dict = xmltodict.parse(r.text, 'utf-8')['odds']
             self.date_time = datetime.datetime.now()
             if self.date_time.hour < 21:
                 self.current_date = str(self.date_time.year) + "-" + '{:02d}'.format(self.date_time.month) + "-" + '{:02d}'.format(self.date_time.day)
