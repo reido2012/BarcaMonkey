@@ -1,5 +1,5 @@
 import datetime
-
+import traceback
 from smarkets import Smarkets
 from monkey import Monkey
 from oddschecker import scraper
@@ -22,8 +22,12 @@ def get_data():
         print("Exception in Scraper")
         print(e)
         return 0
-    smarkets = Smarkets.SmarketsParser()
-    smarkets.write_or_update_events()
+    try:
+        smarkets = Smarkets.SmarketsParser()
+        smarkets.write_or_update_events()
+    except Exception as e:
+        print("Exception in Smarkets")
+        traceback.print_tb(e)
 
 
 def get_comparison_results():
