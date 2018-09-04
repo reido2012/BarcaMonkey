@@ -27,7 +27,7 @@ def get_data():
         smarkets.write_or_update_events()
     except Exception as e:
         print("Exception in Smarkets")
-        traceback.print_tb(e)
+        traceback.print_exc()
 
 
 def get_comparison_results():
