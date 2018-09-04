@@ -38,13 +38,25 @@ def handle_url_request(url, header):
 
         soup = run_bs4(out)
     else:
+        print(f"Sleeping for 5 Seconds")
+        time.sleep(5)
+        try:
+            out = make_request(header, url)
+            if out.status_code == 404:
+                logging.error("404 For Url: ", url)
+                raise Exception404
+            else:
+                assert out.status_code == 200
 
-        raise Exception
+                soup = run_bs4(out)
+        except Exception as e:
+            print(f"Exception When Handling URL: {e}")
 
     return soup
 
 
 def make_request(header, url):
+    time.sleep(2)
     try:
         out = requests.get(url, headers=header)
     except ssl.SSLEOFError as ssle:

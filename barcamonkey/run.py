@@ -6,12 +6,21 @@ from oddschecker import scraper
 
 
 def get_results():
-    get_data()
+    try:
+        get_data()
+    except Exception as e:
+        print("Exception Occurred")
+        print(e)
     return get_comparison_results()
 
 
 def get_data():
-    scraper.run_scraper()
+    try:
+        scraper.run_scraper()
+    except Exception as e:
+        print("Exception in Scraper")
+        print(e)
+
     smarkets = Smarkets.SmarketsParser()
     smarkets.write_or_update_events()
 
@@ -41,22 +50,9 @@ def main():
     # print(messages)
 
 
-def create_messages_from_results(results):
-    messages = []
 
-    for (smarkets_url, oddschecker_url, event_results) in results:
-
-        message = f"Smarkets URL: {smarkets_url} \n Odds Checker URL: {oddschecker_url} \n "
-
-        for horse, difference_obj in event_results.items():
-            horse_message = f"Horse: {horse} \n "
-            message += horse_message
-            for bookie_name, bookie_odds_obj in difference_obj.items():
-                message += f"{bookie_name}: \n diff: {bookie_odds_obj['diff']} \n smarkets: {bookie_odds_obj['smarkets']} \n oddschecker: {bookie_odds_obj['odds_checker']}\n\n"
-
-        messages.append(message)
-
-    return messages
+def calculate_profit(smarkets_odd, odds_checker):
+    return 0.98 * ((10 * odds_checker)/smarkets_odd-0.02) - 10
 
 
 if __name__ == '__main__':

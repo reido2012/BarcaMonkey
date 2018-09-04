@@ -8,7 +8,7 @@ from concurrent import futures
 from .core_utils import get_soup
 from .bookie_codes import BOOKIE_CODES_AND_INDICES
 
-MAX_WORKERS = 5
+MAX_WORKERS = 4
 ODS_CHECKER_NEXT_DAY = 'https://www.oddschecker.com/horse-racing'
 DIRNAME = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -97,8 +97,8 @@ def run_scraper():
     updated_events = do_concurrently(get_odds_from_event_table, days_events)
 
     for event in list(updated_events):
-        print("*"*40)
-        print(event)
+        # print("*"*40)
+        # print(event)
         event.send_to_json()
 
 def get_odds_from_event_table(event):

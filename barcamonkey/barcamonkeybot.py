@@ -70,25 +70,33 @@ def create_messages_from_results(results):
     messages = []
 
     for (smarkets_url, oddschecker_url, event_results) in results:
-        message = ""
         for horse, difference_obj in event_results.items():
-            horse_message = f"Horse: **{horse}** \n "
-            message += horse_message
             for bookie_name, bookie_odds_obj in difference_obj.items():
-                message += f"{bookie_name}: \n diff: **{bookie_odds_obj['diff']}** \n smarkets: {bookie_odds_obj['smarkets']} \n lay: **{bookie_odds_obj['lay']}** \n oddschecker: {bookie_odds_obj['odds_checker']}\n\n"
+                profit = calculate_profit(bookie_odds_obj['smarkets'], bookie_odds_obj['odds_checker'])
+                message = f"Profit: {profit} \n Bookie: {bookie_name}: \n diff: **{bookie_odds_obj['diff']}** \n smarkets: {bookie_odds_obj['smarkets']} \n lay: **{bookie_odds_obj['lay']}** \n oddschecker: {bookie_odds_obj['odds_checker']}\n"
 
-        message += f"Smarkets URL: {smarkets_url} \n Odds Checker URL: {oddschecker_url} \n "
-        messages.append(message)
+                if profit > 0:
+                    horse_message = f"Horse: **{horse}** \n "
+                    messages.append(horse_message)
+                    messages.append(message)
+                    messages.append(f"Smarkets: {smarkets_url} \n Oddschecker: {oddschecker_url}")
+                    messages.append("************")
 
     return messages
 
 
 def get_odds():
     all_results = get_results()
-    messages = create_messages_from_results(all_results)
-    for message in messages:
-        slack_client.rtm_send_message("general", message)
-    time.sleep(20)
+
+    if all_results:
+        messages = create_messages_from_results(all_results)
+        for message in messages:
+            slack_client.rtm_send_message("general", message)
+        time.sleep(5)
+
+
+def calculate_profit(smarkets_odd, odds_checker):
+    return 0.98 * ((10 * odds_checker)/smarkets_odd-0.02) - 10
 
 
 if __name__ == "__main__":
@@ -99,6 +107,8 @@ if __name__ == "__main__":
 
         while True:
             command, channel = parse_bot_commands(slack_client.rtm_read())
+            print("command:")
+            print(command)
             if command:
                 val = handle_command(command)
                 print("Value")
@@ -113,6 +123,8 @@ if __name__ == "__main__":
                         BOT_ON = False
             else:
                 if BOT_ON:
+                    print("No Command But Getting Odds")
+
                     get_odds()
             time.sleep(1)
     else:
