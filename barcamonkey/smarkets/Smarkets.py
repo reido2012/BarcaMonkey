@@ -6,6 +6,7 @@ import os
 import json
 import string
 import sys
+import gzip
 
 from collections import OrderedDict
 DIRNAME = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -88,12 +89,21 @@ class SmarketsParser:
     #Date Format
     #YEAR - MONTH - DAY
 
-    def __init__(self):
-        self._XML_URL = "http://odds.smarkets.com/oddsfeed.xml"
-        with requests.get(self._XML_URL, stream=True) as r:
-            self.xml_dict = xmltodict.parse(r.text, 'utf-8')['odds']
+    def __init__(self, current_day_limit=21):
+        self._XML_URL = "http://odds.smarkets.com/oddsfeed.xml.gz"
+        filename = self._XML_URL.split("/")[-1]
+        with open(filename, "wb") as f:
+            r = requests.get(self._XML_URL)
+            f.write(r.content)
+
+        with requests.get(self._XML_URL) as r:
+            print(f"Status Code: {r.status_code}")
+            print(f"Encoding:{r.encoding}")
+            # r.encoding = 'utf-8'
+            # print(r.content.decode('utf-8'))
+            self.xml_dict = xmltodict.parse(gzip.GzipFile(filename))['odds']
             self.date_time = datetime.datetime.now()
-            if self.date_time.hour < 21:
+            if self.date_time.hour < current_day_limit:
                 self.current_date = str(self.date_time.year) + "-" + '{:02d}'.format(self.date_time.month) + "-" + '{:02d}'.format(self.date_time.day)
             else:
                 self.current_date = str(self.date_time.year) + "-" + '{:02d}'.format(
@@ -116,6 +126,7 @@ class SmarketsParser:
                 sorted_horses = sorted(horses, key=lambda x: x['@slug'])
                 new_event.set_horses(sorted_horses)
                 new_event.send_to_json()
+
         print("Finished Handling Smarkets")
 
     def _get_odds(self, odds_list):

@@ -12,16 +12,10 @@ def get_results():
         print("Exception Occurred")
         print(e)
         return 0
-    return get_comparison_results()
+    return get_comparison_results(21)
 
 
 def get_data():
-    try:
-        scraper.run_scraper()
-    except Exception as e:
-        print("Exception in Scraper")
-        print(e)
-        return 0
     try:
         smarkets = Smarkets.SmarketsParser()
         smarkets.write_or_update_events()
@@ -29,10 +23,18 @@ def get_data():
         print("Exception in Smarkets")
         traceback.print_exc()
 
+    try:
+        scraper.run_scraper()
+    except Exception as e:
+        print("Exception in Scraper")
+        print(e)
+        return 0
 
-def get_comparison_results():
+
+
+def get_comparison_results(current_day_limit=21):
     date_obj = datetime.datetime.now()
-    if date_obj.hour < 21:
+    if date_obj.hour < current_day_limit:
         date_str = str(date_obj.year) + "-" + '{:02d}'.format(date_obj.month) + "-" + '{:02d}'.format(date_obj.day)
     else:
         date_str = str(date_obj.year) + "-" + '{:02d}'.format(date_obj.month) + "-" + '{:02d}'.format(date_obj.day + 1)
@@ -47,9 +49,9 @@ def main():
     # date_str = str(date_obj.year) + "-" + '{:02d}'.format(date_obj.month) + "-" + '{:02d}'.format(date_obj.day)
     # print(f"Date Str: {date_str}")
 
-    scraper.run_scraper()
-    # smarkets = Smarkets.SmarketsParser()
-    # smarkets.write_or_update_events()
+    # scraper.run_scraper()
+    smarkets = Smarkets.SmarketsParser()
+    smarkets.write_or_update_events()
 
     # monkey_comparer = Monkey.Monkey()
     # all_results = monkey_comparer.compare_events(date_str)

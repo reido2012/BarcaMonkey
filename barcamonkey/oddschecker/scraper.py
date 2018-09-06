@@ -82,11 +82,11 @@ class Event:
                f"URL: {self.url} "
 
 
-def run_scraper():
+def run_scraper(current_day_limit=21):
     #Every morning
     #Get links for the events of the day
     soup = get_soup(ODS_CHECKER_NEXT_DAY)
-    if datetime.datetime.now().hour < 21:
+    if datetime.datetime.now().hour < current_day_limit:
         race_meets_table = get_tag_by_attr(soup, 'div', 'class', 'race-meets')
     else:
         race_meets_table = get_tags_by_attr(soup, 'div', 'class', 'race-meets')[1]

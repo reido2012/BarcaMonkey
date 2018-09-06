@@ -76,7 +76,7 @@ def make_request(header, url):
         logging.info(ce)
         logging.info("Sleeping for 20 Seconds")
         time.sleep(20)
-        sys.exit(0)
+        out = requests.get(url, headers=header)
 
     return out
 

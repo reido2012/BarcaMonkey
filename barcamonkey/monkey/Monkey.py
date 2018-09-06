@@ -8,9 +8,11 @@ class Monkey:
         self.events_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + "/events/"
 
     def has_event_passed(self, filepath):
-        file_name_time = filepath.split("/")[-1:][0].split("-")[0].split(":")
+        split_filepath = filepath.split("/")
+        file_name_time = split_filepath[-1:][0].split("-")[0].split(":")
+        year, month, day = split_filepath[-2:-1][0].split("-")
         now = datetime.datetime.now()
-        file_time = now.replace(hour=int(file_name_time[0]), minute=int(file_name_time[1]))
+        file_time = now.replace(year=int(year), day=int(day), month=int(month), hour=int(file_name_time[0]), minute=int(file_name_time[1]))
         return now > file_time
 
     def compare_events(self, date_to_check):
@@ -21,7 +23,6 @@ class Monkey:
 
             with open(filepath) as f:
                 data = json.load(f)
-
 
             smarkets_event_json = data['smarkets']
             smarkets_url = smarkets_event_json['url']
