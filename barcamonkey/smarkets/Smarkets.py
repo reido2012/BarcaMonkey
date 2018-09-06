@@ -91,20 +91,26 @@ class SmarketsParser:
 
     def __init__(self, current_day_limit=21):
         self._XML_URL = "http://odds.smarkets.com/oddsfeed.xml.gz"
-        filename = self._XML_URL.split("/")[-1]
-        with open(filename, "wb") as f:
-            r = requests.get(self._XML_URL)
-            f.write(r.content)
 
         with requests.get(self._XML_URL) as r:
             print(f"Status Code: {r.status_code}")
             print(f"Encoding:{r.encoding}")
             # r.encoding = 'utf-8'
             # print(r.content.decode('utf-8'))
-            self.xml_dict = xmltodict.parse(gzip.GzipFile(filename))['odds']
+            if r.encoding == 'UTF-8':
+                self.xml_dict = xmltodict.parse(r.text)['odds']
+            else:
+                filename = self._XML_URL.split("/")[-1]
+                with open(filename, "wb") as f:
+                    r = requests.get(self._XML_URL)
+                    f.write(r.content)
+
+                self.xml_dict = xmltodict.parse(gzip.GzipFile(filename))['odds']
+
             self.date_time = datetime.datetime.now()
             if self.date_time.hour < current_day_limit:
-                self.current_date = str(self.date_time.year) + "-" + '{:02d}'.format(self.date_time.month) + "-" + '{:02d}'.format(self.date_time.day)
+                self.current_date = str(self.date_time.year) + "-" + '{:02d}'.format(
+                    self.date_time.month) + "-" + '{:02d}'.format(self.date_time.day)
             else:
                 self.current_date = str(self.date_time.year) + "-" + '{:02d}'.format(
                     self.date_time.month) + "-" + '{:02d}'.format(self.date_time.day + 1)
