@@ -19,8 +19,6 @@ class Monkey:
         folder_path = self.events_path + str(date_to_check)
         results = []
         for filepath in glob.glob(folder_path + "/*.json"):
-            #print(f"Filepath: {filepath}")
-
             with open(filepath) as f:
                 data = json.load(f)
 
@@ -43,7 +41,6 @@ class Monkey:
 
             if not smarkets_event_json['horses']:
                 continue
-
 
             oddschecker_horses = oddschecker_event_json['horses']
             oddschecker_url = oddschecker_event_json['url']
@@ -74,13 +71,8 @@ class Monkey:
                             'odds_checker': bookie_odds
                         }
             if event_results:
-                print(f"Smarkets URL: {smarkets_url}")
-                print(f"Odds Checker URL: {oddschecker_url}")
-                print(event_results)
                 result = (smarkets_url, oddschecker_url, event_results)
-
                 results.append(result)
-                print("*" * 40)
 
         return results
 

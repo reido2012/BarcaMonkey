@@ -6,7 +6,20 @@ BOOKIE_CODES_AND_INDICES = {
     "MR": (4, "Marathon Bet"),
     "FB": (5, "Betfair"),
     "PP": (6, "Paddy Power"),
+    "UN": (7, "UNIBET"),
     "CE": (8, "Coral"),
-    "FR": (9, "BetFred")
-
+    "FR": (9, "BetFred"),
+    "BY": (10, "BoyleSports"),
+    "BX": (11, "ToteSport"),
+    "BL": (12, "BLACKTYPE"),
+    "PS": (13, "Bet Stars"),
+    "WA": (14, "Betway"),
+    "BB": (15, "Bet Bright"),
+    "OE": (16, "10 Bet"),
+    "SO": (17, "Sporting Bet"),
+    "EB": (18, "188 Bet"),
+    "EE": (19, "888Sport"),
+    "VC": (20, "BETVICTOR"),
+    "PE": (21, "SportPesa"),
+    "SX": (22, "Spread EX")
 }

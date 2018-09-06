@@ -4,6 +4,7 @@ import re
 import traceback
 from slackclient import SlackClient
 from run import get_results, get_comparison_results
+from collections import deque
 
 # instantiate Slack client
 slack_client = SlackClient(os.environ.get('SLACK_BOT_TOKEN'))
@@ -74,17 +75,21 @@ def create_messages_from_results(results):
             for bookie_name, bookie_odds_obj in difference_obj.items():
                 qb_profit = qualifying_bet_profit(bookie_odds_obj['smarkets'], bookie_odds_obj['odds_checker'])
                 fb_profit = free_bet_profit(bookie_odds_obj['smarkets'], bookie_odds_obj['odds_checker'])
-                message = f"Qualifying Bet - Profit: {qb_profit} \n Free Bet - Profit: {fb_profit} \n Bookie: {bookie_name}: \n smarkets: {bookie_odds_obj['smarkets']} \n lay: **{bookie_odds_obj['lay']}** \n oddschecker: {bookie_odds_obj['odds_checker']}\n"
 
-                if (qb_profit > 0.1) or (fb_profit > 8):
+                smarkets_odds = round(bookie_odds_obj['smarkets'], 2)
+                oddschecker_odds = round(bookie_odds_obj['odds_checker'], 2)
+                message = f"Bookie: *{bookie_name}* \n QB Profit: *£{qb_profit}* \n Smarkets: {smarkets_odds} \n Lay: {bookie_odds_obj['lay']} \n Oddschecker: {oddschecker_odds} \n FB Profit: £{fb_profit} \n "
+
+                if (qb_profit > 0.1) or (fb_profit >= 12):
                     str_msg_temp.append(message)
                     location, race_time = parse_smarkets_url(smarkets_url)
                     str_msg_temp.append(f"Location: {location} \n Time: {race_time} \n")
                     str_msg_temp.append("*********************")
 
             if str_msg_temp:
-                messages.append(f"Horse: **{horse}** \n " + " ".join(str_msg_temp))
-    print(messages)
+                messages.append(f"Horse: *{horse}* \n " + " ".join(str_msg_temp))
+
+    print(f"Messages: {messages}")
     return messages
 
 
@@ -95,7 +100,8 @@ def parse_smarkets_url(url):
 
 def get_odds():
     all_results = get_results()
-    print(all_results)
+    print(f"All Results: {all_results}")
+
     if all_results == 0:
         slack_client.rtm_send_message("general", "An Error Has Ocurred")
 
@@ -107,11 +113,23 @@ def get_odds():
 
 
 def qualifying_bet_profit(smarkets_odd, odds_checker):
-    return 0.98 * ((10 * odds_checker)/smarkets_odd-0.02) - 10
+    return round((0.98 * ((10 * odds_checker)/smarkets_odd-0.02) - 10), 2)
 
 
 def free_bet_profit(smarkets_odd, odds_checker):
-    return (10*(odds_checker-1)) / (smarkets_odd-0.02)
+    return round(((10*(odds_checker-1)) / (smarkets_odd-0.02)), 2)
+
+
+def run_command(command):
+    val = handle_command(command)
+
+    if val is not None:
+
+        if val is True:
+            get_odds()
+            return True
+        else:
+            return False
 
 
 if __name__ == "__main__":
@@ -120,32 +138,29 @@ if __name__ == "__main__":
             print("Starter Bot connected and running!")
             # Read bot's user ID by calling Web API method `auth.test`
             starterbot_id = slack_client.api_call("auth.test")["user_id"]
-
+            command_queue = deque([])
             while True:
                 command, channel = parse_bot_commands(slack_client.rtm_read())
-                print("command:")
-                print(command)
+
+                if (command == START_ODDS) or (command == END_ODDS):
+                    command_queue.append(command)
+
                 if command:
-                    val = handle_command(command)
-                    print("Value")
-                    print(val)
-
-                    if val is not None:
-
-                        if val is True:
-                            BOT_ON = True
-                            get_odds()
-                        else:
-                            BOT_ON = False
+                    command = command_queue.popleft()
+                    run_command(command)
                 else:
-                    if BOT_ON:
-                        print("No Command But Getting Odds")
-                        try:
-                            get_odds()
-                        except Exception:
-                            traceback.print_exc()
-                            print("Brokkeeeeeee")
-                            raise Exception
+                    if len(command_queue) > 0:
+                        command = command_queue.popleft()
+                        BOT_ON = run_command(command)
+                    else:
+                        if BOT_ON:
+                            print("No Command But Getting Odds")
+                            try:
+                                get_odds()
+                            except Exception:
+                                traceback.print_exc()
+                                print("Brokkeeeeeee")
+                                raise Exception
                 time.sleep(1)
 
         else:

@@ -12,7 +12,7 @@ def get_results():
         print("Exception Occurred")
         print(e)
         return 0
-    return get_comparison_results(21)
+    return get_comparison_results()
 
 
 def get_data():
