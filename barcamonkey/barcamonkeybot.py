@@ -142,7 +142,10 @@ if __name__ == "__main__":
             while True:
                 command, channel = parse_bot_commands(slack_client.rtm_read())
 
-                if (command == START_ODDS) or (command == END_ODDS):
+                if command not in [START_ODDS, END_ODDS, None]:
+                    command = None
+
+                if command in [START_ODDS, END_ODDS]:
                     command_queue.append(command)
 
                 if command:
@@ -155,12 +158,8 @@ if __name__ == "__main__":
                     else:
                         if BOT_ON:
                             print("No Command But Getting Odds")
-                            try:
-                                get_odds()
-                            except Exception:
-                                traceback.print_exc()
-                                print("Brokkeeeeeee")
-                                raise Exception
+                            BOT_ON = run_command(START_ODDS)
+                            
                 time.sleep(1)
 
         else:
