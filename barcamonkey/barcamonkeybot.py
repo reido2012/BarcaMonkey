@@ -147,7 +147,7 @@ if __name__ == "__main__":
 
                 if command:
                     command = command_queue.popleft()
-                    run_command(command)
+                    BOT_ON = run_command(command)
                 else:
                     if len(command_queue) > 0:
                         command = command_queue.popleft()
