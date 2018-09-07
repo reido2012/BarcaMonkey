@@ -2,6 +2,7 @@ import os
 import time
 import re
 import traceback
+from datetime import datetime
 from slackclient import SlackClient
 from run import get_results, get_comparison_results
 from collections import deque
@@ -80,11 +81,13 @@ def create_messages_from_results(results):
                 oddschecker_odds = round(bookie_odds_obj['odds_checker'], 2)
                 message = f"Bookie: *{bookie_name}* \n QB Profit: *£{qb_profit}* \n Smarkets: {smarkets_odds} \n Lay: {bookie_odds_obj['lay']} \n Oddschecker: {oddschecker_odds} \n FB Profit: £{fb_profit} \n "
 
-                if (qb_profit > 0.1) or (fb_profit >= 12):
+                if (qb_profit > 0.1) or (fb_profit >= 10):
                     str_msg_temp.append(message)
                     location, race_time = parse_smarkets_url(smarkets_url)
-                    str_msg_temp.append(f"Location: {location} \n Time: {race_time} \n")
-                    str_msg_temp.append("*********************")
+                    str_msg_temp.append(f"Race Time: {race_time} \n Race Location: {location} \n ")
+                    time_obj = datetime.now().time()
+                    str_msg_temp.append(f"Msg Time: {time_obj.hour}:{time_obj.minute} \n")
+                    str_msg_temp.append("*********************\n")
 
             if str_msg_temp:
                 messages.append(f"Horse: *{horse}* \n " + " ".join(str_msg_temp))
@@ -100,7 +103,6 @@ def parse_smarkets_url(url):
 
 def get_odds():
     all_results = get_results()
-    print(f"All Results: {all_results}")
 
     if all_results == 0:
         slack_client.rtm_send_message("general", "An Error Has Ocurred")
@@ -138,28 +140,20 @@ if __name__ == "__main__":
             print("Starter Bot connected and running!")
             # Read bot's user ID by calling Web API method `auth.test`
             starterbot_id = slack_client.api_call("auth.test")["user_id"]
-            command_queue = deque([])
+
+            prev_command = ""
             while True:
                 command, channel = parse_bot_commands(slack_client.rtm_read())
 
-                if command not in [START_ODDS, END_ODDS, None]:
-                    command = None
+                if command not in [START_ODDS, END_ODDS]:
+                    command = ""
 
-                if command in [START_ODDS, END_ODDS]:
-                    command_queue.append(command)
-
-                if command:
-                    command = command_queue.popleft()
-                    BOT_ON = run_command(command)
+                if command == "":
+                    run_command(prev_command)
                 else:
-                    if len(command_queue) > 0:
-                        command = command_queue.popleft()
-                        BOT_ON = run_command(command)
-                    else:
-                        if BOT_ON:
-                            print("No Command But Getting Odds")
-                            BOT_ON = run_command(START_ODDS)
-                            
+                    prev_command = command
+                    run_command(command)
+
                 time.sleep(1)
 
         else:
