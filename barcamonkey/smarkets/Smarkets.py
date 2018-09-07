@@ -1,15 +1,16 @@
 import requests
-import time
 import xmltodict
 import datetime
 import os
 import json
 import string
-import sys
 import gzip
+import pytz
 
 from collections import OrderedDict
 DIRNAME = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+TZ = pytz.timezone('Europe/London')
 
 class Event:
     def __init__(self, event_obj, date):
@@ -107,7 +108,7 @@ class SmarketsParser:
 
                 self.xml_dict = xmltodict.parse(gzip.GzipFile(filename))['odds']
 
-            self.date_time = datetime.datetime.now()
+            self.date_time = datetime.datetime.now(TZ)
             if self.date_time.hour < current_day_limit:
                 self.current_date = str(self.date_time.year) + "-" + '{:02d}'.format(
                     self.date_time.month) + "-" + '{:02d}'.format(self.date_time.day)

@@ -2,11 +2,12 @@ import os
 import time
 import re
 import traceback
+import pytz
 from datetime import datetime
 from slackclient import SlackClient
 from run import get_results, get_comparison_results
-from collections import deque
 
+TZ = pytz.timezone('Europe/London')
 # instantiate Slack client
 slack_client = SlackClient(os.environ.get('SLACK_BOT_TOKEN'))
 
@@ -85,8 +86,9 @@ def create_messages_from_results(results):
                     str_msg_temp.append(message)
                     location, race_time = parse_smarkets_url(smarkets_url)
                     str_msg_temp.append(f"Race Time: {race_time} \n Race Location: {location} \n ")
-                    time_obj = datetime.now().time()
-                    str_msg_temp.append(f"Msg Time: {time_obj.hour}:{time_obj.minute} \n")
+                    time_obj = datetime.now(TZ).time()
+                    msg_time = '{:02d}'.format(time_obj.hour) + ":" + '{:02d}'.format(time_obj.minute)
+                    str_msg_temp.append(f"Msg Time: {msg_time} \n")
                     str_msg_temp.append("*********************\n")
 
             if str_msg_temp:

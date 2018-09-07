@@ -11,6 +11,7 @@ setup(
         "slackclient",
         "xmltodict",
         "beautifulsoup4",
-        "dateparser"
+        "dateparser",
+        "pytz"
     ],
 )

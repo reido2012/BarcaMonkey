@@ -3,12 +3,13 @@ import json
 import os
 import string
 import datetime
-
+import pytz
 from concurrent import futures
 from .core_utils import get_soup
 from .bookie_codes import BOOKIE_CODES_AND_INDICES
 
 MAX_WORKERS = 4
+TZ = pytz.timezone('Europe/London')
 ODS_CHECKER_NEXT_DAY = 'https://www.oddschecker.com/horse-racing'
 DIRNAME = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -86,7 +87,7 @@ def run_scraper(current_day_limit=21):
     #Every morning
     #Get links for the events of the day
     soup = get_soup(ODS_CHECKER_NEXT_DAY)
-    if datetime.datetime.now().hour < current_day_limit:
+    if datetime.datetime.now(TZ).hour < current_day_limit:
         race_meets_table = get_tag_by_attr(soup, 'div', 'class', 'race-meets')
     else:
         race_meets_table = get_tags_by_attr(soup, 'div', 'class', 'race-meets')[1]

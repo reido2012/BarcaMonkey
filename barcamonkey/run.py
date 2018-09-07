@@ -1,9 +1,11 @@
 import datetime
 import traceback
+import pytz
 from smarkets import Smarkets
 from monkey import Monkey
 from oddschecker import scraper
 
+TZ = pytz.timezone('Europe/London')
 
 def get_results():
     try:
@@ -33,7 +35,7 @@ def get_data():
 
 
 def get_comparison_results(current_day_limit=21):
-    date_obj = datetime.datetime.now()
+    date_obj = datetime.datetime.now(TZ)
     if date_obj.hour < current_day_limit:
         date_str = str(date_obj.year) + "-" + '{:02d}'.format(date_obj.month) + "-" + '{:02d}'.format(date_obj.day)
     else:

@@ -2,6 +2,9 @@ import os
 import glob
 import json
 import datetime
+import pytz
+
+TZ = pytz.timezone('Europe/London')
 
 class Monkey:
     def __init__(self):
@@ -11,7 +14,7 @@ class Monkey:
         split_filepath = filepath.split("/")
         file_name_time = split_filepath[-1:][0].split("-")[0].split(":")
         year, month, day = split_filepath[-2:-1][0].split("-")
-        now = datetime.datetime.now()
+        now = datetime.datetime.now(TZ)
         file_time = now.replace(year=int(year), day=int(day), month=int(month), hour=int(file_name_time[0]), minute=int(file_name_time[1]))
         return now > file_time
 
