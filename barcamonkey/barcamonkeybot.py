@@ -80,12 +80,12 @@ def create_messages_from_results(results):
 
                 smarkets_odds = round(bookie_odds_obj['smarkets'], 2)
                 oddschecker_odds = round(bookie_odds_obj['odds_checker'], 2)
-                message = f"Bookie: *{bookie_name}* \n QB Profit: *£{qb_profit}* \n Smarkets: {smarkets_odds} \n Lay: {bookie_odds_obj['lay']} \n Oddschecker: {oddschecker_odds} \n FB Profit: £{fb_profit} \n "
+                message = f"Bookie: *{bookie_name}* \n QB Profit: *£{qb_profit}* \n FB Profit: £{fb_profit} \n Odds: {oddschecker_odds} - {smarkets_odds} \n Lay: {bookie_odds_obj['lay']} \n"
 
                 if (qb_profit > 0.1) or (fb_profit >= 10):
                     str_msg_temp.append(message)
                     location, race_time = parse_smarkets_url(smarkets_url)
-                    str_msg_temp.append(f"Race Time: {race_time} \n Race Location: {location} \n ")
+                    str_msg_temp.append(f"Race: {race_time} {location.capitalize()} \n")
                     time_obj = datetime.now(TZ).time()
                     msg_time = '{:02d}'.format(time_obj.hour) + ":" + '{:02d}'.format(time_obj.minute)
                     str_msg_temp.append(f"Msg Time: {msg_time} \n")

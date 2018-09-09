@@ -33,11 +33,14 @@ class Event:
             name = format_horse_name(name)
 
             bids = horse['bids']
-            self.horse_odds[name] = (None, None)
+
+            if name not in self.horse_odds.keys():
+                self.horse_odds[name] = []
 
             if bids and bids['price']:
-                bids = get_odds(bids['price'])
-                self.horse_odds[name] = bids[0]
+                odds, stake = get_odds(bids['price'])[0]
+                current_time = datetime.datetime.now(TZ).strftime("%H:%M:%S")
+                self.horse_odds[name].append((odds, stake, current_time))
 
     def send_to_json(self):
         folder_path = f"{DIRNAME}/events/{self.date}/"
@@ -64,10 +67,20 @@ class Event:
         with open(filepath) as f:
             data = json.load(f)
 
+        self.update_odds_list(data)
+
         data['smarkets']['horses'] = self.horse_odds
         data['smarkets']['url'] = self.url
 
         self._write_to_json(filepath, data)
+
+    def update_odds_list(self, json_data):
+        old_horse_odds = json_data['smarkets']['horses']
+
+        for horse in self.horse_odds:
+            if horse in old_horse_odds.keys():
+                odds_horse = old_horse_odds[horse]
+                self.horse_odds[horse] = odds_horse + self.horse_odds[horse]
 
     def _write_to_json(self, filepath, obj):
 

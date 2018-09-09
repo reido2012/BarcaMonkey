@@ -64,10 +64,20 @@ class Event:
         with open(filepath) as f:
             data = json.load(f)
 
+        self.update_odds_list(data)
         data['oddschecker']['horses'] = self.horse_odds
         data['oddschecker']['url'] = self.url
 
         self._write_to_json(filepath, data)
+
+    def update_odds_list(self, json_data):
+        old_horse_odds = json_data['oddschecker']['horses']
+
+        for horse in self.horse_odds.keys():
+            for index, bookie_name in list(BOOKIE_CODES_AND_INDICES.values()):
+                if horse in old_horse_odds.keys() and bookie_name in old_horse_odds[horse].keys():
+                    odds_horse = old_horse_odds[horse][bookie_name]
+                    self.horse_odds[horse][bookie_name] = odds_horse + self.horse_odds[horse][bookie_name]
 
     def _write_to_json(self, filepath, obj):
 
@@ -122,10 +132,15 @@ def get_odds_from_event_table(event):
                 continue
 
             horse_odd = all_odds[index]['data-odig']
+            current_time = datetime.datetime.now(TZ).strftime("%H:%M:%S")
+
+            if name not in our_odds.keys():
+                our_odds[name] = []
+
             if horse_odd == "0":
-                our_odds[name] = None
+                our_odds[name].append((None, current_time))
             else:
-                our_odds[name] = horse_odd
+                our_odds[name].append((horse_odd, current_time))
 
         event.horse_odds[horse_name] = our_odds
 

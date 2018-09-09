@@ -12,6 +12,7 @@ setup(
         "xmltodict",
         "beautifulsoup4",
         "dateparser",
-        "pytz"
+        "pytz",
+        "twilio"
     ],
 )

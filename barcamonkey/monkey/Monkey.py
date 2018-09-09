@@ -50,7 +50,11 @@ class Monkey:
 
             event_results = {}
             for smarkets_horse, smarkets_horse_info in smarkets_event_json['horses'].items():
-                smarkets_horse_odds, smarket_horse_lay = smarkets_horse_info
+
+                if not smarkets_horse_info:
+                    continue
+
+                smarkets_horse_odds, smarket_horse_lay, harvest_time = smarkets_horse_info[-1:][0]
 
                 if not smarkets_horse_odds: #Odds
                     continue
@@ -59,7 +63,13 @@ class Monkey:
 
                 smarkets_horse_odds = float(smarkets_horse_odds)
 
-                for oddschecker_bookie, bookie_odds in oddschecker_horses[smarkets_horse].items():
+                for oddschecker_bookie, bookie_odds_list in oddschecker_horses[smarkets_horse].items():
+                    # print(f"Bookie Odds List: {bookie_odds_list}")
+                    if not bookie_odds_list:
+                        continue
+
+                    bookie_odds, oc_harvest_time = bookie_odds_list[-1:][0]
+
                     if not bookie_odds:
                         continue
 
@@ -71,7 +81,9 @@ class Monkey:
                             'diff': difference,
                             'smarkets': smarkets_horse_odds,
                             'lay': "£" + smarket_horse_lay,
-                            'odds_checker': bookie_odds
+                            'odds_checker': bookie_odds,
+                            'time_scraped_smarkets': harvest_time,
+                            'time_scraped_oc': oc_harvest_time
                         }
             if event_results:
                 result = (smarkets_url, oddschecker_url, event_results)

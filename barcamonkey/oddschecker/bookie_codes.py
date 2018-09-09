@@ -1,5 +1,5 @@
 BOOKIE_CODES_AND_INDICES = {
-    "B3": (0, "Bet 365"),
+    "B3": (0, "Bet365"),
     "SK": (1, "Sky Bet"),
     "LD": (2, "Ladbrokes"),
     "WH": (3, "William Hill"),
