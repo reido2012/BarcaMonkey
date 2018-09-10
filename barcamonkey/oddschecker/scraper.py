@@ -77,9 +77,7 @@ class Event:
         old_horse_odds = json_data['oddschecker']['horses']
 
         for horse in self.horse_odds.keys():
-            print(f"Horse: {horse}")
             for index, bookie_name in list(BOOKIE_CODES_AND_INDICES.values()):
-                print(f"Bookie Name: {bookie_name}")
                 if horse in old_horse_odds.keys() and bookie_name in old_horse_odds[horse].keys():
                     odds_horse = old_horse_odds[horse][bookie_name]
 
