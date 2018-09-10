@@ -77,9 +77,9 @@ def create_messages_from_results(results):
         for horse, difference_obj in event_results.items():
             str_msg_temp = []
             for bookie_name, bookie_odds_obj in difference_obj.items():
-                qb_profit = bookie_odds_obj['smarkets']['qb_profit']
-                fb_profit = bookie_odds_obj['smarkets']['fb_profit']
-                high_qb = bookie_odds_obj['smarkets']['high_qb']
+                qb_profit = bookie_odds_obj['qb_profit']
+                fb_profit = bookie_odds_obj['fb_profit']
+                high_qb = bookie_odds_obj['high_qb']
 
                 if high_qb:
                     make_call(os.environ.get('ADAM_MOBILE'))
