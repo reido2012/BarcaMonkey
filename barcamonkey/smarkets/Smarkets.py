@@ -75,6 +75,9 @@ class Event:
         self._write_to_json(filepath, data)
 
     def update_odds_list(self, json_data):
+        if 'horses' not in json_data['smarkets'].keys():
+            return
+
         old_horse_odds = json_data['smarkets']['horses']
 
         for horse in self.horse_odds:

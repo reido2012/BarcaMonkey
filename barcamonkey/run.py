@@ -80,6 +80,7 @@ def main():
     # messages = create_messages_from_results(all_results)
     # print(messages)
     # make_call('+447934345900')
+    pass
 
 
 def calculate_profit(smarkets_odd, odds_checker):
