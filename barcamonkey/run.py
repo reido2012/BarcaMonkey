@@ -5,7 +5,7 @@ from smarkets import Smarkets
 
 from monkey import Monkey
 from oddschecker import scraper
-from twilio.rest import Client
+
 
 TZ = pytz.timezone('Europe/London')
 
@@ -48,21 +48,6 @@ def get_comparison_results(current_day_limit=21):
     monkey_comparer = Monkey.Monkey()
     return monkey_comparer.compare_events(date_str)
 
-
-def make_call(phone_number):
-    # Your Account Sid and Auth Token from twilio.com/console
-    account_sid = os.environ.get('TWILIO_ACC_SID')
-    auth_token = os.environ.get('TWILIO_AUTH')
-
-    client = Client(account_sid, auth_token)
-
-    call = client.calls.create(
-                            url='http://demo.twilio.com/docs/voice.xml',
-                            to=phone_number,
-                            from_='+447492885157'
-                        )
-
-    print(call.sid)
 
 
 def main():

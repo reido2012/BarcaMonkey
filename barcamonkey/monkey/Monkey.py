@@ -18,6 +18,26 @@ class Monkey:
         file_time = now.replace(year=int(year), day=int(day), month=int(month), hour=int(file_name_time[0]), minute=int(file_name_time[1]))
         return now > file_time
 
+    def is_event_too_close(self, filepath, margin=15):
+        margin = datetime.timedelta(minutes=margin)
+        split_path = filepath.split("/")
+        race_date = split_path[-2:-1][0]
+        race_time = split_path[-1:][0].split("-")[0]
+        race_dt = datetime.datetime.strptime(f"{race_date} {race_time}", "%Y-%m-%d %H:%M").replace(tzinfo=TZ)
+
+        now = datetime.datetime.now(TZ)
+
+        if race_dt < now + margin:
+            return True
+
+        return False
+
+    def qualifying_bet_profit(self, smarkets_odd, odds_checker):
+        return round((0.98 * ((10 * odds_checker) / smarkets_odd - 0.02) - 10), 2)
+
+    def free_bet_profit(self, smarkets_odd, odds_checker):
+        return round(((10 * (odds_checker - 1)) / (smarkets_odd - 0.02)), 2)
+
     def compare_events(self, date_to_check):
         folder_path = self.events_path + str(date_to_check)
         results = []
@@ -31,6 +51,9 @@ class Monkey:
             oddschecker_event_json = data['oddschecker']
 
             if self.has_event_passed(filepath):
+                continue
+
+            if self.is_event_too_close(filepath):
                 continue
 
             if 'horses' not in oddschecker_event_json.keys():
@@ -64,7 +87,6 @@ class Monkey:
                 smarkets_horse_odds = float(smarkets_horse_odds)
 
                 for oddschecker_bookie, bookie_odds_list in oddschecker_horses[smarkets_horse].items():
-                    # print(f"Bookie Odds List: {bookie_odds_list}")
                     if not bookie_odds_list:
                         continue
 
@@ -75,16 +97,24 @@ class Monkey:
 
                     bookie_odds = float(bookie_odds)
                     difference = round(abs(smarkets_horse_odds - bookie_odds), 4)
+                    qb_profit = self.qualifying_bet_profit(smarkets_horse_odds, bookie_odds)
+                    fb_profit = self.free_bet_profit(smarkets_horse_odds, bookie_odds)
+                    high_qb = True if qb_profit >= 3.0 else False
+
                     if smarkets_horse_odds < bookie_odds:
-                        event_results[smarkets_horse] = {}
-                        event_results[smarkets_horse][oddschecker_bookie] = {
-                            'diff': difference,
-                            'smarkets': smarkets_horse_odds,
-                            'lay': "£" + smarket_horse_lay,
-                            'odds_checker': bookie_odds,
-                            'time_scraped_smarkets': harvest_time,
-                            'time_scraped_oc': oc_harvest_time
-                        }
+                        if (qb_profit > 0.1) or (fb_profit >= 10):
+                            event_results[smarkets_horse] = {}
+                            event_results[smarkets_horse][oddschecker_bookie] = {
+                                'diff': difference,
+                                'smarkets': smarkets_horse_odds,
+                                'lay': "£" + smarket_horse_lay,
+                                'odds_checker': bookie_odds,
+                                'time_scraped_smarkets': harvest_time,
+                                'time_scraped_oc': oc_harvest_time,
+                                'qb_profit': qb_profit,
+                                'fb_profit': fb_profit,
+                                'high_qb': high_qb,
+                            }
             if event_results:
                 result = (smarkets_url, oddschecker_url, event_results)
                 results.append(result)

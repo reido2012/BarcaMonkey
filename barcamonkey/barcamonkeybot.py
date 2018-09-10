@@ -4,9 +4,10 @@ import re
 import traceback
 import pytz
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 from slackclient import SlackClient
 from run import get_results, get_comparison_results
+from twilio.rest import Client
 
 TZ = pytz.timezone('Europe/London')
 # instantiate Slack client
@@ -76,27 +77,50 @@ def create_messages_from_results(results):
         for horse, difference_obj in event_results.items():
             str_msg_temp = []
             for bookie_name, bookie_odds_obj in difference_obj.items():
-                qb_profit = qualifying_bet_profit(bookie_odds_obj['smarkets'], bookie_odds_obj['odds_checker'])
-                fb_profit = free_bet_profit(bookie_odds_obj['smarkets'], bookie_odds_obj['odds_checker'])
+                qb_profit = bookie_odds_obj['smarkets']['qb_profit']
+                fb_profit = bookie_odds_obj['smarkets']['fb_profit']
+                high_qb = bookie_odds_obj['smarkets']['high_qb']
+
+                if high_qb:
+                    make_call(os.environ.get('ADAM_MOBILE'))
+                    high_qb_msg = "HIGHQB"
 
                 smarkets_odds = round(bookie_odds_obj['smarkets'], 2)
                 oddschecker_odds = round(bookie_odds_obj['odds_checker'], 2)
-                message = f"Bookie: *{bookie_name}* \n QB Profit: *£{qb_profit}* \n FB Profit: £{fb_profit} \n Odds: {oddschecker_odds} - {smarkets_odds} \n Lay: {bookie_odds_obj['lay']} \n"
+                message = f"Bookie: *{bookie_name}* \n QB Profit: *£{qb_profit}* \n FB Profit: £{fb_profit} \n Odds: *{oddschecker_odds} - {smarkets_odds}* \n Lay: {bookie_odds_obj['lay']} \n"
 
-                if (qb_profit > 0.1) or (fb_profit >= 10):
-                    str_msg_temp.append(message)
-                    location, race_time = parse_smarkets_url(smarkets_url)
-                    str_msg_temp.append(f"Race: {race_time} {location.capitalize()} \n")
-                    time_obj = datetime.now(TZ).time()
-                    msg_time = '{:02d}'.format(time_obj.hour) + ":" + '{:02d}'.format(time_obj.minute)
-                    str_msg_temp.append(f"Msg Time: {msg_time} \n")
-                    str_msg_temp.append("*********************\n")
+                str_msg_temp.append(message)
+
+                if high_qb:
+                    str_msg_temp.append(f"Priority: {high_qb_msg} \n")
+
+                location, race_time = parse_smarkets_url(smarkets_url)
+                str_msg_temp.append(f"Race: {race_time} {location.capitalize()} \n")
+                time_obj = datetime.now(TZ).time()
+                msg_time = '{:02d}'.format(time_obj.hour) + ":" + '{:02d}'.format(time_obj.minute)
+                str_msg_temp.append(f"Msg Time: {msg_time} \n")
+                str_msg_temp.append("*********************\n")
 
             if str_msg_temp:
                 messages.append(f"Horse: *{horse}* \n " + " ".join(str_msg_temp))
 
     print(f"Messages: {messages}")
     return messages
+
+
+def make_call(phone_number):
+    account_sid = os.environ.get('TWILIO_ACC_SID')
+    auth_token = os.environ.get('TWILIO_AUTH')
+
+    client = Client(account_sid, auth_token)
+
+    call = client.calls.create(
+                            url='http://demo.twilio.com/docs/voice.xml',
+                            to=phone_number,
+                            from_='+447492885157'
+                        )
+
+    print(call.sid)
 
 
 def parse_smarkets_url(url):
@@ -106,7 +130,7 @@ def parse_smarkets_url(url):
 
 def get_odds():
     all_results = get_results()
-
+    print(all_results)
     if all_results == 0:
         slack_client.rtm_send_message("general", "An Error Has Ocurred")
         sys.exit(0)
@@ -116,14 +140,6 @@ def get_odds():
         for message in messages:
             slack_client.rtm_send_message("general", message)
         time.sleep(5)
-
-
-def qualifying_bet_profit(smarkets_odd, odds_checker):
-    return round((0.98 * ((10 * odds_checker)/smarkets_odd-0.02) - 10), 2)
-
-
-def free_bet_profit(smarkets_odd, odds_checker):
-    return round(((10*(odds_checker-1)) / (smarkets_odd-0.02)), 2)
 
 
 def run_command(command):

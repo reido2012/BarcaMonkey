@@ -121,8 +121,6 @@ def run_scraper(current_day_limit=21):
     print("Finished Running Scraper")
 
 def get_odds_from_event_table(event):
-    #for event in events:
-        #Every 30 seconds do this
     soup = get_soup(event.url)
     odds_table = get_tag_by_attr(soup, 'tbody', 'id', 't1')
     horse_rows = odds_table.find_all('tr')
