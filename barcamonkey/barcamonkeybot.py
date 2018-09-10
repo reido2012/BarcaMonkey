@@ -3,6 +3,7 @@ import time
 import re
 import traceback
 import pytz
+import sys
 from datetime import datetime
 from slackclient import SlackClient
 from run import get_results, get_comparison_results
@@ -108,6 +109,7 @@ def get_odds():
 
     if all_results == 0:
         slack_client.rtm_send_message("general", "An Error Has Ocurred")
+        sys.exit(0)
 
     if all_results:
         messages = create_messages_from_results(all_results)

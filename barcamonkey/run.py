@@ -1,7 +1,6 @@
 import datetime
 import traceback
 import pytz
-import os
 from smarkets import Smarkets
 
 from monkey import Monkey
@@ -28,13 +27,14 @@ def get_data():
     except Exception as e:
         print("Exception in Smarkets")
         traceback.print_exc()
+        raise Exception
 
     try:
         scraper.run_scraper()
     except Exception as e:
         print("Exception in Scraper")
         print(e)
-        return 0
+        raise Exception
 
 
 def get_comparison_results(current_day_limit=21):
