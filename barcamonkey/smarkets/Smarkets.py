@@ -39,6 +39,7 @@ class Event:
 
             if bids and bids['price']:
                 odds, stake = get_odds(bids['price'])[0]
+
                 current_time = datetime.datetime.now(TZ).strftime("%H:%M:%S")
                 self.horse_odds[name].append((odds, stake, current_time))
 

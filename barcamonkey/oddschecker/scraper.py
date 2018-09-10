@@ -130,11 +130,10 @@ def get_odds_from_event_table(event):
         horse_name = format_horse_name(horse_name)
 
         our_odds = {}
-        all_odds = get_tags_by_attr(horse_row, 'td', 'class', 'bc bs')
-        all_odds_len = len(all_odds)
+        all_odds = horse_row.find_all('td')
+        # all_odds_len = len(all_odds)
         for index, name in list(BOOKIE_CODES_AND_INDICES.values()):
-            if index >= all_odds_len:
-                continue
+            index += 2
 
             horse_odd = all_odds[index]['data-odig']
             current_time = datetime.datetime.now(TZ).strftime("%H:%M:%S")
