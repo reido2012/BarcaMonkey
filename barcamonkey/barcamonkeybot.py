@@ -23,6 +23,8 @@ START_ODDS = "odds on"
 END_ODDS = "odds off"
 MENTION_REGEX = "^<@(|[WU].+?)>(.*)"
 BOT_ON = False
+CALLED_HORSES = {}
+
 
 def parse_bot_commands(slack_events):
     """
@@ -73,6 +75,7 @@ def handle_command(command):
 
 def create_messages_from_results(results):
     messages = []
+    should_make_call = False
     for (smarkets_url, oddschecker_url, event_results) in results:
         for horse, difference_obj in event_results.items():
             str_msg_temp = []
@@ -80,9 +83,21 @@ def create_messages_from_results(results):
                 qb_profit = bookie_odds_obj['qb_profit']
                 fb_profit = bookie_odds_obj['fb_profit']
                 high_qb = bookie_odds_obj['high_qb']
+                location, race_time = parse_smarkets_url(smarkets_url)
 
                 if high_qb:
-                    make_call(os.environ.get('ADAM_MOBILE'))
+                    if horse not in CALLED_HORSES.keys():
+                        CALLED_HORSES[horse] = []
+                        should_make_call = True
+                        CALLED_HORSES[horse].append(f"{race_time} {location.capitalize()}")
+                    else:
+                        # Don't call the horse if the race is the same
+                        if f"{race_time} {location.capitalize()}" == CALLED_HORSES[horse][-1:][0]:
+                            should_make_call = False
+                        else:
+                            should_make_call = True
+                            CALLED_HORSES[horse].append(f"{race_time} {location.capitalize()}")
+
                     high_qb_msg = "HIGHQB"
 
                 smarkets_odds = round(bookie_odds_obj['smarkets'], 2)
@@ -94,7 +109,6 @@ def create_messages_from_results(results):
                 if high_qb:
                     str_msg_temp.append(f"Priority: {high_qb_msg} \n")
 
-                location, race_time = parse_smarkets_url(smarkets_url)
                 str_msg_temp.append(f"Race: {race_time} {location.capitalize()} \n")
                 time_obj = datetime.now(TZ).time()
                 msg_time = '{:02d}'.format(time_obj.hour) + ":" + '{:02d}'.format(time_obj.minute)
@@ -103,6 +117,9 @@ def create_messages_from_results(results):
 
             if str_msg_temp:
                 messages.append(f"Horse: *{horse}* \n " + " ".join(str_msg_temp))
+
+    if should_make_call:
+        make_call(os.environ.get('ADAM_MOBILE'))
 
     print(f"Messages: {messages}")
     return messages

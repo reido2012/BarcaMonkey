@@ -117,15 +117,23 @@ def run_scraper(current_day_limit=21):
         updated_events = do_concurrently(get_odds_from_event_table, days_events)
 
         for event in list(updated_events):
-            event.send_to_json()
+            if event:
+                event.send_to_json()
     print("Finished Running Scraper")
 
+
 def get_odds_from_event_table(event):
+    if '/abandoned-' in event.url:
+        return None
+
     soup = get_soup(event.url)
     odds_table = get_tag_by_attr(soup, 'tbody', 'id', 't1')
     horse_rows = odds_table.find_all('tr')
 
     for horse_row in horse_rows:
+        if not horse_row:
+            continue
+
         horse_name = horse_row['data-bname']
         horse_name = format_horse_name(horse_name)
 
