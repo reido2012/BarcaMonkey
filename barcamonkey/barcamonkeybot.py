@@ -119,7 +119,9 @@ def create_messages_from_results(results):
                 messages.append(f"Horse: *{horse}* \n " + " ".join(str_msg_temp))
 
     if should_make_call:
-        make_call(os.environ.get('ADAM_MOBILE'))
+        now = datetime.now(TZ)
+        if 23 > now.hour >= 7:
+            make_call(os.environ.get('ADAM_MOBILE'))
 
     print(f"Messages: {messages}")
     return messages
