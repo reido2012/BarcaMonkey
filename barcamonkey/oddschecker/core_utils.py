@@ -51,7 +51,7 @@ def handle_url_request(url, header):
                 soup = run_bs4(out)
         except Exception as e:
             print(f"Exception When Handling URL: {e}")
-
+            raise Exception
     return soup
 
 
