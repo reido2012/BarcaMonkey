@@ -128,6 +128,10 @@ def get_odds_from_event_table(event):
 
     soup = get_soup(event.url)
     odds_table = get_tag_by_attr(soup, 'tbody', 'id', 't1')
+
+    if not odds_table:
+        return None
+
     horse_rows = odds_table.find_all('tr')
 
     for horse_row in horse_rows:

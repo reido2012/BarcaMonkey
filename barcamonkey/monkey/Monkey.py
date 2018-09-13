@@ -24,13 +24,9 @@ class Monkey:
         race_date = split_path[-2:-1][0]
         race_time = split_path[-1:][0].split("-")[0]
         race_dt = datetime.datetime.strptime(f"{race_date} {race_time}", "%Y-%m-%d %H:%M").replace(tzinfo=TZ)
-
         now = datetime.datetime.now(TZ)
 
-        if race_dt < now + margin:
-            return True
-
-        return False
+        return race_dt <= now + margin
 
     def qualifying_bet_profit(self, smarkets_odd, odds_checker):
         return round((0.98 * ((10 * odds_checker) / smarkets_odd - 0.02) - 10), 2)
