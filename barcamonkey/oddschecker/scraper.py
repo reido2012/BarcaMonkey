@@ -139,7 +139,6 @@ def get_odds_from_event_table(event):
             continue
 
         if "nonRunner" in horse_row["class"]:
-            print("Non Runner!")
             non_runner = True
         else:
             non_runner = False
