@@ -138,6 +138,12 @@ def get_odds_from_event_table(event):
         if not horse_row:
             continue
 
+        if "nonRunner" in horse_row["class"]:
+            print("Non Runner!")
+            non_runner = True
+        else:
+            non_runner = False
+
         horse_name = horse_row['data-bname']
         horse_name = format_horse_name(horse_name)
 
@@ -153,10 +159,14 @@ def get_odds_from_event_table(event):
             if name not in our_odds.keys():
                 our_odds[name] = []
 
+
             if horse_odd == "0":
                 our_odds[name].append((None, current_time))
             else:
                 our_odds[name].append((horse_odd, current_time))
+
+            if non_runner:
+                our_odds[name].append((None, current_time))
 
         event.horse_odds[horse_name] = our_odds
 
