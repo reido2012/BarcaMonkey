@@ -56,11 +56,6 @@ def handle_command(command):
     """
         Executes bot command if the command is known
     """
-    # Default response is help text for the user
-    default_response = "Not sure what you mean. Try *{}*.".format(EXAMPLE_COMMAND)
-
-    # Finds and executes the given command, filling in response
-    response = None
     # This is where you start to implement more commands!
     if command.startswith(START_ODDS):
         slack_client.rtm_send_message(channel, "Turning Odds Notifications On")
@@ -83,6 +78,8 @@ def create_messages_from_results(results):
                 qb_profit = bookie_odds_obj['qb_profit']
                 fb_profit = bookie_odds_obj['fb_profit']
                 high_qb = bookie_odds_obj['high_qb']
+                med_qb = bookie_odds_obj['med_qb']
+
                 location, race_time = parse_smarkets_url(smarkets_url)
 
                 if high_qb:
@@ -100,6 +97,7 @@ def create_messages_from_results(results):
 
                     high_qb_msg = "HIGHQB"
 
+
                 smarkets_odds = round(bookie_odds_obj['smarkets'], 2)
                 oddschecker_odds = round(bookie_odds_obj['odds_checker'], 2)
                 message = f"Bookie: *{bookie_name}* \n QB Profit: *£{qb_profit}* \n FB Profit: £{fb_profit} \n Odds: *{oddschecker_odds} - {smarkets_odds}* \n Lay: {bookie_odds_obj['lay']} \n"
@@ -108,6 +106,9 @@ def create_messages_from_results(results):
 
                 if high_qb:
                     str_msg_temp.append(f"Priority: {high_qb_msg} \n")
+
+                if med_qb:
+                    str_msg_temp.append(f"Priority: MEDQB \n")
 
                 str_msg_temp.append(f"Race: {race_time} {location.capitalize()} \n")
                 time_obj = datetime.now(TZ).time()

@@ -96,6 +96,7 @@ class Monkey:
                     qb_profit = self.qualifying_bet_profit(smarkets_horse_odds, bookie_odds)
                     fb_profit = self.free_bet_profit(smarkets_horse_odds, bookie_odds)
                     high_qb = True if qb_profit >= 3.0 else False
+                    med_qb = True if 1.0 <= qb_profit < 3.0 else False
 
                     if smarkets_horse_odds < bookie_odds:
                         if (qb_profit > 0.1) or (fb_profit >= 10):
@@ -110,6 +111,7 @@ class Monkey:
                                 'qb_profit': qb_profit,
                                 'fb_profit': fb_profit,
                                 'high_qb': high_qb,
+                                'med_qb': med_qb
                             }
             if event_results:
                 result = (smarkets_url, oddschecker_url, event_results)

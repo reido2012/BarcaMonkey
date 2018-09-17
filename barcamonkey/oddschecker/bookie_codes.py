@@ -23,3 +23,29 @@ BOOKIE_CODES_AND_INDICES = {
     "PE": (21, "SportPesa"),
     "SX": (22, "Spread EX")
 }
+
+BOOKIE_NAME_TO_INDEX = {
+    "Bet365": 0,
+    "Sky Bet": 1,
+    "Ladbrokes": 2,
+    "William Hill": 3,
+    "Marathon Bet": 4,
+    "Betfair": 5,
+    "Paddy Power": 6,
+    "UNIBET": 7,
+    "Coral": 8,
+    "BetFred": 9,
+    "BoyleSports": 10,
+    "ToteSport": 11,
+    "BLACKTYPE": 12,
+    "Bet Stars": 13,
+    "Betway": 14,
+    "Bet Bright": 15,
+    "10 Bet": 16,
+    "Sporting Bet": 17,
+    "188 Bet": 18,
+    "888Sport": 19,
+    "BETVICTOR": 20,
+    "SportPesa": 21,
+    "Spread EX": 22
+}

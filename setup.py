@@ -13,6 +13,7 @@ setup(
         "beautifulsoup4",
         "dateparser",
         "pytz",
-        "twilio"
+        "twilio",
+        "selenium"
     ],
 )
