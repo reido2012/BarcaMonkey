@@ -51,14 +51,14 @@ def main(event_url, bookie, horse_name, expected_odds):
         print(login_button)
         click_via_script(driver, login_button)
 
-        time.sleep(3)
+        time.sleep(1)
         while True:
             pass
     else:
         print("Odds Are Not What Expected")
 
 
-def login_padd
+# def login_padd
 
 def click_via_script(driver, clickable_elem):
     driver.execute_script("arguments[0].click();", clickable_elem)

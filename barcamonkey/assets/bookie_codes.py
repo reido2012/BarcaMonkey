@@ -5,21 +5,21 @@ BOOKIE_CODES_AND_INDICES = {
     "WH": (3, "William Hill"),
     "MR": (4, "Marathon Bet"),
     "FB": (5, "Betfair"),
-    "VC": (6, "BETVICTOR"),
-    "PP": (7, "Paddy Power"),
-    "UN": (8, "UNIBET"),
-    "CE": (9, "Coral"),
-    "FR": (10, "BetFred"),
-    "BY": (11, "BoyleSports"),
-    "BX": (12, "ToteSport"),
-    "BL": (13, "BLACKTYPE"),
-    "PS": (14, "Bet Stars"),
-    "WA": (15, "Betway"),
-    "BB": (16, "Bet Bright"),
-    "OE": (17, "10 Bet"),
-    "SO": (18, "Sporting Bet"),
-    "EB": (19, "188 Bet"),
-    # "EE": (20, "888Sport"),
+    "PP": (6, "Paddy Power"),
+    "UN": (7, "UNIBET"),
+    "CE": (8, "Coral"),
+    "FR": (9, "BetFred"),
+    "BY": (10, "BoyleSports"),
+    "BX": (11, "ToteSport"),
+    "BL": (12, "BLACKTYPE"),
+    "PS": (13, "Bet Stars"),
+    "WA": (14, "Betway"),
+    "BB": (15, "Bet Bright"),
+    "OE": (16, "10 Bet"),
+    "SO": (17, "Sporting Bet"),
+    "EB": (18, "188 Bet"),
+    "EE": (19, "888Sport"),
+    "VC": (20, "BETVICTOR"),
     "PE": (21, "SportPesa"),
     "SX": (22, "Spread EX")
 }
@@ -44,8 +44,13 @@ BOOKIE_NAME_TO_INDEX = {
     "10 Bet": 16,
     "Sporting Bet": 17,
     "188 Bet": 18,
-    # "888Sport": 19,
+    "888Sport": 19,
     "BETVICTOR": 20,
     "SportPesa": 21,
     "Spread EX": 22
+}
+
+BOOKIE_NAME_TO_URL = {
+    "888sport": "https://www.888sport.com/horse-racing-betting/#/racing/horse_racing/meetings",
+    "oddschecker": "https://www.888sport.com/horse-racing-betting/#/racing/horse_racing/meetings"
 }

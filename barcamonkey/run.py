@@ -5,9 +5,28 @@ from smarkets import Smarkets
 
 from monkey import Monkey
 from oddschecker import scraper
-
+from sport888 import scraper as s8_scraper
 
 TZ = pytz.timezone('Europe/London')
+
+
+def debug():
+    date_obj = datetime.datetime.now(TZ)
+    if date_obj.hour < 21:
+        date_str = str(date_obj.year) + "-" + '{:02d}'.format(date_obj.month) + "-" + '{:02d}'.format(date_obj.day)
+    else:
+        date_str = str(date_obj.year) + "-" + '{:02d}'.format(date_obj.month) + "-" + '{:02d}'.format(date_obj.day + 1)
+    print(f"Date Str: {date_str}")
+
+
+    smarkets = Smarkets.SmarketsParser()
+    smarkets.write_or_update_events()
+    s8_scraper.run_scraper()
+    scraper.run_scraper()
+
+    monkey_comparer = Monkey.Monkey()
+    all_results = monkey_comparer.compare_events(date_str)
+    print(all_results)
 
 
 def get_results():
@@ -32,7 +51,14 @@ def get_data():
     try:
         scraper.run_scraper()
     except Exception as e:
-        print("Exception in Scraper")
+        print("Exception in OddsChecker Scraper")
+        print(e)
+        raise Exception
+
+    try:
+        s8_scraper.run_scraper()
+    except Exception as e:
+        print("Exception in 888 Scraper")
         print(e)
         raise Exception
 
@@ -50,27 +76,9 @@ def get_comparison_results(current_day_limit=21):
 
 
 
-def main():
-    # date_obj = datetime.datetime.now()
-    # date_str = str(date_obj.year) + "-" + '{:02d}'.format(date_obj.month) + "-" + '{:02d}'.format(date_obj.day)
-    # print(f"Date Str: {date_str}")
-
-    # scraper.run_scraper()
-    # smarkets = Smarkets.SmarketsParser()
-    # smarkets.write_or_update_events()
-
-    # monkey_comparer = Monkey.Monkey()
-    # all_results = monkey_comparer.compare_events(date_str)
-    # print(all_results)
-    # messages = create_messages_from_results(all_results)
-    # print(messages)
-    # make_call('+447934345900')
-    pass
-
-
-def calculate_profit(smarkets_odd, odds_checker):
-    return 0.98 * ((10 * odds_checker)/smarkets_odd-0.02) - 10
+# def calculate_profit(smarkets_odd, odds_checker):
+#     return 0.98 * ((10 * odds_checker)/smarkets_odd-0.02) - 10
 
 
 if __name__ == '__main__':
-    main()
+    debug()

@@ -56,7 +56,7 @@ def handle_url_request(url, header):
 
 
 def make_request(header, url):
-    time.sleep(2)
+    time.sleep(1)
     try:
         out = requests.get(url, headers=header)
     except ssl.SSLEOFError as ssle:

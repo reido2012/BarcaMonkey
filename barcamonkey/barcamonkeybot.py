@@ -52,6 +52,7 @@ def parse_direct_mention(message_text):
     # the first group contains the username, the second group contains the remaining message
     return (matches.group(1), matches.group(2).strip()) if matches else (None, None)
 
+
 def handle_command(command):
     """
         Executes bot command if the command is known
@@ -100,7 +101,7 @@ def create_messages_from_results(results):
 
                 smarkets_odds = round(bookie_odds_obj['smarkets'], 2)
                 oddschecker_odds = round(bookie_odds_obj['odds_checker'], 2)
-                message = f"Bookie: *{bookie_name}* \n QB Profit: *£{qb_profit}* \n FB Profit: £{fb_profit} \n Odds: *{oddschecker_odds} - {smarkets_odds}* \n Lay: {bookie_odds_obj['lay']} \n"
+                message = f"Bookie: *{bookie_name}* \n QB Profit: *£{qb_profit}* \n FB Profit: £{fb_profit} \n Odds: *{oddschecker_odds} - {smarkets_odds}* \n Available: {bookie_odds_obj['lay']} \n"
 
                 str_msg_temp.append(message)
 
@@ -150,7 +151,7 @@ def parse_smarkets_url(url):
 
 def get_odds():
     all_results = get_results()
-    print(all_results)
+    # print(all_results)
     if all_results == 0:
         slack_client.rtm_send_message("general", "An Error Has Ocurred")
         sys.exit(0)
@@ -159,7 +160,7 @@ def get_odds():
         messages = create_messages_from_results(all_results)
         for message in messages:
             slack_client.rtm_send_message("general", message)
-        time.sleep(5)
+        time.sleep(1)
 
 
 def run_command(command):

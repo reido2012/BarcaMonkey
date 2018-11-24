@@ -56,7 +56,12 @@ class Event:
                 "oddschecker": {
                     "url": self.url,
                     "horses": self.horse_odds
-                }
+                },
+
+                "888Sport": {
+                    "url": "",
+                    "horses": None
+                },
             }
             self._write_to_json(filepath, new_obj)
 
@@ -64,7 +69,9 @@ class Event:
         with open(filepath) as f:
             data = json.load(f)
 
-        self.update_odds_list(data)
+        if data['oddschecker']['horses']:
+            self.update_odds_list(data)
+
         data['oddschecker']['horses'] = self.horse_odds
         data['oddschecker']['url'] = self.url
 
