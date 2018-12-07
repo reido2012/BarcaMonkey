@@ -9,6 +9,7 @@ from collections import OrderedDict
 TZ = pytz.timezone('Europe/London')
 DIRNAME = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
 class SmarketsEvent:
     def __init__(self, event_obj, date):
         self._set_event_attrs(event_obj)

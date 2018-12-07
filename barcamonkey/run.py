@@ -1,8 +1,9 @@
 import datetime
 import traceback
 import pytz
-from smarkets import Smarkets
+import time
 
+from smarkets import Smarkets
 from monkey import Monkey
 from oddschecker import scraper
 from sport888 import scraper as s8_scraper
@@ -18,11 +19,22 @@ def debug():
         date_str = str(date_obj.year) + "-" + '{:02d}'.format(date_obj.month) + "-" + '{:02d}'.format(date_obj.day + 1)
     print(f"Date Str: {date_str}")
 
-
+    smarkets_s = time.time()
     smarkets = Smarkets.SmarketsParser()
     smarkets.write_or_update_events()
-    s8_scraper.run_scraper()
+    smarkets_f = time.time()
+
+    s8_s = time.time()
+    s8_scraper.run_scraper_concurrent()
+    s8_f = time.time()
+
+    oddschecker_s = time.time()
     scraper.run_scraper()
+    oddschecker_f = time.time()
+
+    print(f"Oddschecker Time: {oddschecker_f - oddschecker_s}")
+    print(f"Sport888 Time: {s8_f - s8_s}")
+    print(f"Smarkets Time: {smarkets_f - smarkets_s}")
 
     monkey_comparer = Monkey.Monkey()
     all_results = monkey_comparer.compare_events(date_str)
@@ -41,6 +53,7 @@ def get_results():
 
 def get_data():
     try:
+        #Can be put in a thread
         smarkets = Smarkets.SmarketsParser()
         smarkets.write_or_update_events()
     except Exception as e:
@@ -49,6 +62,7 @@ def get_data():
         raise Exception
 
     try:
+        #This uses multiple threads to scrape the individual event pages
         scraper.run_scraper()
     except Exception as e:
         print("Exception in OddsChecker Scraper")
@@ -56,7 +70,7 @@ def get_data():
         raise Exception
 
     try:
-        s8_scraper.run_scraper()
+        s8_scraper.run_scraper_concurrent()
     except Exception as e:
         print("Exception in 888 Scraper")
         print(e)
@@ -73,11 +87,6 @@ def get_comparison_results(current_day_limit=21):
 
     monkey_comparer = Monkey.Monkey()
     return monkey_comparer.compare_events(date_str)
-
-
-
-# def calculate_profit(smarkets_odd, odds_checker):
-#     return 0.98 * ((10 * odds_checker)/smarkets_odd-0.02) - 10
 
 
 if __name__ == '__main__':
