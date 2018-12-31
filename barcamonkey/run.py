@@ -4,9 +4,11 @@ import pytz
 import time
 
 from smarkets import Smarkets
+from smarkets_autobettor import smarkets_autobettor
 from monkey import Monkey
 from oddschecker import scraper
 from sport888 import scraper as s8_scraper
+
 
 TZ = pytz.timezone('Europe/London')
 
@@ -40,6 +42,10 @@ def debug():
     all_results = monkey_comparer.compare_events(date_str)
     print(all_results)
 
+
+def test_auto_betting():
+    auto_bettor = smarkets_autobettor.SmarketsAutoBettor("oreid52@googlemail.com")
+    auto_bettor.sign_in_to_smarkets("https://smarkets.com/event/1260064/")
 
 def get_results():
     try:
@@ -90,4 +96,5 @@ def get_comparison_results(current_day_limit=21):
 
 
 if __name__ == '__main__':
-    debug()
+    # debug()
+    test_auto_betting()
