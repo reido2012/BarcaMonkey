@@ -45,7 +45,9 @@ def debug():
 
 def test_auto_betting():
     auto_bettor = smarkets_autobettor.SmarketsAutoBettor("oreid52@googlemail.com")
-    auto_bettor.sign_in_to_smarkets("https://smarkets.com/event/1260064/")
+    # auto_bettor.sign_in_to_smarkets("https://smarkets.com/event/1338869/sport/horse-racing/huntingdon/2019/01/11/13:00")
+    auto_bettor.bet_on_smarkets('https://smarkets.com/event/1366429/sport/horse-racing/newcastle/2019/01/17/19:25',
+                                'Royal Mezyan', 9.8, 27)
 
 def get_results():
     try:
