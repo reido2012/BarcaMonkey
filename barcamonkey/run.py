@@ -4,7 +4,7 @@ import pytz
 import time
 
 from smarkets import Smarkets
-from smarkets_autobettor import smarkets_autobettor
+from autobettors import smarkets_autobettor, oddschecker_autobettor
 from monkey import Monkey
 from oddschecker import scraper
 from sport888 import scraper as s8_scraper
@@ -44,10 +44,11 @@ def debug():
 
 
 def test_auto_betting():
-    auto_bettor = smarkets_autobettor.SmarketsAutoBettor("oreid52@googlemail.com")
-    # auto_bettor.sign_in_to_smarkets("https://smarkets.com/event/1338869/sport/horse-racing/huntingdon/2019/01/11/13:00")
-    auto_bettor.bet_on_smarkets('https://smarkets.com/event/1366429/sport/horse-racing/newcastle/2019/01/17/19:25',
-                                'Royal Mezyan', 9.8, 27)
+    # smarkets_bettor = smarkets_autobettor.SmarketsAutoBettor("oreid52@googlemail.com")
+    # smarkets_bettor.bet_on_smarkets('https://smarkets.com/event/1391742/sport/horse-racing/newcastle/2019/01/22/16:10',
+    #                             'Zubayr', 9.8, 13)
+    oc_bettor = oddschecker_autobettor.OddsCheckerAutoBettor("oreid52@googlemail.com")
+    oc_bettor.place_bet("https://www.oddschecker.com/horse-racing/2019-01-22-newcastle/16:10/winner", "10 Bet", "Zubayr", 5.5)
 
 def get_results():
     try:

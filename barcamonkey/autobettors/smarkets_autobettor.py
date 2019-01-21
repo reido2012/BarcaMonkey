@@ -5,17 +5,19 @@ from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
 
-
 BARCAMONKEY_BASE_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MIN_BET = 0.05
+
 
 class SmarketsAutoBettor:
     """
     This class contains methods that create a selenium webdriver instance to place a bet on smarkets
     """
+
     # Should take info that it needs to make a bet on smarkets
     # + debug mode - runs in chrome otherwise use phantomjs
-    def __init__(self, email_address, phantom=False, user_data_path="/Users/omarreid/Library/Application\ Support/Google/Chrome/Default"):
+    def __init__(self, email_address, phantom=False,
+                 user_data_path="/Users/omarreid/Library/Application\ Support/Google/Chrome/Default"):
         self.email_address = email_address
 
         opts = Options()
@@ -27,10 +29,6 @@ class SmarketsAutoBettor:
         else:
             self.driver = webdriver.Chrome(BARCAMONKEY_BASE_PATH + "/assets/chromedriver", chrome_options=opts)
 
-        # set timeout information
-        # driver.set_page_load_timeout(15)
-
-
     def bet_on_smarkets(self, smarkets_url, horse_name, expected_horse_odds, expected_availability):
         self._sign_in_to_smarkets(smarkets_url)
         self._place_bet(smarkets_url, horse_name, expected_horse_odds, expected_availability)
@@ -39,8 +37,49 @@ class SmarketsAutoBettor:
             pass
         pass
 
+    def _sign_in_to_smarkets(self, smarkets_url):
+        time.sleep(0.5)
+        self.driver.get(smarkets_url)
 
-    def _place_bet(self, smarkets_url, horse_name, odds,available):
+        while self.driver.current_url != smarkets_url:
+            time.sleep(1)
+            self.driver.get(smarkets_url)
+            time.sleep(1)
+
+        time.sleep(1)
+
+        # Check if Smarkets kept us logged in
+        try:
+            self.driver.find_element_by_xpath("//a[@id='header-login']")
+            already_logged_in = False
+        except NoSuchElementException as e:
+            already_logged_in = True
+
+        if not already_logged_in:
+            login_button = self.driver.find_element_by_xpath("//a[@id='header-login']")
+            while login_button is None:
+                login_button = self.driver.find_element_by_xpath("//a[@id='header-login']")
+
+            time.sleep(1)
+            login_button.click()
+
+            email_input = self.driver.find_element_by_xpath("//input[@id='login-form-email']")
+            while email_input is None:
+                email_input = self.driver.find_element_by_xpath("//input[@id='login-form-email']")
+
+            email_input.send_keys(self.email_address)
+
+            smarkets_pass = os.environ.get('SMARKETS_PASS')
+            password_input = self.driver.find_element_by_xpath("//input[@id='login-form-password']")
+            password_input.send_keys(smarkets_pass)
+
+            submit_login_button = self.driver.find_element_by_xpath(
+                "//button[@type='submit' and contains(text(), 'Log In')]")
+            time.sleep(0.5)
+            submit_login_button.click()
+            time.sleep(2)
+
+    def _place_bet(self, smarkets_url, horse_name, odds, available):
         """
         Given an event, a horse and its odds, attempt to place a bet on the horse
         :param smarkets_url: URL of the event on Smarkets
@@ -70,7 +109,6 @@ class SmarketsAutoBettor:
         print(f"Target Horse Found: {target_horse_name_container.text}")
 
         horse_row = target_horse_name_container
-
 
         # TODO: Put this in separate method
         # TODO: If there's no picture it should be range(4)
@@ -115,49 +153,6 @@ class SmarketsAutoBettor:
         account_balance = self.driver.find_element_by_xpath("//div[@class='finance-detail']").text
         account_balance = float(account_balance.replace("BALANCE\n£", ""))
         print(f"Account Balance: {account_balance}")
-
-
-
-    def _sign_in_to_smarkets(self, smarkets_url):
-        time.sleep(0.5)
-        self.driver.get(smarkets_url)
-
-        while self.driver.current_url != smarkets_url:
-            time.sleep(1)
-            self.driver.get(smarkets_url)
-            time.sleep(1)
-
-        time.sleep(1)
-
-        # Check if Smarkets kept us logged in
-        try:
-            self.driver.find_element_by_xpath("//a[@id='header-login']")
-            already_logged_in = False
-        except NoSuchElementException as e:
-            already_logged_in = True
-
-        if not already_logged_in:
-            login_button = self.driver.find_element_by_xpath("//a[@id='header-login']")
-            while login_button is None:
-                login_button = self.driver.find_element_by_xpath("//a[@id='header-login']")
-
-            time.sleep(1)
-            login_button.click()
-
-            email_input = self.driver.find_element_by_xpath("//input[@id='login-form-email']")
-            while email_input is None:
-                email_input = self.driver.find_element_by_xpath("//input[@id='login-form-email']")
-
-            email_input.send_keys(self.email_address)
-
-            smarkets_pass = os.environ.get('SMARKETS_PASS')
-            password_input = self.driver.find_element_by_xpath("//input[@id='login-form-password']")
-            password_input.send_keys(smarkets_pass)
-
-            submit_login_button = self.driver.find_element_by_xpath("//button[@type='submit' and contains(text(), 'Log In')]")
-            time.sleep(0.5)
-            submit_login_button.click()
-            time.sleep(2)
 
     def _format_horse_name(self, horse_name):
         translator = str.maketrans('', '', string.punctuation)
