@@ -14,7 +14,7 @@ def main(event_url, bookie, horse_name, expected_odds):
 
     horse_row = driver.find_element_by_xpath(f"//tr[@data-bname='{horse_name}']")
     odds_list = horse_row.find_elements_by_tag_name("td")
-    index = BOOKIE_NAME_TO_INDEX[bookie] + 1
+    index = BOOKIE_NAME_TO_INDEX[bookie] + 3
     odds_button = odds_list[index]
     print(odds_button)
     print(f"Odds On Page: {odds_button.get_attribute('data-odig')}")
@@ -72,4 +72,4 @@ def get_decimal_odd(horse_odd):
 
 
 if __name__ == '__main__':
-    main("https://www.oddschecker.com/horse-racing/gulfstream/23:36/winner", 'Paddy Power', 'Dreamingofmermaids', 9)
+    main("https://www.oddschecker.com/horse-racing/lingfield/14:10/winner", 'Paddy Power', 'Mickey', 9.5)
