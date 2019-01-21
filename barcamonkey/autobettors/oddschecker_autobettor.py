@@ -22,7 +22,7 @@ class OddsCheckerAutoBettor:
         else:
             self.driver = webdriver.Chrome(BARCAMONKEY_BASE_PATH + "/assets/chromedriver", chrome_options=opts)
 
-    def place_bet(self, event_url, bookie, horse_name, expected_odds):
+    def place_bet(self, event_url, horse_name, expected_odds, bookie): #Need availability for mapping to work
 
         self.driver.get(event_url)
 

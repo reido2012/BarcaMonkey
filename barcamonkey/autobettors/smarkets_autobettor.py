@@ -29,7 +29,7 @@ class SmarketsAutoBettor:
         else:
             self.driver = webdriver.Chrome(BARCAMONKEY_BASE_PATH + "/assets/chromedriver", chrome_options=opts)
 
-    def bet_on_smarkets(self, smarkets_url, horse_name, expected_horse_odds, expected_availability):
+    def place_bet(self, smarkets_url, horse_name, expected_horse_odds, expected_availability):
         self._sign_in_to_smarkets(smarkets_url)
         self._place_bet(smarkets_url, horse_name, expected_horse_odds, expected_availability)
 

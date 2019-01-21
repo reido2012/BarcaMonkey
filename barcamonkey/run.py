@@ -8,7 +8,7 @@ from autobettors import smarkets_autobettor, oddschecker_autobettor
 from monkey import Monkey
 from oddschecker import scraper
 from sport888 import scraper as s8_scraper
-
+from utils import utils
 
 TZ = pytz.timezone('Europe/London')
 
@@ -42,13 +42,21 @@ def debug():
     all_results = monkey_comparer.compare_events(date_str)
     print(all_results)
 
+# test_list = [(smarkets_bettor, ('https://smarkets.com/event/1391742/sport/horse-racing/newcastle/2019/01/22/16:10', 'Zubayr', 9.8, 13)), (oc_bettor.place_bet, ("https://www.oddschecker.com/horse-racing/2019-01-22-newcastle/16:10/winner", "10 Bet", "Zubayr", 5.5))]
+# run_bettors_concurrently(test_list)
+# def run_bettors_concurrently(bots_list):
+#     utils.do_concurrently(lambda auto_pair: auto_pair[0].place_bet(*auto_pair[1]), a_list=bots_list, max_workers=2)
+
 
 def test_auto_betting():
-    # smarkets_bettor = smarkets_autobettor.SmarketsAutoBettor("oreid52@googlemail.com")
+    smarkets_bettor = smarkets_autobettor.SmarketsAutoBettor("oreid52@googlemail.com")
     # smarkets_bettor.bet_on_smarkets('https://smarkets.com/event/1391742/sport/horse-racing/newcastle/2019/01/22/16:10',
     #                             'Zubayr', 9.8, 13)
     oc_bettor = oddschecker_autobettor.OddsCheckerAutoBettor("oreid52@googlemail.com")
-    oc_bettor.place_bet("https://www.oddschecker.com/horse-racing/2019-01-22-newcastle/16:10/winner", "10 Bet", "Zubayr", 5.5)
+    # oc_bettor.place_bet("https://www.oddschecker.com/horse-racing/2019-01-22-newcastle/16:10/winner", "10 Bet", "Zubayr", 5.5)
+
+
+
 
 def get_results():
     try:
