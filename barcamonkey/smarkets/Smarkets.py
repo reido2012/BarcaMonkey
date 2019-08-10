@@ -1,6 +1,6 @@
 import requests
 # import xmltodict
-# import datetime
+import datetime
 import os
 # import gzip
 import pytz
@@ -68,31 +68,97 @@ BASE = "https://api.smarkets.com"
 #         print("Finished Handling Smarkets")
 
 
+class Session:
+    def __init__(self):
+        self.session_token = self.get_session_token()
+        self.events_for_the_day = None
+
+    def get_session_token(self):
+        """
+        Will return token that can be used to authenticate future requests
+        The token is valid for 30 mins, but if we make an authenticated request with it it will be renewed for 30 more mins
+        :return:
+            session_token: Session token we use to
+        """
+
+        credentials = {
+            "password": os.environ.get('SMARKETS_PASS'),
+            "remember": True,
+            "username": "oreid52@googlemail.com"
+        }
+
+        r = requests.post(BASE + '/v3/sessions/', json=credentials)
+        result = r.json()
+        session_token = result['token']
+        return session_token
+
+    def get_events(self):
+        now = datetime.datetime.now(TZ)
+        curr_day = now.strftime("%Y-%m-%dT00:00:00Z")
+        request_data = self._create_event_request(curr_day)
+        r = requests.get(f"{BASE}/v3/events/", params=request_data)
+        all_events = r.json()
+        all_events = all_events['events']
+
+        print("Events")
+        event = all_events[10]
+        event_id = event['id']
+        print(event_id)
+        pprint(event)
+        self.get_event_market(event_id)
+
+    def get_event_market(self, event_id):
+        # event_id can be a list of event_ids, same with contracts
+        r = requests.get(f"{BASE}/v3/events/{event_id}/markets/", params={'limit_by_event': 1})
+        markets = r.json()['markets']
+        market = markets[0]
+        market_id =market['id']
+        print("Market ID")
+        pprint(market_id)
+        self.get_market_contracts(market_id)
+
+    def get_market_contracts(self, market_id):
+        r = requests.get(f"{BASE}/v3/markets/{market_id}/contracts/", params={})
+        contracts = r.json()['contracts']
+        print("Contracts")
+        pprint(contracts)
+        self.get_contract_last_executed_prices(market_id, contracts)
+        self.get_contract_quotes(market_id, contracts)
+
+    def get_contract_last_executed_prices(self, market_id, contracts):
+        r = requests.get(f"{BASE}/v3/markets/{market_id}/last_executed_prices/")
+        prices = r.json()['last_executed_prices']
+
+        print("Last Executed Prices")
+        pprint(prices)
+
+    def get_contract_quotes(self, market_id, contracts):
+        r = requests.get(f"{BASE}/v3/markets/{market_id}/quotes/")
+        quotes = r.json()
+
+        print("Current Quotes")
+        pprint(quotes)
+
+    def _create_event_request(self, curr_day):
+        # Full list of filters https://docs.smarkets.com/#/events/get_events
+        data = dict(
+            state=["upcoming"],
+            type=["football_match", "horse_racing_race"],
+            type_domain=["football", "horse_racing"],
+            type_scope=["single_event"],
+            start_date_min=curr_day,
+            with_new_type=True,
+            inplay_enabled=False,
+            include_hidden=False,
+            token=self.session_token
+        )
+
+        return data
+
+
 def main():
-    session_token = get_session_token()
-    get_events()
-
-def get_session_token():
-    """
-    Will return token that can be used to authenticate future requests
-    The token is valid for 30 mins, but if we make an authenticated request with it it will be renewed for 30 more mins
-    :return:
-        session_token: Session token we use to
-    """
-
-    credentials = {
-        "password": os.environ.get('SMARKETS_PASS'),
-        "remember": True,
-        "username": "oreid52@googlemail.com"
-    }
-
-    r = requests.post(BASE + '/v3/sessions/', json=credentials)
-    result = r.json()
-    session_token = result['token']
-    return session_token
-
-def get_events():
-    pass
+    sess = Session()
+    sess.get_events()
 
 
 if __name__ == "__main__":
