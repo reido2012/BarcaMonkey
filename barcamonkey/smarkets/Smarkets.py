@@ -100,11 +100,12 @@ class Session:
         all_events = r.json()
         all_events = all_events['events']
 
-        print("Events")
-        event = all_events[10]
+        # print("Events")
+        # print("*" * 40)
+        event = all_events[0]
         event_id = event['id']
-        print(event_id)
-        pprint(event)
+        # print(event_id)
+        # pprint(event)
         self.get_event_market(event_id)
 
     def get_event_market(self, event_id):
@@ -112,17 +113,18 @@ class Session:
         r = requests.get(f"{BASE}/v3/events/{event_id}/markets/", params={'limit_by_event': 1})
         markets = r.json()['markets']
         market = markets[0]
-        market_id =market['id']
-        print("Market ID")
-        pprint(market_id)
+        market_id = market['id']
+        # print("Market ID")
+        # print("*" * 40)
+        # pprint(market_id)
         self.get_market_contracts(market_id)
 
     def get_market_contracts(self, market_id):
         r = requests.get(f"{BASE}/v3/markets/{market_id}/contracts/", params={})
         contracts = r.json()['contracts']
         print("Contracts")
+        print("*" * 40)
         pprint(contracts)
-        self.get_contract_last_executed_prices(market_id, contracts)
         self.get_contract_quotes(market_id, contracts)
 
     def get_contract_last_executed_prices(self, market_id, contracts):
@@ -136,15 +138,66 @@ class Session:
         r = requests.get(f"{BASE}/v3/markets/{market_id}/quotes/")
         quotes = r.json()
 
-        print("Current Quotes")
+        self.process_contract_quotes(quotes)
+
+        print("Quotes:")
         pprint(quotes)
+
+    def process_contract_quotes(self, quotes):
+
+        for contract_id, quote in quotes.items():
+            quotes[contract_id] = self.format_quote(quote)
+
+    def format_quote(self, quote):
+        bids = quote['bids']
+        offers = quote['offers']
+
+        if bids:
+            # Blue
+            bid = self._convert_tick(bids[0])
+        else:
+            bid = None
+
+        if offers:
+            # Green
+            offer = self._convert_tick(offers[0])
+        else:
+            offer = None
+
+        quote['bids'] = bid
+        quote['offers'] = offer
+
+        return quote
+
+    def _convert_tick(self, tick):
+        """
+        Converts the quantity and price of a tick to the format that matches the website.
+
+        Quantity is the sum of the total pot (back+lay) in case the order is matched
+        The units are 1/100 of a UK penny.
+
+        This price is in percentage basis points.
+        Example: 5000 = 50%
+        To convert it to decimal odds, just divide 10000 by it
+        Example: 10000 / 5000 = 2.0 (decimal odds).
+
+        :param tick:
+        :return: tick
+        """
+        converted_price = 10000/tick['price']
+        available = (tick['price'] * tick['quantity'])/int(1e8)
+
+        tick['quantity'] = round(available, 2)
+        tick['price'] = round(converted_price, 2)
+
+        return tick
 
     def _create_event_request(self, curr_day):
         # Full list of filters https://docs.smarkets.com/#/events/get_events
         data = dict(
             state=["upcoming"],
-            type=["football_match", "horse_racing_race"],
-            type_domain=["football", "horse_racing"],
+            type=["horse_racing_race"],
+            type_domain=["horse_racing"],
             type_scope=["single_event"],
             start_date_min=curr_day,
             with_new_type=True,
