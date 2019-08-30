@@ -11,35 +11,44 @@ DIRNAME = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class SmarketsEvent:
-    def __init__(self, event_obj, date):
+    def __init__(self, event_obj):
         self._set_event_attrs(event_obj)
-        self.date = date
 
     def _set_event_attrs(self, event_obj):
-        self.id = event_obj['@id']
-        self.time = event_obj['@name']
-        self.parent = event_obj['@parent']
-        self.location = str(event_obj['@parent_name']).lower()
-        self.state = event_obj['@state']
-        self.url = "https://smarkets.com/event/" + self.id + event_obj['@url']
-        self.type = event_obj['@type']
+        self.id = event_obj['id']
+        self.time = event_obj['time']
+        self.parent = event_obj['parent']
+        self.location = event_obj['location']
+        self.state = event_obj['state']
+        self.url = event_obj['url']
+        self.type = event_obj['type']
+        self.date = event_obj.date
         self.horse_odds = {}
+        self.horse_info = {}
 
-    def set_horses(self, horses):
-        for horse in horses:
-            name = horse['@name']
-            name = self._format_horse_name(name)
+    def create_horse_odds(self, contracts, quotes):
 
-            bids = horse['bids']
+        for contract in contracts:
+            if contract['contract_type']['name'] != "NAMED_COMPETITOR":
+                continue
 
-            if name not in self.horse_odds.keys():
-                self.horse_odds[name] = []
+            horse_id = contract['id']
+            horse_name = contract['contract_type']['param']
+            horse_info = contract['info']
+            horse_info['state_or_outcome'] = contract['state_or_outcome']
 
-            if bids and bids['price']:
-                odds, stake = self._get_odds(bids['price'])[0]
+            horse_odds = quotes[horse_id]
+            curr_time = datetime.datetime.now(TZ).strftime("%H:%M:%S")
+            horse_odds['time'] = curr_time
 
-                current_time = datetime.datetime.now(TZ).strftime("%H:%M:%S")
-                self.horse_odds[name].append((odds, stake, current_time))
+            if horse_name not in self.horse_odds.keys():
+                self.horse_odds[horse_name] = []
+
+            if horse_name not in self.horse_odds.keys():
+                self.horse_info[horse_name] = horse_info
+
+            self.horse_odds[horse_name].append(horse_odds)
+
 
     def send_to_json(self):
         folder_path = f"{DIRNAME}/events/{self.date}/"

@@ -4,7 +4,7 @@ import datetime
 import os
 # import gzip
 import pytz
-# from .SmarketsEvent import SmarketsEvent
+from .SmarketsEvent import SmarketsEvent
 from pprint import pprint
 #
 # from collections import OrderedDict
@@ -100,32 +100,54 @@ class Session:
         all_events = r.json()
         all_events = all_events['events']
 
-        # print("Events")
-        # print("*" * 40)
+        print("Events")
+        print("*" * 40)
         event = all_events[0]
         event_id = event['id']
-        # print(event_id)
-        # pprint(event)
-        self.get_event_market(event_id)
 
-    def get_event_market(self, event_id):
+        event_obj = {
+            'id': event_id,
+            'url':  "https://smarkets.com/event/" + event_id + event['full_slug'],
+            'location': event['short_name'].split("@ ")[1].lower(),
+            'type': event['type'],
+            'inplay_enabled': event['inplay_enabled'],
+            'time': event['name'],
+            'description': event['description'],
+            'title': event['short_name'],
+            'datetime': datetime.datetime.strptime(event['start_datetime'], '%Y-%m-%dT%H:%M:%SZ').astimezone(TZ),
+            'parent': event['parent_id'],
+            'date': event['start_date'],
+            'state': event['state']
+        }
+
+        smarkets_event = SmarketsEvent(event_obj)
+
+        print(smarkets_event.id)
+        pprint(event)
+        self.get_event_market(smarkets_event)
+
+    def get_event_market(self, smarkets_event):
         # event_id can be a list of event_ids, same with contracts
-        r = requests.get(f"{BASE}/v3/events/{event_id}/markets/", params={'limit_by_event': 1})
+        r = requests.get(f"{BASE}/v3/events/{se.id}/markets/", params={'limit_by_event': 1})
         markets = r.json()['markets']
         market = markets[0]
         market_id = market['id']
-        # print("Market ID")
-        # print("*" * 40)
-        # pprint(market_id)
-        self.get_market_contracts(market_id)
+        print("Market ID")
+        print("*" * 40)
+        pprint(market_id)
+        self.get_market_contracts(market_id, smarkets_event)
 
-    def get_market_contracts(self, market_id):
+    def get_market_contracts(self, market_id, smarkets_event):
         r = requests.get(f"{BASE}/v3/markets/{market_id}/contracts/", params={})
         contracts = r.json()['contracts']
         print("Contracts")
         print("*" * 40)
         pprint(contracts)
-        self.get_contract_quotes(market_id, contracts)
+
+        quotes = self.get_contract_quotes(market_id, contracts)
+        smarkets_event.create_horse_odds(contracts, quotes)
+
+        pass
 
     def get_contract_last_executed_prices(self, market_id, contracts):
         r = requests.get(f"{BASE}/v3/markets/{market_id}/last_executed_prices/")
@@ -142,7 +164,7 @@ class Session:
 
         print("Quotes:")
         pprint(quotes)
-
+        return quotes
     def process_contract_quotes(self, quotes):
 
         for contract_id, quote in quotes.items():
