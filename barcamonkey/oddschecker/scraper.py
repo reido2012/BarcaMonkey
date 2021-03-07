@@ -5,13 +5,14 @@ import string
 import datetime
 import pytz
 from concurrent import futures
-from .core_utils import get_soup
-from .bookie_codes import BOOKIE_CODES_AND_INDICES
+from core_utils import get_soup
+from bookie_codes import BOOKIE_CODES_AND_INDICES
 
 MAX_WORKERS = 4
 TZ = pytz.timezone('Europe/London')
-ODS_CHECKER_NEXT_DAY = 'https://www.oddschecker.com/horse-racing'
+ODS_CHECKER_NEXT_DAY = 'https://www.oddschecker.com/football'
 DIRNAME = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 class Event:
 
@@ -49,7 +50,7 @@ class Event:
                 os.makedirs(folder_path)
 
             new_obj = {
-                "smarkets":{
+                "smarkets": {
                     "url": "",
                     "horses": None
                 },
@@ -108,16 +109,20 @@ class Event:
 
 
 def run_scraper(current_day_limit=21):
-    #Every morning
-    #Get links for the events of the day
+    # Every morning
+    # Get links for the events of the day
     soup = get_soup(ODS_CHECKER_NEXT_DAY)
-    if datetime.datetime.now(TZ).hour < current_day_limit:
-        race_meets_table = get_tag_by_attr(soup, 'div', 'class', 'race-meets')
-    else:
-        race_meets_table = get_tags_by_attr(soup, 'div', 'class', 'race-meets')[1]
 
-    #Location - Times
-    race_details = get_tags_by_attr(race_meets_table, 'div', 'class', 'race-details')
+    # if datetime.datetime.now(TZ).hour < current_day_limit:
+    #     race_meets_table = get_tag_by_attr(soup, 'div', 'class', 'at-hda standard-list')
+    # else:
+    #     race_meets_table = get_tags_by_attr(soup, 'div', 'class', 'at-hda standard-list')[1]
+
+    # Location - Times
+    match_details = get_tags_by_attr(soup, 'tr', 'class', 'match-on')
+    # only include matches that haven't started yet
+    print(match_details)
+    return
     days_events = [item for sublist in list(map(create_events, race_details)) for item in sublist]
 
     if days_events:
@@ -125,11 +130,13 @@ def run_scraper(current_day_limit=21):
 
         for event in list(updated_events):
             if event:
-                event.send_to_json()
+                print("here")
+        #         event.send_to_json()
     print("Finished Running Scraper")
 
 
 def get_odds_from_event_table(event):
+    print(event.url)
     if '/abandoned-' in event.url:
         return None
 
@@ -146,33 +153,34 @@ def get_odds_from_event_table(event):
             continue
 
         if "nonRunner" in horse_row["class"]:
-            non_runner = True
-        else:
-            non_runner = False
+            continue
 
         horse_name = horse_row['data-bname']
         horse_name = format_horse_name(horse_name)
 
         our_odds = {}
         all_odds = horse_row.find_all('td')
+
         # all_odds_len = len(all_odds)
         for index, name in list(BOOKIE_CODES_AND_INDICES.values()):
             index += 2
-
+            print()
+            print(all_odds[index])
+            print(name)
+            print(horse_name)
             horse_odd = all_odds[index]['data-odig']
             current_time = datetime.datetime.now(TZ).strftime("%H:%M:%S")
 
             if name not in our_odds.keys():
                 our_odds[name] = []
 
-
             if horse_odd == "0":
                 our_odds[name].append((None, current_time))
             else:
                 our_odds[name].append((horse_odd, current_time))
 
-            if non_runner:
-                our_odds[name].append((None, current_time))
+            # if non_runner:
+            #     our_odds[name].append((None, current_time))
 
         event.horse_odds[horse_name] = our_odds
 
@@ -200,7 +208,7 @@ def create_events(race_detail):
 def parse_event(race_time):
     racing_tag = race_time.find('a', {'class': 'beta-footnote race-time time'})
     if not racing_tag:
-        #Event has already taken place
+        # Event has already taken place
         return None
 
     racing_href = racing_tag['href']
@@ -230,6 +238,7 @@ def format_horse_name(horse_name):
     horse_name.translate(translator)
     return horse_name
 
-# if __name__ == '__main__':
-#     main()
 
+if __name__ == '__main__':
+    run_scraper()
+    print("success")

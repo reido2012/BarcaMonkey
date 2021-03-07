@@ -20,7 +20,7 @@ BOOKIE_CODES_AND_INDICES = {
     "SO": (18, "Sporting Bet"),
     "EB": (19, "188 Bet"),
     # "EE": (20, "888Sport"),
-    "PE": (21, "SportPesa"),
+    # "PE": (21, "SportPesa"),
     "SX": (22, "Spread EX")
 }
 
