@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-1/shrewsbury-v-portsmouth/winner",
+        "horses": {
+            "portsmouth": {
+                "Bet365": [
+                    [
+                        "2.1",
+                        "20:00:21"
+                    ],
+                    [
+                        "2.1",
+                        "10:51:53"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.25",
+                        "20:00:21"
+                    ],
+                    [
+                        "3.25",
+                        "10:51:53"
+                    ]
+                ]
+            },
+            "shrewsbury": {
+                "Bet365": [
+                    [
+                        "3.6",
+                        "20:00:21"
+                    ],
+                    [
+                        "3.6",
+                        "10:51:53"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

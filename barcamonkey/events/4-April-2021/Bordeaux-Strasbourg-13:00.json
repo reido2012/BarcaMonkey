@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/france/ligue-1/bordeaux-v-strasbourg/winner",
+        "horses": {
+            "strasbourg": {
+                "Bet365": [
+                    [
+                        "2.6",
+                        "20:01:07"
+                    ],
+                    [
+                        "2.6",
+                        "10:52:45"
+                    ]
+                ]
+            },
+            "bordeaux": {
+                "Bet365": [
+                    [
+                        "2.7",
+                        "20:01:07"
+                    ],
+                    [
+                        "2.7",
+                        "10:52:45"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "20:01:07"
+                    ],
+                    [
+                        "3.2",
+                        "10:52:45"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

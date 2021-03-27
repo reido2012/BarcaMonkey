@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/premier-league/west-ham-v-leicester/winner",
+        "horses": {
+            "leicester": {
+                "Bet365": [
+                    [
+                        "2.3",
+                        "20:00:03"
+                    ],
+                    [
+                        "2.37",
+                        "10:51:34"
+                    ]
+                ]
+            },
+            "west ham": {
+                "Bet365": [
+                    [
+                        "2.9",
+                        "20:00:03"
+                    ],
+                    [
+                        "2.87",
+                        "10:51:34"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.4",
+                        "20:00:03"
+                    ],
+                    [
+                        "3.4",
+                        "10:51:34"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

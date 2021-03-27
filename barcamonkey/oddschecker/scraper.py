@@ -4,29 +4,29 @@ import os
 import string
 import datetime
 import pytz
+from datetime import date
 from concurrent import futures
 from core_utils import get_soup
 from bookie_codes import BOOKIE_CODES_AND_INDICES
 
 MAX_WORKERS = 4
 TZ = pytz.timezone('Europe/London')
-ODS_CHECKER_NEXT_DAY = 'https://www.oddschecker.com/football'
+ODS_CHECKER_NEXT_DAY = 'https://www.oddschecker.com/football/'
 DIRNAME = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 class Event:
 
-    def __init__(self, url, data_time, title):
+    def __init__(self, url, title, event_name, home, away, time):
         self.url = f"https://www.oddschecker.com{url}"
-        self.data_time = data_time
+        self.date = None
+        self.time = time
         self.title = title
-        self.date_obj = self.parse_time()
-        self.date = str(self.date_obj.year) + "-" + '{:02d}'.format(self.date_obj.month) + "-" + '{:02d}'.format(
-            self.date_obj.day)
-        self.time = '{:02d}'.format(self.date_obj.hour) + ":" + '{:02d}'.format(
-            self.date_obj.minute)
-        self.location = None
-        self.horse_odds = {}
+        self.event_name = event_name
+        self.home = home
+        self.away = away
+        self.odds = {}
+        self.country = None
+        self.league = None
 
     def get_url(self):
         return self.url
@@ -34,12 +34,9 @@ class Event:
     def parse_time(self):
         return dateparser.parse(self.data_time)
 
-    def set_location(self, location):
-        self.location = str(location).lower()
-
     def send_to_json(self):
-        folder_path = f"{DIRNAME}/events/{self.date}/"
-        filename = f"{self.time}-{self.location}.json"
+        folder_path = f"{DIRNAME}/events/"+self.date+"/"
+        filename = f"{self.home}-{self.away}-{self.time}.json"
         filepath = folder_path + filename
 
         if os.path.isfile(filepath):
@@ -56,7 +53,7 @@ class Event:
                 },
                 "oddschecker": {
                     "url": self.url,
-                    "horses": self.horse_odds
+                    "horses": self.odds
                 },
 
                 "888Sport": {
@@ -73,7 +70,7 @@ class Event:
         if data['oddschecker']['horses']:
             self.update_odds_list(data)
 
-        data['oddschecker']['horses'] = self.horse_odds
+        data['oddschecker']['horses'] = self.odds
         data['oddschecker']['url'] = self.url
 
         self._write_to_json(filepath, data)
@@ -84,15 +81,15 @@ class Event:
 
         old_horse_odds = json_data['oddschecker']['horses']
 
-        for horse in self.horse_odds.keys():
+        for horse in self.odds.keys():
             for index, bookie_name in list(BOOKIE_CODES_AND_INDICES.values()):
                 if horse in old_horse_odds.keys() and bookie_name in old_horse_odds[horse].keys():
                     odds_horse = old_horse_odds[horse][bookie_name]
 
-                    if bookie_name not in self.horse_odds[horse].keys():
+                    if bookie_name not in self.odds[horse].keys():
                         continue
 
-                    self.horse_odds[horse][bookie_name] = odds_horse + self.horse_odds[horse][bookie_name]
+                    self.odds[horse][bookie_name] = odds_horse + self.odds[horse][bookie_name]
 
     def _write_to_json(self, filepath, obj):
 
@@ -100,121 +97,102 @@ class Event:
             json.dump(obj, f, indent=4)
 
     def __str__(self):
-        return f"Location: {self.location} \n " \
-               f"Title: {self.title}\n " \
-               f"Date: {self.date} \n" \
+        return f"Title: {self.title}\n " \
                f"Time: {self.time} \n" \
-               f"Horses: {self.horse_odds}\n " \
                f"URL: {self.url} "
 
 
-def run_scraper(current_day_limit=21):
+def run_scraper(country, league, current_day_limit=21):
     # Every morning
     # Get links for the events of the day
-    soup = get_soup(ODS_CHECKER_NEXT_DAY)
-
-    # if datetime.datetime.now(TZ).hour < current_day_limit:
-    #     race_meets_table = get_tag_by_attr(soup, 'div', 'class', 'at-hda standard-list')
-    # else:
-    #     race_meets_table = get_tags_by_attr(soup, 'div', 'class', 'at-hda standard-list')[1]
+    soup = get_soup(ODS_CHECKER_NEXT_DAY+country+league)
 
     # Location - Times
     match_details = get_tags_by_attr(soup, 'tr', 'class', 'match-on')
     # only include matches that haven't started yet
-    print(match_details)
-    return
-    days_events = [item for sublist in list(map(create_events, race_details)) for item in sublist]
 
+    days_events = [item for sublist in list(map(create_events, match_details)) for item in sublist]
     if days_events:
         updated_events = do_concurrently(get_odds_from_event_table, days_events)
 
         for event in list(updated_events):
             if event:
-                print("here")
-        #         event.send_to_json()
-    print("Finished Running Scraper")
+                event.send_to_json()
 
 
 def get_odds_from_event_table(event):
-    print(event.url)
     if '/abandoned-' in event.url:
         return None
 
     soup = get_soup(event.url)
+
+    date0 = get_tag_by_attr(soup, 'span', 'class', 'date')
+    date1 = date0.contents[0]
+    date2 = date1.split()
+    date3 = date2[1][:-2] + "-" + date2[2] + "-" + date.today().strftime("%Y")
+    event.date = date3
+
     odds_table = get_tag_by_attr(soup, 'tbody', 'id', 't1')
 
     if not odds_table:
         return None
 
-    horse_rows = odds_table.find_all('tr')
+    match_rows = odds_table.find_all('tr')
 
-    for horse_row in horse_rows:
-        if not horse_row:
+    for match_row in match_rows:
+        if not match_row:
             continue
 
-        if "nonRunner" in horse_row["class"]:
-            continue
-
-        horse_name = horse_row['data-bname']
-        horse_name = format_horse_name(horse_name)
+        team_name = match_row['data-bname']
+        team_name = format_horse_name(team_name)
 
         our_odds = {}
-        all_odds = horse_row.find_all('td')
+        all_odds = match_row.find_all('td')
 
         # all_odds_len = len(all_odds)
         for index, name in list(BOOKIE_CODES_AND_INDICES.values()):
             index += 2
-            print()
-            print(all_odds[index])
-            print(name)
-            print(horse_name)
-            horse_odd = all_odds[index]['data-odig']
+            team_odd = all_odds[index]['data-odig']
             current_time = datetime.datetime.now(TZ).strftime("%H:%M:%S")
 
             if name not in our_odds.keys():
                 our_odds[name] = []
 
-            if horse_odd == "0":
+            if team_odd == "0":
                 our_odds[name].append((None, current_time))
             else:
-                our_odds[name].append((horse_odd, current_time))
+                our_odds[name].append((team_odd, current_time))
 
             # if non_runner:
             #     our_odds[name].append((None, current_time))
 
-        event.horse_odds[horse_name] = our_odds
-
+        event.odds[team_name] = our_odds
     return event
     # Could avoid double checking by saving the last data-bid value of tr
 
 
-def create_events(race_detail):
-    location = get_tag_by_attr(race_detail, 'a', 'class', 'venue beta-caption1').contents[0]
-
-    race_times = get_tags_by_attr(race_detail, 'div', 'class', 'racing-time')
+def create_events(match_detail):
     events = []
-    for race_time in race_times:
-        if race_time:
-            event = parse_event(race_time)
-            if not event:
-                continue
-
-            event.set_location(location)
-            events.append(event)
+    event = parse_event(match_detail)
+    if event.time:
+        events.append(event)
 
     return events
 
 
-def parse_event(race_time):
-    racing_tag = race_time.find('a', {'class': 'beta-footnote race-time time'})
-    if not racing_tag:
-        # Event has already taken place
-        return None
+def parse_event(match_detail):
+    match_tag = match_detail.find('a', {'class': 'beta-callout full-height-link whole-row-link'})
 
-    racing_href = racing_tag['href']
-    race_time = racing_tag['data-time']
-    race_title = racing_tag['title']
-    return Event(racing_href, race_time, race_title)
+    match_href = match_tag['href']
+    match_title = match_tag['title']
+    match_event_name = match_tag['data-event-name']
+
+    match_home = get_tags_by_attr(match_detail, 'p', 'class', 'fixtures-bet-name')[0].contents[-1]
+    match_away = get_tags_by_attr(match_detail, 'p', 'class', 'fixtures-bet-name')[1].contents[-1]
+    match_time = get_tag_by_attr(match_detail, 'span', 'class', 'time-digits').contents[0]
+    print(match_home)
+    print(match_away)
+    return Event(match_href, match_title, match_event_name, match_home, match_away, match_time)
 
 
 def do_concurrently(a_function, a_list):
@@ -240,5 +218,36 @@ def format_horse_name(horse_name):
 
 
 if __name__ == '__main__':
-    run_scraper()
-    print("success")
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+    run_scraper("ENGLISH/", "PREMIER-LEAGUE/")
+    run_scraper("ENGLISH/", "CHAMPIONSHIP/")
+    run_scraper("ENGLISH/", "LEAGUE-1/")
+    run_scraper("ENGLISH/", "LEAGUE-2/")
+    run_scraper("ENGLISH/", "FA-CUP/")
+    run_scraper("ENGLISH/", "EFL-CUP/")
+    # run_scraper("SCOTTISH", "PREMIERSHIP/")
+    run_scraper("SPAIN/", "LA-LIGA-PRIMERA/")
+    run_scraper("GERMANY/", "BUNDESLIGA/")
+    run_scraper("ITALY/", "SERIE-A/")
+    run_scraper("FRANCE/", "LIGUE-1/")
+    run_scraper("SPAIN/", "LA-LIGA-PRIMERA/")
+    run_scraper("CHAMPIONS-LEAGUE", "/")
+    run_scraper("EUROPA-LEAGUE", "/")
+    print("SUCCESS")
+
+
+

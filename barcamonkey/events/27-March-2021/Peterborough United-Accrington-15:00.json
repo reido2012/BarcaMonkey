@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-1/peterborough-united-v-accrington/winner",
+        "horses": {
+            "peterborough united": {
+                "Bet365": [
+                    [
+                        "1.7",
+                        "20:00:20"
+                    ],
+                    [
+                        "1.7",
+                        "10:51:52"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.8",
+                        "20:00:20"
+                    ],
+                    [
+                        "3.8",
+                        "10:51:52"
+                    ]
+                ]
+            },
+            "accrington": {
+                "Bet365": [
+                    [
+                        "4.75",
+                        "20:00:20"
+                    ],
+                    [
+                        "4.75",
+                        "10:51:52"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

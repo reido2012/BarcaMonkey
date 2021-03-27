@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/premier-league/everton-v-crystal-palace/winner",
+        "horses": {
+            "everton": {
+                "Bet365": [
+                    [
+                        "1.75",
+                        "20:00:01"
+                    ],
+                    [
+                        "1.75",
+                        "10:51:32"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.4",
+                        "20:00:01"
+                    ],
+                    [
+                        "3.4",
+                        "10:51:32"
+                    ]
+                ]
+            },
+            "crystal palace": {
+                "Bet365": [
+                    [
+                        "5",
+                        "20:00:01"
+                    ],
+                    [
+                        "5",
+                        "10:51:32"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

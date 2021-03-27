@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-2/colchester-v-bradford/winner",
+        "horses": {
+            "bradford": {
+                "Bet365": [
+                    [
+                        "2.3",
+                        "20:00:28"
+                    ],
+                    [
+                        "2.3",
+                        "10:52:02"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "20:00:28"
+                    ],
+                    [
+                        "3.2",
+                        "10:52:02"
+                    ]
+                ]
+            },
+            "colchester": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "20:00:28"
+                    ],
+                    [
+                        "3.2",
+                        "10:52:02"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

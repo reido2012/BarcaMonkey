@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-2/stevenage-v-barrow/winner",
+        "horses": {
+            "stevenage": {
+                "Bet365": [
+                    [
+                        "2.3",
+                        "20:00:31"
+                    ],
+                    [
+                        "2.3",
+                        "10:52:05"
+                    ]
+                ]
+            },
+            "barrow": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "20:00:31"
+                    ],
+                    [
+                        "3.2",
+                        "10:52:05"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "20:00:31"
+                    ],
+                    [
+                        "3.2",
+                        "10:52:05"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

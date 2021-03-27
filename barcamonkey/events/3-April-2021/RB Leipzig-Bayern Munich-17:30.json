@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/germany/bundesliga/rb-leipzig-v-bayern-munich/winner",
+        "horses": {
+            "bayern munich": {
+                "Bet365": [
+                    [
+                        "2.05",
+                        "20:00:54"
+                    ],
+                    [
+                        "2.05",
+                        "10:52:29"
+                    ]
+                ]
+            },
+            "rb leipzig": {
+                "Bet365": [
+                    [
+                        "3.1",
+                        "20:00:54"
+                    ],
+                    [
+                        "3.1",
+                        "10:52:29"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.9",
+                        "20:00:54"
+                    ],
+                    [
+                        "3.9",
+                        "10:52:29"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

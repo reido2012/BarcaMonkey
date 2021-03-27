@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/europa-league/arsenal-v-slavia-prague/winner",
+        "horses": {
+            "arsenal": {
+                "Bet365": [
+                    [
+                        "1.44",
+                        "20:01:26"
+                    ],
+                    [
+                        "1.44",
+                        "10:53:03"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "4.5",
+                        "20:01:26"
+                    ],
+                    [
+                        "4.5",
+                        "10:53:03"
+                    ]
+                ]
+            },
+            "slavia prague": {
+                "Bet365": [
+                    [
+                        "7",
+                        "20:01:26"
+                    ],
+                    [
+                        "7",
+                        "10:53:03"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

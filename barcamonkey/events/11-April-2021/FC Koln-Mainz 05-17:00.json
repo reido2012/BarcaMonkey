@@ -1,0 +1,39 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/germany/bundesliga/fc-koln-v-mainz-05/winner",
+        "horses": {
+            "mainz 05": {
+                "Bet365": [
+                    [
+                        "2.37",
+                        "10:52:34"
+                    ]
+                ]
+            },
+            "fc koln": {
+                "Bet365": [
+                    [
+                        "3",
+                        "10:52:34"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.25",
+                        "10:52:34"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

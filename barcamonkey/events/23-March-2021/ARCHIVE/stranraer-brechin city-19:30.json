@@ -1,0 +1,14 @@
+{
+    "smarkets": {
+        "url": "smarkets.com/event/42119459",
+        "horses": {
+            "stranraer": 1.28,
+            "brechin city": 19.49,
+            "draw": 8.4
+        }
+    },
+    "oddschecker": {
+        "url": "",
+        "horses": null
+    }
+}

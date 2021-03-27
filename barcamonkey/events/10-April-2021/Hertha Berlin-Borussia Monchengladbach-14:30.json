@@ -1,0 +1,39 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/germany/bundesliga/hertha-berlin-v-borussia-monchengladbach/winner",
+        "horses": {
+            "borussia monchengladbach": {
+                "Bet365": [
+                    [
+                        "2.2",
+                        "10:52:32"
+                    ]
+                ]
+            },
+            "hertha berlin": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "10:52:32"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.4",
+                        "10:52:32"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

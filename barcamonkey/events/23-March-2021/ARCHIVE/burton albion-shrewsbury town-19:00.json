@@ -1,0 +1,14 @@
+{
+    "smarkets": {
+        "url": "smarkets.com/event/42119462",
+        "horses": {
+            "burton albion": 2.4,
+            "shrewsbury town": 3.7,
+            "draw": 3.45
+        }
+    },
+    "oddschecker": {
+        "url": "",
+        "horses": null
+    }
+}

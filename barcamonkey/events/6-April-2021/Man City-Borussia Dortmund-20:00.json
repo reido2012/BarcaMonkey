@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/champions-league/man-city-v-borussia-dortmund/winner",
+        "horses": {
+            "man city": {
+                "Bet365": [
+                    [
+                        "1.4",
+                        "20:01:23"
+                    ],
+                    [
+                        "1.4",
+                        "10:53:00"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "4.75",
+                        "20:01:23"
+                    ],
+                    [
+                        "4.75",
+                        "10:53:00"
+                    ]
+                ]
+            },
+            "borussia dortmund": {
+                "Bet365": [
+                    [
+                        "7",
+                        "20:01:23"
+                    ],
+                    [
+                        "7",
+                        "10:53:00"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

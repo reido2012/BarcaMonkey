@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-2/forest-green-v-bolton/winner",
+        "horses": {
+            "forest green": {
+                "Bet365": [
+                    [
+                        "2.6",
+                        "20:00:27"
+                    ],
+                    [
+                        "2.6",
+                        "10:52:00"
+                    ]
+                ]
+            },
+            "bolton": {
+                "Bet365": [
+                    [
+                        "2.75",
+                        "20:00:27"
+                    ],
+                    [
+                        "2.75",
+                        "10:52:00"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "20:00:27"
+                    ],
+                    [
+                        "3.2",
+                        "10:52:00"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

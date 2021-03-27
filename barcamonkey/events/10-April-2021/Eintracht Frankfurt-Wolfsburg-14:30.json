@@ -1,0 +1,39 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/germany/bundesliga/eintracht-frankfurt-v-wolfsburg/winner",
+        "horses": {
+            "eintracht frankfurt": {
+                "Bet365": [
+                    [
+                        "2.37",
+                        "10:52:31"
+                    ]
+                ]
+            },
+            "wolfsburg": {
+                "Bet365": [
+                    [
+                        "2.87",
+                        "10:52:31"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.4",
+                        "10:52:31"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

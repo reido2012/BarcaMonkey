@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/germany/bundesliga/bayer-leverkusen-v-schalke-04/winner",
+        "horses": {
+            "bayer leverkusen": {
+                "Bet365": [
+                    [
+                        "1.2",
+                        "20:00:52"
+                    ],
+                    [
+                        "1.2",
+                        "10:52:27"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "6.5",
+                        "20:00:52"
+                    ],
+                    [
+                        "6.5",
+                        "10:52:27"
+                    ]
+                ]
+            },
+            "schalke 04": {
+                "Bet365": [
+                    [
+                        "13",
+                        "20:00:52"
+                    ],
+                    [
+                        "13",
+                        "10:52:27"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/premier-league/man-utd-v-brighton/winner",
+        "horses": {
+            "man utd": {
+                "Bet365": [
+                    [
+                        "1.57",
+                        "20:00:00"
+                    ],
+                    [
+                        "1.57",
+                        "10:51:30"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "4",
+                        "20:00:00"
+                    ],
+                    [
+                        "4",
+                        "10:51:30"
+                    ]
+                ]
+            },
+            "brighton": {
+                "Bet365": [
+                    [
+                        "5.75",
+                        "20:00:00"
+                    ],
+                    [
+                        "5.75",
+                        "10:51:30"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

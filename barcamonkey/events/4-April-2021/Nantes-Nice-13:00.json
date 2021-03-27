@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/france/ligue-1/nantes-v-nice/winner",
+        "horses": {
+            "nantes": {
+                "Bet365": [
+                    [
+                        "2.45",
+                        "20:01:07"
+                    ],
+                    [
+                        "2.45",
+                        "10:52:46"
+                    ]
+                ]
+            },
+            "nice": {
+                "Bet365": [
+                    [
+                        "2.75",
+                        "20:01:07"
+                    ],
+                    [
+                        "2.75",
+                        "10:52:46"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.3",
+                        "20:01:07"
+                    ],
+                    [
+                        "3.3",
+                        "10:52:46"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

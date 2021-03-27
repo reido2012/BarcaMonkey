@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-1/blackpool-v-plymouth/winner",
+        "horses": {
+            "blackpool": {
+                "Bet365": [
+                    [
+                        "1.85",
+                        "20:00:18"
+                    ],
+                    [
+                        "1.85",
+                        "10:51:51"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.4",
+                        "20:00:18"
+                    ],
+                    [
+                        "3.4",
+                        "10:51:51"
+                    ]
+                ]
+            },
+            "plymouth": {
+                "Bet365": [
+                    [
+                        "4.2",
+                        "20:00:18"
+                    ],
+                    [
+                        "4.2",
+                        "10:51:51"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

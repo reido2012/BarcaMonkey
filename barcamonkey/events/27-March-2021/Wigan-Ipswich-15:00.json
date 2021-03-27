@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-1/wigan-v-ipswich/winner",
+        "horses": {
+            "ipswich": {
+                "Bet365": [
+                    [
+                        "2.15",
+                        "20:00:22"
+                    ],
+                    [
+                        "2.15",
+                        "10:51:54"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "20:00:22"
+                    ],
+                    [
+                        "3.2",
+                        "10:51:54"
+                    ]
+                ]
+            },
+            "wigan": {
+                "Bet365": [
+                    [
+                        "3.5",
+                        "20:00:22"
+                    ],
+                    [
+                        "3.5",
+                        "10:51:54"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

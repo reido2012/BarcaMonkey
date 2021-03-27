@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/italy/serie-a/atalanta-v-udinese/winner",
+        "horses": {
+            "atalanta": {
+                "Bet365": [
+                    [
+                        "1.45",
+                        "20:00:58"
+                    ],
+                    [
+                        "1.45",
+                        "10:52:37"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "4.33",
+                        "20:00:58"
+                    ],
+                    [
+                        "4.33",
+                        "10:52:37"
+                    ]
+                ]
+            },
+            "udinese": {
+                "Bet365": [
+                    [
+                        "7",
+                        "20:00:58"
+                    ],
+                    [
+                        "7",
+                        "10:52:37"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

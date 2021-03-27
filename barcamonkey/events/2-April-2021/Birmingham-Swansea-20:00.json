@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/championship/birmingham-v-swansea/winner",
+        "horses": {
+            "swansea": {
+                "Bet365": [
+                    [
+                        "2.3",
+                        "20:00:13"
+                    ],
+                    [
+                        "2.3",
+                        "10:51:43"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "20:00:13"
+                    ],
+                    [
+                        "3.2",
+                        "10:51:43"
+                    ]
+                ]
+            },
+            "birmingham": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "20:00:13"
+                    ],
+                    [
+                        "3.2",
+                        "10:51:43"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

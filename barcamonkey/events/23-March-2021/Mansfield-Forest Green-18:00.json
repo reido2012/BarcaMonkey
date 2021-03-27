@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-2/mansfield-v-forest-green/winner",
+        "horses": {
+            "mansfield": {
+                "Bet365": [
+                    [
+                        "2.45",
+                        "20:00:25"
+                    ],
+                    [
+                        "2.4",
+                        "10:51:58"
+                    ]
+                ]
+            },
+            "forest green": {
+                "Bet365": [
+                    [
+                        "2.8",
+                        "20:00:25"
+                    ],
+                    [
+                        "3",
+                        "10:51:58"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.4",
+                        "20:00:25"
+                    ],
+                    [
+                        "3.3",
+                        "10:51:58"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

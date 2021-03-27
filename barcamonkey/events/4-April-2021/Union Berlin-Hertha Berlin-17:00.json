@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/germany/bundesliga/union-berlin-v-hertha-berlin/winner",
+        "horses": {
+            "union berlin": {
+                "Bet365": [
+                    [
+                        "2.37",
+                        "20:00:55"
+                    ],
+                    [
+                        "2.37",
+                        "10:52:31"
+                    ]
+                ]
+            },
+            "hertha berlin": {
+                "Bet365": [
+                    [
+                        "2.9",
+                        "20:00:55"
+                    ],
+                    [
+                        "2.9",
+                        "10:52:31"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.4",
+                        "20:00:55"
+                    ],
+                    [
+                        "3.4",
+                        "10:52:31"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

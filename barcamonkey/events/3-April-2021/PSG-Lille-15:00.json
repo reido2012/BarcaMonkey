@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/france/ligue-1/psg-v-lille/winner",
+        "horses": {
+            "psg": {
+                "Bet365": [
+                    [
+                        "1.57",
+                        "20:01:05"
+                    ],
+                    [
+                        "1.57",
+                        "10:52:44"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "4",
+                        "20:01:05"
+                    ],
+                    [
+                        "4",
+                        "10:52:44"
+                    ]
+                ]
+            },
+            "lille": {
+                "Bet365": [
+                    [
+                        "5.75",
+                        "20:01:05"
+                    ],
+                    [
+                        "5.75",
+                        "10:52:44"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

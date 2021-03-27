@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-2/harrogate-v-southend/winner",
+        "horses": {
+            "harrogate": {
+                "Bet365": [
+                    [
+                        "1.61",
+                        "20:00:30"
+                    ],
+                    [
+                        "1.61",
+                        "10:52:04"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.75",
+                        "20:00:30"
+                    ],
+                    [
+                        "3.75",
+                        "10:52:04"
+                    ]
+                ]
+            },
+            "southend": {
+                "Bet365": [
+                    [
+                        "5.5",
+                        "20:00:30"
+                    ],
+                    [
+                        "5.5",
+                        "10:52:04"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

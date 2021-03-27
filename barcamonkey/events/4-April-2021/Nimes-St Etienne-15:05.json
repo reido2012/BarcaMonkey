@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/france/ligue-1/nimes-v-st-etienne/winner",
+        "horses": {
+            "st etienne": {
+                "Bet365": [
+                    [
+                        "2.15",
+                        "20:01:08"
+                    ],
+                    [
+                        "2.15",
+                        "10:52:46"
+                    ]
+                ]
+            },
+            "nimes": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "20:01:08"
+                    ],
+                    [
+                        "3.2",
+                        "10:52:46"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.4",
+                        "20:01:08"
+                    ],
+                    [
+                        "3.4",
+                        "10:52:46"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

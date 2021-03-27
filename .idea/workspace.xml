@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8f99da19-f329-47d9-b836-9a007b020e86" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/BarcaMonkey.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BarcaMonkey.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/11:55-greyville.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/12:30-greyville.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/13:05-greyville.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/13:40-greyville.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/14:00-catterick.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/14:10-musselburgh.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/14:15-greyville.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/14:20-lingfield.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/14:30-catterick.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/14:40-musselburgh.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/14:50-lingfield.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/14:55-greyville.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/15:00-catterick.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/15:10-musselburgh.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/15:20-lingfield.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/15:30-catterick.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/15:30-greyville.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/15:40-musselburgh.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/15:50-lingfield.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/16:00-catterick.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/16:05-bellewstown.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/16:05-greyville.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/16:10-musselburgh.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/16:20-lingfield.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/16:30-catterick.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/16:35-bellewstown.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/16:40-musselburgh.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/16:45-worcester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/16:55-lingfield.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/17:00-catterick.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/17:05-bellewstown.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/17:10-musselburgh.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/17:15-worcester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/17:25-lingfield.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/17:35-bellewstown.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/17:45-worcester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/17:55-kempton.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/18:05-bellewstown.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/18:15-worcester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/18:25-kempton.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/18:35-bellewstown.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/18:45-worcester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/18:55-kempton.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/19:05-bellewstown.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/19:15-worcester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/19:25-kempton.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/19:35-bellewstown.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/19:45-worcester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/19:55-kempton.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/20:25-kempton.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-08-29/20:55-kempton.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/12:30-durbanville.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/13:05-durbanville.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/13:40-durbanville.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/14:00-catterick.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/14:05-listowel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/14:10-leicester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/14:15-durbanville.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/14:20-worcester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/14:30-catterick.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/14:35-listowel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/14:40-leicester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/14:50-durbanville.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/14:50-worcester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/15:00-catterick.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/15:05-listowel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/15:15-leicester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/15:25-durbanville.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/15:25-worcester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/15:30-salisbury.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/15:35-catterick.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/15:40-listowel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/15:45-leicester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/15:55-worcester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/16:00-durbanville.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/16:00-salisbury.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/16:05-catterick.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/16:10-listowel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/16:20-leicester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/16:25-worcester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/16:35-durbanville.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/16:35-salisbury.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/16:40-catterick.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/16:45-listowel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/16:50-leicester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/16:55-worcester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/17:05-salisbury.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/17:10-catterick.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/17:15-listowel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/17:25-leicester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/17:30-worcester.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/17:40-salisbury.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/17:45-catterick.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/18:10-salisbury.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/18:40-salisbury.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/events/2018-09-11/19:10-salisbury.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/oddschecker/bookie_codes.py" beforeDir="false" afterPath="$PROJECT_DIR$/barcamonkey/oddschecker/bookie_codes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/oddschecker/core_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/barcamonkey/oddschecker/core_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/oddschecker/scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/barcamonkey/oddschecker/scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/barcamonkey/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/barcamonkey/run.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1oqpQBVeD5csEWUuDTVyNPXfiWe" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/barcamonkey" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.run">
+    <configuration name="pydevd" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BarcaMonkey" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_HOME_DIR$/plugins/python-ce/helpers/pydev" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_HOME_DIR$/plugins/python-ce/helpers/pydev/pydevd.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BarcaMonkey" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/barcamonkey" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/barcamonkey/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python.pydevd" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8f99da19-f329-47d9-b836-9a007b020e86" name="Default Changelist" comment="" />
+      <created>1614023957088</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614023957088</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-2/exeter-v-salford/winner",
+        "horses": {
+            "exeter": {
+                "Bet365": [
+                    [
+                        "2.2",
+                        "20:00:28"
+                    ],
+                    [
+                        "2.2",
+                        "10:52:02"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "20:00:28"
+                    ],
+                    [
+                        "3.2",
+                        "10:52:02"
+                    ]
+                ]
+            },
+            "salford": {
+                "Bet365": [
+                    [
+                        "3.4",
+                        "20:00:28"
+                    ],
+                    [
+                        "3.4",
+                        "10:52:02"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

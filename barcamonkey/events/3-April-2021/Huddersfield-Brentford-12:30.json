@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/championship/huddersfield-v-brentford/winner",
+        "horses": {
+            "brentford": {
+                "Bet365": [
+                    [
+                        "2.15",
+                        "20:00:13"
+                    ],
+                    [
+                        "1.9",
+                        "10:51:45"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.4",
+                        "20:00:13"
+                    ],
+                    [
+                        "3.5",
+                        "10:51:45"
+                    ]
+                ]
+            },
+            "huddersfield": {
+                "Bet365": [
+                    [
+                        "3.25",
+                        "20:00:13"
+                    ],
+                    [
+                        "4",
+                        "10:51:45"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

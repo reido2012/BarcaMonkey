@@ -1,0 +1,39 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/germany/bundesliga/schalke-04-v-augsburg/winner",
+        "horses": {
+            "augsburg": {
+                "Bet365": [
+                    [
+                        "2.3",
+                        "10:52:32"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "10:52:32"
+                    ]
+                ]
+            },
+            "schalke 04": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "10:52:32"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

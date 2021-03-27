@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-2/tranmere-v-mansfield/winner",
+        "horses": {
+            "tranmere": {
+                "Bet365": [
+                    [
+                        "2.45",
+                        "20:00:32"
+                    ],
+                    [
+                        "2.45",
+                        "10:52:06"
+                    ]
+                ]
+            },
+            "mansfield": {
+                "Bet365": [
+                    [
+                        "2.9",
+                        "20:00:32"
+                    ],
+                    [
+                        "2.9",
+                        "10:52:06"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.25",
+                        "20:00:32"
+                    ],
+                    [
+                        "3.25",
+                        "10:52:06"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

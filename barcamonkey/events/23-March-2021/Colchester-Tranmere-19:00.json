@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-2/colchester-v-tranmere/winner",
+        "horses": {
+            "tranmere": {
+                "Bet365": [
+                    [
+                        "2.3",
+                        "20:00:25"
+                    ],
+                    [
+                        "2.25",
+                        "10:51:58"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.1",
+                        "20:00:25"
+                    ],
+                    [
+                        "3.2",
+                        "10:51:58"
+                    ]
+                ]
+            },
+            "colchester": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "20:00:25"
+                    ],
+                    [
+                        "3.4",
+                        "10:51:58"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

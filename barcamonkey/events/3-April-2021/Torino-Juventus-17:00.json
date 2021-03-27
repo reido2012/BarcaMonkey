@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/italy/serie-a/torino-v-juventus/winner",
+        "horses": {
+            "juventus": {
+                "Bet365": [
+                    [
+                        "1.45",
+                        "20:01:02"
+                    ],
+                    [
+                        "1.45",
+                        "10:52:40"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "4.33",
+                        "20:01:02"
+                    ],
+                    [
+                        "4.33",
+                        "10:52:40"
+                    ]
+                ]
+            },
+            "torino": {
+                "Bet365": [
+                    [
+                        "7",
+                        "20:01:02"
+                    ],
+                    [
+                        "7",
+                        "10:52:40"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

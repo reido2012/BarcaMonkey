@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-1/bristol-rovers-v-swindon/winner",
+        "horses": {
+            "bristol rovers": {
+                "Bet365": [
+                    [
+                        "2",
+                        "20:00:16"
+                    ],
+                    [
+                        "2.05",
+                        "10:51:49"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.4",
+                        "20:00:16"
+                    ],
+                    [
+                        "3.5",
+                        "10:51:49"
+                    ]
+                ]
+            },
+            "swindon": {
+                "Bet365": [
+                    [
+                        "3.75",
+                        "20:00:16"
+                    ],
+                    [
+                        "3.6",
+                        "10:51:49"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

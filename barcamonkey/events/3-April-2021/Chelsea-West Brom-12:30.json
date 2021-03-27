@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/premier-league/chelsea-v-west-brom/winner",
+        "horses": {
+            "chelsea": {
+                "Bet365": [
+                    [
+                        "1.2",
+                        "19:59:58"
+                    ],
+                    [
+                        "1.18",
+                        "10:51:28"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "6.5",
+                        "19:59:58"
+                    ],
+                    [
+                        "6.5",
+                        "10:51:28"
+                    ]
+                ]
+            },
+            "west brom": {
+                "Bet365": [
+                    [
+                        "15",
+                        "19:59:58"
+                    ],
+                    [
+                        "15",
+                        "10:51:28"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

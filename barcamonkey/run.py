@@ -22,21 +22,23 @@ def debug():
     print(f"Date Str: {date_str}")
 
     smarkets_s = time.time()
-    smarkets = Smarkets.SmarketsParser()
-    smarkets.write_or_update_events()
-    smarkets_f = time.time()
+    print(smarkets_s)
+    # smarkets = Smarkets.SmarketsParser()
+    # print(smarkets)
+    # smarkets.write_or_update_events()
+    # smarkets_f = time.time()
 
-    s8_s = time.time()
-    s8_scraper.run_scraper_concurrent()
-    s8_f = time.time()
+    # s8_s = time.time()
+    # s8_scraper.run_scraper_concurrent()
+    # s8_f = time.time()
 
     oddschecker_s = time.time()
-    scraper.run_scraper()
+    # scraper.run_scraper()
     oddschecker_f = time.time()
 
     print(f"Oddschecker Time: {oddschecker_f - oddschecker_s}")
-    print(f"Sport888 Time: {s8_f - s8_s}")
-    print(f"Smarkets Time: {smarkets_f - smarkets_s}")
+    # print(f"Sport888 Time: {s8_f - s8_s}")
+    # print(f"Smarkets Time: {smarkets_f - smarkets_s}")
 
     monkey_comparer = Monkey.Monkey()
     all_results = monkey_comparer.compare_events(date_str)
@@ -48,11 +50,11 @@ def debug():
 #     utils.do_concurrently(lambda auto_pair: auto_pair[0].place_bet(*auto_pair[1]), a_list=bots_list, max_workers=2)
 
 
-def test_auto_betting():
-    smarkets_bettor = smarkets_autobettor.SmarketsAutoBettor("oreid52@googlemail.com")
+# def test_auto_betting():
+    # smarkets_bettor = smarkets_autobettor.SmarketsAutoBettor("oreid52@googlemail.com")
     # smarkets_bettor.bet_on_smarkets('https://smarkets.com/event/1391742/sport/horse-racing/newcastle/2019/01/22/16:10',
     #                             'Zubayr', 9.8, 13)
-    oc_bettor = oddschecker_autobettor.OddsCheckerAutoBettor("oreid52@googlemail.com")
+    # oc_bettor = oddschecker_autobettor.OddsCheckerAutoBettor("oreid52@googlemail.com")
     # oc_bettor.place_bet("https://www.oddschecker.com/horse-racing/2019-01-22-newcastle/16:10/winner", "10 Bet", "Zubayr", 5.5)
 
 
@@ -107,5 +109,6 @@ def get_comparison_results(current_day_limit=21):
 
 
 if __name__ == '__main__':
-    # debug()
-    test_auto_betting()
+    debug()
+    # test_auto_betting()
+    print("")

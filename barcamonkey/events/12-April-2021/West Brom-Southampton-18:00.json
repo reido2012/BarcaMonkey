@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/premier-league/west-brom-v-southampton/winner",
+        "horses": {
+            "southampton": {
+                "Bet365": [
+                    [
+                        "2.05",
+                        "20:00:05"
+                    ],
+                    [
+                        "2",
+                        "10:51:35"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "20:00:05"
+                    ],
+                    [
+                        "3.2",
+                        "10:51:35"
+                    ]
+                ]
+            },
+            "west brom": {
+                "Bet365": [
+                    [
+                        "4",
+                        "20:00:05"
+                    ],
+                    [
+                        "4",
+                        "10:51:35"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

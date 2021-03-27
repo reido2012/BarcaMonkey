@@ -1,0 +1,7 @@
+slackclient
+xmltodict
+beautifulsoup4
+dateparser
+pytz
+twilio
+selenium

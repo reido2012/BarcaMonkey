@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/italy/serie-a/lazio-v-spezia/winner",
+        "horses": {
+            "lazio": {
+                "Bet365": [
+                    [
+                        "1.4",
+                        "20:01:00"
+                    ],
+                    [
+                        "1.4",
+                        "10:52:39"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "4.75",
+                        "20:01:00"
+                    ],
+                    [
+                        "4.75",
+                        "10:52:39"
+                    ]
+                ]
+            },
+            "spezia": {
+                "Bet365": [
+                    [
+                        "7",
+                        "20:01:00"
+                    ],
+                    [
+                        "7",
+                        "10:52:39"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

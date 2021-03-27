@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/champions-league/real-madrid-v-liverpool/winner",
+        "horses": {
+            "real madrid": {
+                "Bet365": [
+                    [
+                        "2.5",
+                        "20:01:23"
+                    ],
+                    [
+                        "2.5",
+                        "10:53:00"
+                    ]
+                ]
+            },
+            "liverpool": {
+                "Bet365": [
+                    [
+                        "2.7",
+                        "20:01:23"
+                    ],
+                    [
+                        "2.7",
+                        "10:53:00"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.4",
+                        "20:01:23"
+                    ],
+                    [
+                        "3.4",
+                        "10:53:00"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

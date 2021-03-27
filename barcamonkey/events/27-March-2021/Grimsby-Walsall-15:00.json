@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-2/grimsby-v-walsall/winner",
+        "horses": {
+            "walsall": {
+                "Bet365": [
+                    [
+                        "2.25",
+                        "20:00:30"
+                    ],
+                    [
+                        "2.25",
+                        "10:52:03"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.3",
+                        "20:00:30"
+                    ],
+                    [
+                        "3.3",
+                        "10:52:03"
+                    ]
+                ]
+            },
+            "grimsby": {
+                "Bet365": [
+                    [
+                        "3.25",
+                        "20:00:30"
+                    ],
+                    [
+                        "3.25",
+                        "10:52:03"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

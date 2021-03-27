@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-2/oldham-v-exeter/winner",
+        "horses": {
+            "exeter": {
+                "Bet365": [
+                    [
+                        "1.83",
+                        "20:00:26"
+                    ],
+                    [
+                        "1.83",
+                        "10:52:00"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.6",
+                        "20:00:26"
+                    ],
+                    [
+                        "3.6",
+                        "10:52:00"
+                    ]
+                ]
+            },
+            "oldham": {
+                "Bet365": [
+                    [
+                        "4.5",
+                        "20:00:26"
+                    ],
+                    [
+                        "4.33",
+                        "10:52:00"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

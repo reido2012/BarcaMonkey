@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-2/carlisle-v-cambridge/winner",
+        "horses": {
+            "carlisle": {
+                "Bet365": [
+                    [
+                        "2.15",
+                        "20:00:28"
+                    ],
+                    [
+                        "2.15",
+                        "10:52:02"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.25",
+                        "20:00:28"
+                    ],
+                    [
+                        "3.25",
+                        "10:52:02"
+                    ]
+                ]
+            },
+            "cambridge": {
+                "Bet365": [
+                    [
+                        "3.5",
+                        "20:00:28"
+                    ],
+                    [
+                        "3.5",
+                        "10:52:02"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

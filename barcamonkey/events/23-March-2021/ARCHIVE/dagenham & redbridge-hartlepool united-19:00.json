@@ -1,0 +1,14 @@
+{
+    "smarkets": {
+        "url": "smarkets.com/event/42119382",
+        "horses": {
+            "dagenham & redbridge": 4.2,
+            "hartlepool united": 2.26,
+            "draw": 3.75
+        }
+    },
+    "oddschecker": {
+        "url": "",
+        "horses": null
+    }
+}

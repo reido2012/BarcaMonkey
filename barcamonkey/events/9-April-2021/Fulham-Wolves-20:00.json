@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/premier-league/fulham-v-wolves/winner",
+        "horses": {
+            "fulham": {
+                "Bet365": [
+                    [
+                        "2.4",
+                        "20:00:01"
+                    ],
+                    [
+                        "2.4",
+                        "10:51:31"
+                    ]
+                ]
+            },
+            "wolves": {
+                "Bet365": [
+                    [
+                        "3",
+                        "20:00:01"
+                    ],
+                    [
+                        "3",
+                        "10:51:31"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.25",
+                        "20:00:01"
+                    ],
+                    [
+                        "3.2",
+                        "10:51:31"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

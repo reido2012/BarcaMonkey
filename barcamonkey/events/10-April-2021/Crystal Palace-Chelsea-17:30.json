@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/premier-league/crystal-palace-v-chelsea/winner",
+        "horses": {
+            "chelsea": {
+                "Bet365": [
+                    [
+                        "1.4",
+                        "20:00:03"
+                    ],
+                    [
+                        "1.4",
+                        "10:51:33"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "4",
+                        "20:00:03"
+                    ],
+                    [
+                        "4",
+                        "10:51:33"
+                    ]
+                ]
+            },
+            "crystal palace": {
+                "Bet365": [
+                    [
+                        "9.5",
+                        "20:00:03"
+                    ],
+                    [
+                        "9.5",
+                        "10:51:33"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

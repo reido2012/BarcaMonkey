@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/italy/serie-a/cagliari-v-verona/winner",
+        "horses": {
+            "cagliari": {
+                "Bet365": [
+                    [
+                        "2.62",
+                        "20:00:58"
+                    ],
+                    [
+                        "2.62",
+                        "10:52:37"
+                    ]
+                ]
+            },
+            "verona": {
+                "Bet365": [
+                    [
+                        "2.7",
+                        "20:00:58"
+                    ],
+                    [
+                        "2.7",
+                        "10:52:37"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.25",
+                        "20:00:58"
+                    ],
+                    [
+                        "3.25",
+                        "10:52:37"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

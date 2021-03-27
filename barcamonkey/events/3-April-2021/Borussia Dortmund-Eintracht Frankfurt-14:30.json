@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/germany/bundesliga/borussia-dortmund-v-eintracht-frankfurt/winner",
+        "horses": {
+            "borussia dortmund": {
+                "Bet365": [
+                    [
+                        "1.72",
+                        "20:00:52"
+                    ],
+                    [
+                        "1.72",
+                        "10:52:28"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.75",
+                        "20:00:52"
+                    ],
+                    [
+                        "3.75",
+                        "10:52:28"
+                    ]
+                ]
+            },
+            "eintracht frankfurt": {
+                "Bet365": [
+                    [
+                        "4.75",
+                        "20:00:52"
+                    ],
+                    [
+                        "4.75",
+                        "10:52:28"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

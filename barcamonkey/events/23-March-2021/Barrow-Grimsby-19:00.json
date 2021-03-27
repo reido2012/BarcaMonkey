@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-2/barrow-v-grimsby/winner",
+        "horses": {
+            "barrow": {
+                "Bet365": [
+                    [
+                        "1.9",
+                        "20:00:25"
+                    ],
+                    [
+                        "1.8",
+                        "10:51:58"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.4",
+                        "20:00:25"
+                    ],
+                    [
+                        "3.4",
+                        "10:51:58"
+                    ]
+                ]
+            },
+            "grimsby": {
+                "Bet365": [
+                    [
+                        "4.33",
+                        "20:00:25"
+                    ],
+                    [
+                        "4.75",
+                        "10:51:58"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

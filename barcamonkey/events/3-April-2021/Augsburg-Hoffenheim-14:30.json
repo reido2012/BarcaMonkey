@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/germany/bundesliga/augsburg-v-hoffenheim/winner",
+        "horses": {
+            "hoffenheim": {
+                "Bet365": [
+                    [
+                        "1.95",
+                        "20:00:52"
+                    ],
+                    [
+                        "1.95",
+                        "10:52:27"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.5",
+                        "20:00:52"
+                    ],
+                    [
+                        "3.5",
+                        "10:52:27"
+                    ]
+                ]
+            },
+            "augsburg": {
+                "Bet365": [
+                    [
+                        "3.8",
+                        "20:00:52"
+                    ],
+                    [
+                        "3.8",
+                        "10:52:27"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

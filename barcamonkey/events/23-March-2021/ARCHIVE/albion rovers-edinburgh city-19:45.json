@@ -1,0 +1,14 @@
+{
+    "smarkets": {
+        "url": "smarkets.com/event/42119460",
+        "horses": {
+            "albion rovers": 7.2,
+            "edinburgh city": 1.69,
+            "draw": 5.3
+        }
+    },
+    "oddschecker": {
+        "url": "",
+        "horses": null
+    }
+}

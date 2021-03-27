@@ -1,0 +1,7 @@
+[auth]
+login = "adampeverall@yahoo.co.uk"
+password = ""
+
+[api]
+base_url = "https://api.smarkets.com/v3/"
+chunk_size = 20

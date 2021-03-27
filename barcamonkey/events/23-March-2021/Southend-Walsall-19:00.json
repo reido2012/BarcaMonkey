@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-2/southend-v-walsall/winner",
+        "horses": {
+            "walsall": {
+                "Bet365": [
+                    [
+                        "2.45",
+                        "20:00:27"
+                    ],
+                    [
+                        "2.62",
+                        "10:52:00"
+                    ]
+                ]
+            },
+            "southend": {
+                "Bet365": [
+                    [
+                        "3",
+                        "20:00:27"
+                    ],
+                    [
+                        "2.8",
+                        "10:52:00"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "20:00:27"
+                    ],
+                    [
+                        "3.2",
+                        "10:52:00"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/europa-league/granada-v-man-utd/winner",
+        "horses": {
+            "man utd": {
+                "Bet365": [
+                    [
+                        "1.61",
+                        "20:01:26"
+                    ],
+                    [
+                        "1.61",
+                        "10:53:03"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.8",
+                        "20:01:26"
+                    ],
+                    [
+                        "3.8",
+                        "10:53:03"
+                    ]
+                ]
+            },
+            "granada": {
+                "Bet365": [
+                    [
+                        "5.5",
+                        "20:01:26"
+                    ],
+                    [
+                        "5.5",
+                        "10:53:03"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

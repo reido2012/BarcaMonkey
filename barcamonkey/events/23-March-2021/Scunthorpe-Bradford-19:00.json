@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-2/scunthorpe-v-bradford/winner",
+        "horses": {
+            "bradford": {
+                "Bet365": [
+                    [
+                        "2.6",
+                        "20:00:26"
+                    ],
+                    [
+                        "2.6",
+                        "10:52:00"
+                    ]
+                ]
+            },
+            "scunthorpe": {
+                "Bet365": [
+                    [
+                        "2.8",
+                        "20:00:26"
+                    ],
+                    [
+                        "2.8",
+                        "10:52:00"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "20:00:26"
+                    ],
+                    [
+                        "3.2",
+                        "10:52:00"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

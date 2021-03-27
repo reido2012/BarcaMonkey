@@ -1,0 +1,39 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/germany/bundesliga/werder-bremen-v-rb-leipzig/winner",
+        "horses": {
+            "rb leipzig": {
+                "Bet365": [
+                    [
+                        "1.5",
+                        "10:52:32"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "4",
+                        "10:52:32"
+                    ]
+                ]
+            },
+            "werder bremen": {
+                "Bet365": [
+                    [
+                        "7",
+                        "10:52:32"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

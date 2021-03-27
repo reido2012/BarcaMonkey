@@ -1,0 +1,39 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/germany/bundesliga/vfb-stuttgart-v-borussia-dortmund/winner",
+        "horses": {
+            "borussia dortmund": {
+                "Bet365": [
+                    [
+                        "1.9",
+                        "10:52:32"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.6",
+                        "10:52:32"
+                    ]
+                ]
+            },
+            "vfb stuttgart": {
+                "Bet365": [
+                    [
+                        "3.75",
+                        "10:52:32"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

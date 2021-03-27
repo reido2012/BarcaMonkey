@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/premier-league/man-city-v-leeds/winner",
+        "horses": {
+            "man city": {
+                "Bet365": [
+                    [
+                        "1.16",
+                        "20:00:01"
+                    ],
+                    [
+                        "1.16",
+                        "10:51:32"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "7.5",
+                        "20:00:01"
+                    ],
+                    [
+                        "7.5",
+                        "10:51:32"
+                    ]
+                ]
+            },
+            "leeds": {
+                "Bet365": [
+                    [
+                        "13",
+                        "20:00:01"
+                    ],
+                    [
+                        "13",
+                        "10:51:32"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

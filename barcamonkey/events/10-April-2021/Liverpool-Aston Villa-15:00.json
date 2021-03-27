@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/premier-league/liverpool-v-aston-villa/winner",
+        "horses": {
+            "liverpool": {
+                "Bet365": [
+                    [
+                        "1.36",
+                        "20:00:03"
+                    ],
+                    [
+                        "1.36",
+                        "10:51:33"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "4.75",
+                        "20:00:03"
+                    ],
+                    [
+                        "4.75",
+                        "10:51:33"
+                    ]
+                ]
+            },
+            "aston villa": {
+                "Bet365": [
+                    [
+                        "8.5",
+                        "20:00:03"
+                    ],
+                    [
+                        "8.5",
+                        "10:51:33"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

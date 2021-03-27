@@ -1,0 +1,14 @@
+{
+    "smarkets": {
+        "url": "smarkets.com/event/42119463",
+        "horses": {
+            "bristol rovers": 2.22,
+            "swindon town": 4.1,
+            "draw": 3.7
+        }
+    },
+    "oddschecker": {
+        "url": "",
+        "horses": null
+    }
+}

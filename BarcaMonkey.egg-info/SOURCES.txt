@@ -1,0 +1,11 @@
+README.md
+setup.py
+BarcaMonkey.egg-info/PKG-INFO
+BarcaMonkey.egg-info/SOURCES.txt
+BarcaMonkey.egg-info/dependency_links.txt
+BarcaMonkey.egg-info/requires.txt
+BarcaMonkey.egg-info/top_level.txt
+barcamonkey/__init__.py
+barcamonkey/barcamonkeybot.py
+barcamonkey/oddscheckerbettor.py
+barcamonkey/run.py

@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/premier-league/leeds-v-sheffield-utd/winner",
+        "horses": {
+            "leeds": {
+                "Bet365": [
+                    [
+                        "1.53",
+                        "19:59:58"
+                    ],
+                    [
+                        "1.5",
+                        "10:51:28"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "4",
+                        "19:59:58"
+                    ],
+                    [
+                        "4",
+                        "10:51:28"
+                    ]
+                ]
+            },
+            "sheffield utd": {
+                "Bet365": [
+                    [
+                        "6.5",
+                        "19:59:58"
+                    ],
+                    [
+                        "7",
+                        "10:51:28"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

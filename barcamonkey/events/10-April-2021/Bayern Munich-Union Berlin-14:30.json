@@ -1,0 +1,39 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/germany/bundesliga/bayern-munich-v-union-berlin/winner",
+        "horses": {
+            "bayern munich": {
+                "Bet365": [
+                    [
+                        "1.28",
+                        "10:52:31"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "5.5",
+                        "10:52:31"
+                    ]
+                ]
+            },
+            "union berlin": {
+                "Bet365": [
+                    [
+                        "9",
+                        "10:52:31"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/championship/cardiff-v-nottingham-forest/winner",
+        "horses": {
+            "cardiff": {
+                "Bet365": [
+                    [
+                        "2.05",
+                        "20:00:09"
+                    ],
+                    [
+                        "2.05",
+                        "10:51:39"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.25",
+                        "20:00:09"
+                    ],
+                    [
+                        "3.25",
+                        "10:51:39"
+                    ]
+                ]
+            },
+            "nottingham forest": {
+                "Bet365": [
+                    [
+                        "3.8",
+                        "20:00:09"
+                    ],
+                    [
+                        "3.8",
+                        "10:51:39"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

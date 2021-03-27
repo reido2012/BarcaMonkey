@@ -1,0 +1,39 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/germany/bundesliga/hoffenheim-v-bayer-leverkusen/winner",
+        "horses": {
+            "bayer leverkusen": {
+                "Bet365": [
+                    [
+                        "2.4",
+                        "10:52:34"
+                    ]
+                ]
+            },
+            "hoffenheim": {
+                "Bet365": [
+                    [
+                        "2.8",
+                        "10:52:34"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.5",
+                        "10:52:34"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

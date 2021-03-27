@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/germany/bundesliga/wolfsburg-v-fc-koln/winner",
+        "horses": {
+            "wolfsburg": {
+                "Bet365": [
+                    [
+                        "1.55",
+                        "20:00:54"
+                    ],
+                    [
+                        "1.55",
+                        "10:52:29"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "4.2",
+                        "20:00:54"
+                    ],
+                    [
+                        "4.2",
+                        "10:52:29"
+                    ]
+                ]
+            },
+            "fc koln": {
+                "Bet365": [
+                    [
+                        "5.5",
+                        "20:00:54"
+                    ],
+                    [
+                        "5.5",
+                        "10:52:29"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

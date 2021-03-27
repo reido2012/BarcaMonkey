@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-1/afc-wimbledon-v-northampton/winner",
+        "horses": {
+            "afc wimbledon": {
+                "Bet365": [
+                    [
+                        "2.55",
+                        "20:00:18"
+                    ],
+                    [
+                        "2.55",
+                        "10:51:50"
+                    ]
+                ]
+            },
+            "northampton": {
+                "Bet365": [
+                    [
+                        "2.8",
+                        "20:00:18"
+                    ],
+                    [
+                        "2.8",
+                        "10:51:50"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "20:00:18"
+                    ],
+                    [
+                        "3.2",
+                        "10:51:50"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

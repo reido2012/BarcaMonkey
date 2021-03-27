@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/fa-cup/chelsea-v-man-city/winner",
+        "horses": {
+            "man city": {
+                "Bet365": [
+                    [
+                        "1.72",
+                        "20:00:35"
+                    ],
+                    [
+                        "1.72",
+                        "10:52:10"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.75",
+                        "20:00:35"
+                    ],
+                    [
+                        "3.75",
+                        "10:52:10"
+                    ]
+                ]
+            },
+            "chelsea": {
+                "Bet365": [
+                    [
+                        "4.5",
+                        "20:00:35"
+                    ],
+                    [
+                        "4.5",
+                        "10:52:10"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

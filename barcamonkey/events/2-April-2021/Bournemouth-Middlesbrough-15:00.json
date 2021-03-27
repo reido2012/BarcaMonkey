@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/championship/bournemouth-v-middlesbrough/winner",
+        "horses": {
+            "bournemouth": {
+                "Bet365": [
+                    [
+                        "2.05",
+                        "20:00:09"
+                    ],
+                    [
+                        "2.05",
+                        "10:51:39"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.5",
+                        "20:00:09"
+                    ],
+                    [
+                        "3.5",
+                        "10:51:39"
+                    ]
+                ]
+            },
+            "middlesbrough": {
+                "Bet365": [
+                    [
+                        "3.6",
+                        "20:00:09"
+                    ],
+                    [
+                        "3.6",
+                        "10:51:39"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/league-1/hull-v-gillingham/winner",
+        "horses": {
+            "hull": {
+                "Bet365": [
+                    [
+                        "1.72",
+                        "20:00:20"
+                    ],
+                    [
+                        "1.72",
+                        "10:51:52"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.6",
+                        "20:00:20"
+                    ],
+                    [
+                        "3.6",
+                        "10:51:52"
+                    ]
+                ]
+            },
+            "gillingham": {
+                "Bet365": [
+                    [
+                        "4.75",
+                        "20:00:20"
+                    ],
+                    [
+                        "4.75",
+                        "10:51:52"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

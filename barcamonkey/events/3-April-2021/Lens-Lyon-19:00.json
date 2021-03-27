@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/france/ligue-1/lens-v-lyon/winner",
+        "horses": {
+            "lyon": {
+                "Bet365": [
+                    [
+                        "1.72",
+                        "20:01:05"
+                    ],
+                    [
+                        "1.72",
+                        "10:52:43"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "4",
+                        "20:01:05"
+                    ],
+                    [
+                        "4",
+                        "10:52:43"
+                    ]
+                ]
+            },
+            "lens": {
+                "Bet365": [
+                    [
+                        "4.33",
+                        "20:01:05"
+                    ],
+                    [
+                        "4.33",
+                        "10:52:43"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/france/ligue-1/marseille-v-dijon/winner",
+        "horses": {
+            "marseille": {
+                "Bet365": [
+                    [
+                        "1.44",
+                        "20:01:08"
+                    ],
+                    [
+                        "1.44",
+                        "10:52:46"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "4.2",
+                        "20:01:08"
+                    ],
+                    [
+                        "4.2",
+                        "10:52:46"
+                    ]
+                ]
+            },
+            "dijon": {
+                "Bet365": [
+                    [
+                        "7.5",
+                        "20:01:08"
+                    ],
+                    [
+                        "7.5",
+                        "10:52:46"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

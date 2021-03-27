@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/championship/barnsley-v-reading/winner",
+        "horses": {
+            "barnsley": {
+                "Bet365": [
+                    [
+                        "2.15",
+                        "20:00:13"
+                    ],
+                    [
+                        "2.15",
+                        "10:51:43"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.25",
+                        "20:00:13"
+                    ],
+                    [
+                        "3.25",
+                        "10:51:43"
+                    ]
+                ]
+            },
+            "reading": {
+                "Bet365": [
+                    [
+                        "3.5",
+                        "20:00:13"
+                    ],
+                    [
+                        "3.5",
+                        "10:51:43"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

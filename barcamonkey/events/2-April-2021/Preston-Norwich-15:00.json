@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/championship/preston-v-norwich/winner",
+        "horses": {
+            "norwich": {
+                "Bet365": [
+                    [
+                        "1.72",
+                        "20:00:11"
+                    ],
+                    [
+                        "1.72",
+                        "10:51:40"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.6",
+                        "20:00:11"
+                    ],
+                    [
+                        "3.6",
+                        "10:51:40"
+                    ]
+                ]
+            },
+            "preston": {
+                "Bet365": [
+                    [
+                        "5",
+                        "20:00:11"
+                    ],
+                    [
+                        "5",
+                        "10:51:40"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

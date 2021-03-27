@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/premier-league/aston-villa-v-fulham/winner",
+        "horses": {
+            "aston villa": {
+                "Bet365": [
+                    [
+                        "2.25",
+                        "19:59:58"
+                    ],
+                    [
+                        "2.25",
+                        "10:51:28"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.1",
+                        "19:59:58"
+                    ],
+                    [
+                        "3.1",
+                        "10:51:28"
+                    ]
+                ]
+            },
+            "fulham": {
+                "Bet365": [
+                    [
+                        "3.4",
+                        "19:59:58"
+                    ],
+                    [
+                        "3.4",
+                        "10:51:28"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

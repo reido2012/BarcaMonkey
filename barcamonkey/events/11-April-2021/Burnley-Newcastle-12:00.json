@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/premier-league/burnley-v-newcastle/winner",
+        "horses": {
+            "burnley": {
+                "Bet365": [
+                    [
+                        "2.15",
+                        "20:00:03"
+                    ],
+                    [
+                        "2.15",
+                        "10:51:33"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.1",
+                        "20:00:03"
+                    ],
+                    [
+                        "3.1",
+                        "10:51:33"
+                    ]
+                ]
+            },
+            "newcastle": {
+                "Bet365": [
+                    [
+                        "3.6",
+                        "20:00:03"
+                    ],
+                    [
+                        "3.6",
+                        "10:51:33"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/premier-league/tottenham-v-man-utd/winner",
+        "horses": {
+            "man utd": {
+                "Bet365": [
+                    [
+                        "2.4",
+                        "20:00:04"
+                    ],
+                    [
+                        "2.4",
+                        "10:51:35"
+                    ]
+                ]
+            },
+            "tottenham": {
+                "Bet365": [
+                    [
+                        "2.75",
+                        "20:00:04"
+                    ],
+                    [
+                        "2.8",
+                        "10:51:35"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.4",
+                        "20:00:04"
+                    ],
+                    [
+                        "3.4",
+                        "10:51:35"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

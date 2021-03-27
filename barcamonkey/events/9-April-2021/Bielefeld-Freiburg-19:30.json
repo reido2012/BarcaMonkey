@@ -1,0 +1,39 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/germany/bundesliga/bielefeld-v-freiburg/winner",
+        "horses": {
+            "freiburg": {
+                "Bet365": [
+                    [
+                        "2.25",
+                        "10:52:30"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "10:52:30"
+                    ]
+                ]
+            },
+            "bielefeld": {
+                "Bet365": [
+                    [
+                        "3.25",
+                        "10:52:30"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

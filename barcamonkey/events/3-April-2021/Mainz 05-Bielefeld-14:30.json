@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/germany/bundesliga/mainz-05-v-bielefeld/winner",
+        "horses": {
+            "mainz 05": {
+                "Bet365": [
+                    [
+                        "1.95",
+                        "20:00:52"
+                    ],
+                    [
+                        "1.95",
+                        "10:52:27"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.6",
+                        "20:00:52"
+                    ],
+                    [
+                        "3.6",
+                        "10:52:27"
+                    ]
+                ]
+            },
+            "bielefeld": {
+                "Bet365": [
+                    [
+                        "3.8",
+                        "20:00:52"
+                    ],
+                    [
+                        "3.8",
+                        "10:52:27"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

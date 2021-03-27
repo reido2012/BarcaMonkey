@@ -1,0 +1,14 @@
+{
+    "smarkets": {
+        "url": "smarkets.com/event/42119380",
+        "horses": {
+            "altrincham fc": 2.16,
+            "king's lynn town": 4.1,
+            "draw": 4.1
+        }
+    },
+    "oddschecker": {
+        "url": "",
+        "horses": null
+    }
+}

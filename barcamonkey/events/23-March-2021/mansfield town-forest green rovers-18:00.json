@@ -1,0 +1,14 @@
+{
+    "smarkets": {
+        "url": "smarkets.com/event/42119466",
+        "horses": {
+            "mansfield town": 2.6,
+            "forest green rovers": 3.15,
+            "draw": 3.45
+        }
+    },
+    "oddschecker": {
+        "url": "",
+        "horses": null
+    }
+}

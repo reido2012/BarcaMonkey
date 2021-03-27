@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/championship/watford-v-sheffield-wednesday/winner",
+        "horses": {
+            "watford": {
+                "Bet365": [
+                    [
+                        "1.5",
+                        "20:00:11"
+                    ],
+                    [
+                        "1.5",
+                        "10:51:41"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.8",
+                        "20:00:11"
+                    ],
+                    [
+                        "3.8",
+                        "10:51:41"
+                    ]
+                ]
+            },
+            "sheffield wednesday": {
+                "Bet365": [
+                    [
+                        "7",
+                        "20:00:11"
+                    ],
+                    [
+                        "7",
+                        "10:51:41"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

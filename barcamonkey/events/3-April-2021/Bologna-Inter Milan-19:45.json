@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/italy/serie-a/bologna-v-inter-milan/winner",
+        "horses": {
+            "inter milan": {
+                "Bet365": [
+                    [
+                        "1.4",
+                        "20:01:02"
+                    ],
+                    [
+                        "1.4",
+                        "10:52:40"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "4.75",
+                        "20:01:02"
+                    ],
+                    [
+                        "4.75",
+                        "10:52:40"
+                    ]
+                ]
+            },
+            "bologna": {
+                "Bet365": [
+                    [
+                        "7",
+                        "20:01:02"
+                    ],
+                    [
+                        "7",
+                        "10:52:40"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

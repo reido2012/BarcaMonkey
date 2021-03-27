@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/italy/serie-a/genoa-v-fiorentina/winner",
+        "horses": {
+            "fiorentina": {
+                "Bet365": [
+                    [
+                        "2.37",
+                        "20:01:00"
+                    ],
+                    [
+                        "2.37",
+                        "10:52:38"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3",
+                        "20:01:00"
+                    ],
+                    [
+                        "3",
+                        "10:52:38"
+                    ]
+                ]
+            },
+            "genoa": {
+                "Bet365": [
+                    [
+                        "3.4",
+                        "20:01:00"
+                    ],
+                    [
+                        "3.4",
+                        "10:52:38"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

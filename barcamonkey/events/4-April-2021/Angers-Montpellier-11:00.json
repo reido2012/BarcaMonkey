@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/france/ligue-1/angers-v-montpellier/winner",
+        "horses": {
+            "angers": {
+                "Bet365": [
+                    [
+                        "2.4",
+                        "20:01:05"
+                    ],
+                    [
+                        "2.4",
+                        "10:52:43"
+                    ]
+                ]
+            },
+            "montpellier": {
+                "Bet365": [
+                    [
+                        "3",
+                        "20:01:05"
+                    ],
+                    [
+                        "3",
+                        "10:52:43"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "3.2",
+                        "20:01:05"
+                    ],
+                    [
+                        "3.2",
+                        "10:52:43"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

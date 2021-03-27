@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/champions-league/bayern-munich-v-psg/winner",
+        "horses": {
+            "bayern munich": {
+                "Bet365": [
+                    [
+                        "1.66",
+                        "20:01:23"
+                    ],
+                    [
+                        "1.66",
+                        "10:53:00"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "4",
+                        "20:01:23"
+                    ],
+                    [
+                        "4",
+                        "10:53:00"
+                    ]
+                ]
+            },
+            "psg": {
+                "Bet365": [
+                    [
+                        "4.75",
+                        "20:01:23"
+                    ],
+                    [
+                        "4.75",
+                        "10:53:00"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

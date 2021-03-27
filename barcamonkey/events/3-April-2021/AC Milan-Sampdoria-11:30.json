@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/italy/serie-a/ac-milan-v-sampdoria/winner",
+        "horses": {
+            "ac milan": {
+                "Bet365": [
+                    [
+                        "1.5",
+                        "20:00:58"
+                    ],
+                    [
+                        "1.5",
+                        "10:52:37"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "4.33",
+                        "20:00:58"
+                    ],
+                    [
+                        "4.33",
+                        "10:52:37"
+                    ]
+                ]
+            },
+            "sampdoria": {
+                "Bet365": [
+                    [
+                        "6",
+                        "20:00:58"
+                    ],
+                    [
+                        "6",
+                        "10:52:37"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

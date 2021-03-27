@@ -1,0 +1,51 @@
+{
+    "smarkets": {
+        "url": "",
+        "horses": null
+    },
+    "oddschecker": {
+        "url": "https://www.oddschecker.com/football/english/efl-cup/man-city-v-tottenham/winner",
+        "horses": {
+            "man city": {
+                "Bet365": [
+                    [
+                        "1.44",
+                        "20:00:38"
+                    ],
+                    [
+                        "1.44",
+                        "10:52:13"
+                    ]
+                ]
+            },
+            "draw": {
+                "Bet365": [
+                    [
+                        "4.5",
+                        "20:00:38"
+                    ],
+                    [
+                        "4.5",
+                        "10:52:13"
+                    ]
+                ]
+            },
+            "tottenham": {
+                "Bet365": [
+                    [
+                        "7",
+                        "20:00:38"
+                    ],
+                    [
+                        "7",
+                        "10:52:13"
+                    ]
+                ]
+            }
+        }
+    },
+    "888Sport": {
+        "url": "",
+        "horses": null
+    }
+}

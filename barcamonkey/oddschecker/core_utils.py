@@ -7,7 +7,7 @@ import time
 
 
 from bs4 import BeautifulSoup
-from .scraper_exceptions import Exception404
+from scraper_exceptions import Exception404
 from time import sleep
 
 
