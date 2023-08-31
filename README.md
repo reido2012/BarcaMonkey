@@ -1,11 +1,5 @@
 # BarcaMonkey
 
-##### Non Firebase Flow
-Write event data to json files
+Free version of Oddschecker
 
-Then update the odds in the json files 
-
-  
-
-
-##### Firebase Flow
+Last updated: a longggg time ago
